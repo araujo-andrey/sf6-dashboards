@@ -39,8 +39,8 @@ st.write("") # Respiro visual antes dos gráficos
 # O @st.cache_data precisa ficar EXATAMENTE em cima da função def
 @st.cache_data
 def carregar_dados():
-    caminho = "sf6_dados_limpos.csv" 
-    return pd.read_csv(caminho)
+    caminho = "dados_tratados.parquet" 
+    return pd.read_parquet(caminho)
 
 df = carregar_dados()
 
