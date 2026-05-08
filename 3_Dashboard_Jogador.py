@@ -7,7 +7,7 @@ import plotly.express as px
 # ==========================================
 # PARTE 1 - CONFIGURAÇÕES DA PÁGINA
 st.set_page_config(
-    page_title="SF6 - Dados do Winter",
+    page_title="SF6 - Dados de jogadores",
     layout="wide",
     page_icon= "❄️"
 )
@@ -358,7 +358,7 @@ if df is not None:
         if nao_enfrentados:
             qtd_nao = len(nao_enfrentados)
             nomes_str = ", ".join(nao_enfrentados)
-            st.info(f"💡 **Curiosidade:** Com os filtros aplicados, existem **{qtd_nao} personagens** do seu histórico que você não enfrentou: {nomes_str}.")
+            st.info(f"💡 **Curiosidade:** Com os filtros aplicados, existem **{qtd_nao} personagens** no histórico  não enfrentado(s): {nomes_str}.")
         else:
             st.info("💡 **Curiosidade:** Com os filtros aplicados, todos os personagens foram enfrentados!")
 
