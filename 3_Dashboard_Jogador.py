@@ -234,7 +234,7 @@ def classificar_nivel(d):
 # 📥  CARREGAR DADOS
 # ══════════════════════════════════════════════════════════════════════════════
 JOGADOR_ID = "4125616529"
-ARQUIVO    = f"SF6_historico_LIMPO_4125616529(Claud_3).csv"
+ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}(Claud 3).csv"
 
 @st.cache_data
 def carregar_dados():
@@ -989,3 +989,121 @@ colunas_ok=[c for c in colunas_base if c in df_f.columns]
 if total>0:
     st.dataframe(df_f[colunas_ok].sort_values(['Data','Hora Exata'],ascending=[False,False]),
                  use_container_width=True,hide_index=True)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ══  SEÇÃO — AVALIAÇÃO DE MATCHUPS PELO WINTER
+# ══════════════════════════════════════════════════════════════════════════════
+st.markdown("---")
+st.markdown("### 🎮 Avaliação de Matchups — Winter")
+st.caption("Arraste os personagens entre as categorias. O dashboard calcula o win rate de cada grupo automaticamente.")
+
+# Pega personagens enfrentados nos dados filtrados
+chars_enfrentados = sorted(df_f['Oponente_Personagem'].dropna().unique().tolist())
+
+# Inicializa session state com todos os personagens em "Sem Opinião"
+if 'matchup_gosta' not in st.session_state:
+    st.session_state.matchup_gosta    = []
+if 'matchup_reclama' not in st.session_state:
+    st.session_state.matchup_reclama  = []
+if 'matchup_neutro' not in st.session_state:
+    st.session_state.matchup_neutro   = chars_enfrentados.copy()
+
+# Sincroniza: se novos personagens apareceram nos dados, adiciona em Neutro
+ja_classificados = set(st.session_state.matchup_gosta) | set(st.session_state.matchup_reclama) | set(st.session_state.matchup_neutro)
+novos = [c for c in chars_enfrentados if c not in ja_classificados]
+if novos:
+    st.session_state.matchup_neutro.extend(novos)
+
+# Remove personagens que sumiram dos dados filtrados
+for lista in ['matchup_gosta','matchup_reclama','matchup_neutro']:
+    st.session_state[lista] = [c for c in st.session_state[lista] if c in chars_enfrentados]
+
+# Drag-and-drop
+sort_input = [
+    {"header": "😤 Reclama da Matchup",  "items": list(st.session_state.matchup_reclama)},
+    {"header": "😊 Gosta da Matchup",    "items": list(st.session_state.matchup_gosta)},
+    {"header": "😐 Sem Opinião",         "items": list(st.session_state.matchup_neutro)},
+]
+sort_resultado = sort_items(sort_input, multi_containers=True, key="sort_matchup_opinion")
+
+if st.button("💾 Salvar classificação"):
+    for bloco in sort_resultado:
+        if bloco["header"] == "😤 Reclama da Matchup":
+            st.session_state.matchup_reclama = bloco["items"]
+        elif bloco["header"] == "😊 Gosta da Matchup":
+            st.session_state.matchup_gosta   = bloco["items"]
+        else:
+            st.session_state.matchup_neutro  = bloco["items"]
+    st.success("✅ Classificação salva!")
+    st.rerun()
+
+# Análise dos grupos
+grupos = {
+    "😤 Reclama": st.session_state.matchup_reclama,
+    "😊 Gosta":   st.session_state.matchup_gosta,
+    "😐 Neutro":  st.session_state.matchup_neutro,
+}
+
+grupos_com_dados = {k: v for k, v in grupos.items() if v}
+if len(grupos_com_dados) >= 2:
+    st.markdown("#### 📊 Win Rate por Classificação")
+
+    rows = []
+    for label, chars in grupos.items():
+        if not chars: continue
+        sub = df_f[df_f['Oponente_Personagem'].isin(chars)]
+        if len(sub) == 0: continue
+        rows.append({
+            "Classificação": label,
+            "Personagens":   ", ".join(sorted(chars)),
+            "Partidas":      len(sub),
+            "Vitórias":      (sub['Meu_Resultado']=="Vitória 🏆").sum(),
+            "WR_num":        wr(sub),
+        })
+
+    if rows:
+        df_op_class = pd.DataFrame(rows)
+        df_op_class[''] = df_op_class['WR_num'].apply(semaforo)
+        df_op_class['Win Rate (%)'] = df_op_class['WR_num'].apply(lambda x: f"{x:.1f}%")
+
+        # Métricas de destaque
+        mc1, mc2, mc3 = st.columns(3)
+        cores_grupo = {"😤 Reclama": "#b63a24", "😊 Gosta": "#119c0c", "😐 Neutro": "#95A5A6"}
+        for i, row in enumerate(rows):
+            col = [mc1, mc2, mc3][i % 3]
+            col.metric(row['Classificação'], f"{row['WR_num']:.1f}%",
+                       f"{row['Partidas']} partidas")
+
+        st.write("")
+
+        # Gráfico comparativo
+        fig_op = go.Figure()
+        for row in rows:
+            fig_op.add_trace(go.Bar(
+                x=[row['Classificação']], y=[row['WR_num']],
+                name=row['Classificação'],
+                marker_color=cores_grupo.get(row['Classificação'], '#888'),
+                text=[f"{row['WR_num']:.1f}%"], textposition='outside',
+                textfont_color='white',
+                customdata=[[row['Partidas'], row['Personagens']]],
+                hovertemplate=(
+                    "<b>%{x}</b><br>"
+                    "Win Rate: %{y:.1f}%<br>"
+                    "%{customdata[0]} partidas<br><br>"
+                    "%{customdata[1]}<extra></extra>"
+                )
+            ))
+        fig_op.update_layout(
+            template="plotly_dark", height=340, showlegend=False,
+            yaxis=dict(range=[0,115], showticklabels=False),
+            margin=dict(l=10,r=10,t=20,b=10)
+        )
+        st.plotly_chart(fig_op, use_container_width=True)
+
+        # Tabela detalhada
+        st.dataframe(
+            df_op_class[['','Classificação','Partidas','Vitórias','Win Rate (%)','Personagens']],
+            use_container_width=True, hide_index=True
+        )
+        st.caption("💡 O hover do gráfico lista todos os personagens de cada grupo.")
