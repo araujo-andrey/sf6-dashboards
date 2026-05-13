@@ -65,9 +65,9 @@ def init_state():
     if 'wr_verde'      not in st.session_state: st.session_state.wr_verde  = 55
     if 'wr_amarelo'    not in st.session_state: st.session_state.wr_amarelo= 45
     if 'lim_muito_inf' not in st.session_state: st.session_state.lim_muito_inf = -200
-    if 'lim_inf'       not in st.session_state: st.session_state.lim_inf       = -75
-    if 'lim_sup'       not in st.session_state: st.session_state.lim_sup       =  75
-    if 'lim_muito_sup' not in st.session_state: st.session_state.lim_muito_sup =  200
+    if 'lim_inf'       not in st.session_state: st.session_state.lim_inf       = -51
+    if 'lim_sup'       not in st.session_state: st.session_state.lim_sup       =  51
+    if 'lim_muito_sup' not in st.session_state: st.session_state.lim_muito_sup =  101
     if 'chat_votos'    not in st.session_state: pass  # removido
     if 'cols_ativas'   not in st.session_state:
         st.session_state.cols_ativas = {
@@ -82,7 +82,7 @@ init_state()
 with st.expander("⚙️ Configurações — Personalize tudo aqui", expanded=False):
 
     tab_semaforo, tab_nivel, tab_arq, tab_tier, tab_cols = st.tabs([
-        "🚦 Semáforo de Win Rate",
+        "🚦 Indicador de Win Rate",
         "🎯 Faixas de Nível",
         "🥋 Arquétipos",
         "🏆 Tier List",
@@ -110,7 +110,7 @@ with st.expander("⚙️ Configurações — Personalize tudo aqui", expanded=Fa
             st.caption("(automático — abaixo do amarelo)")
 
         st.write("")
-        if st.button("💾 Salvar limites do semáforo"):
+        if st.button("💾 Salvar indicador de Win Rate"):
             st.session_state.wr_verde   = novo_verde
             st.session_state.wr_amarelo = novo_amarelo
             st.success(f"✅ Semáforo: 🟢 ≥{novo_verde}% · 🟡 ≥{novo_amarelo}% · 🔴 <{novo_amarelo}%")
@@ -234,7 +234,7 @@ def classificar_nivel(d):
 # 📥  CARREGAR DADOS
 # ══════════════════════════════════════════════════════════════════════════════
 JOGADOR_ID = "4125616529"
-ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}(Claud_3).csv"
+ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}(Claud 4).csv"
 
 @st.cache_data
 def carregar_dados():
@@ -646,6 +646,7 @@ if cols_on.get("Arquétipo") and total>0:
 if cols_on.get("Nível") and total>0:
     st.markdown("---")
     st.markdown("### 🎯 Desempenho por Nível do Oponente")
+
     df_nv = tabela_wr(df_f,'Nivel_Oponente')
     wr_nv_num = df_f.groupby('Nivel_Oponente',observed=True).apply(
         lambda x:(x['Meu_Resultado']=="Vitória 🏆").sum()/len(x)*100 if len(x)>0 else 0
@@ -653,7 +654,6 @@ if cols_on.get("Nível") and total>0:
 
     cn1,cn2=st.columns(2)
     with cn1:
-        # Lista de oponentes por faixa para o hover (máx 10 + "e N outros")
         def oponentes_hover(nivel):
             nomes = sorted(df_f[df_f['Nivel_Oponente']==nivel]['Oponente_Nome'].dropna().unique())
             if len(nomes) <= 10:
@@ -679,11 +679,26 @@ if cols_on.get("Nível") and total>0:
             margin=dict(l=10,r=10,t=40,b=10)
         )
         st.plotly_chart(fig,use_container_width=True)
+
     with cn2:
         st.write(""); st.write("")
+        mi = st.session_state.lim_muito_inf
+        i  = st.session_state.lim_inf
+        s  = st.session_state.lim_sup
+        ms = st.session_state.lim_muito_sup
+
+        faixas_desc = {
+            "Muito Inferior": f"≤ {mi} MR",
+            "Inferior":       f"{mi+1} a {i} MR",
+            "Similar":        f"{i+1} a {s-1} MR",
+            "Superior":       f"{s} a {ms-1} MR",
+            "Muito Superior": f"≥ {ms} MR",
+        }
+
         df_nv_view = df_nv.rename(columns={'Nivel_Oponente':'Nível'})
+        df_nv_view['Faixa de MR'] = df_nv_view['Nível'].map(faixas_desc)
         st.dataframe(
-            df_nv_view[['','Nível','Lutas','Vitórias','WR (%)','WR_num']],
+            df_nv_view[['','Nível','Faixa de MR','Lutas','Vitórias','WR (%)','WR_num']],
             use_container_width=True, hide_index=True,
             column_config={"WR_num": None}
         )
