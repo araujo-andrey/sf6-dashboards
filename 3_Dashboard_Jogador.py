@@ -234,7 +234,7 @@ def classificar_nivel(d):
 # 📥  CARREGAR DADOS
 # ══════════════════════════════════════════════════════════════════════════════
 JOGADOR_ID = "4125616529"
-ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}(Claud 4).csv"
+ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}(Claud_3).csv"
 
 @st.cache_data
 def carregar_dados():
