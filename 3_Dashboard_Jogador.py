@@ -7,6 +7,8 @@ from streamlit_sortables import sort_items
 # ══════════════════════════════════════════════════════════════════════════════
 # ⚙️  PÁGINA
 # ══════════════════════════════════════════════════════════════════════════════
+JOGADOR_ID = "4125616529"
+ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}.csv"
 st.set_page_config(page_title="SF6 – Análise de Desempenho", layout="wide", page_icon="❄️")
 st.title("📊 Análise de Desempenho – Street Fighter 6")
 
@@ -67,7 +69,7 @@ def init_state():
     if 'lim_muito_inf' not in st.session_state: st.session_state.lim_muito_inf = -200
     if 'lim_inf'       not in st.session_state: st.session_state.lim_inf       = -51
     if 'lim_sup'       not in st.session_state: st.session_state.lim_sup       =  51
-    if 'lim_muito_sup' not in st.session_state: st.session_state.lim_muito_sup =  101
+    if 'lim_muito_sup' not in st.session_state: st.session_state.lim_muito_sup =  100
     if 'chat_votos'    not in st.session_state: pass  # removido
     if 'cols_ativas'   not in st.session_state:
         st.session_state.cols_ativas = {
@@ -233,9 +235,6 @@ def classificar_nivel(d):
 # ══════════════════════════════════════════════════════════════════════════════
 # 📥  CARREGAR DADOS
 # ══════════════════════════════════════════════════════════════════════════════
-JOGADOR_ID = "4125616529"
-ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}(Claud_3).csv"
-
 @st.cache_data
 def carregar_dados():
     try:
@@ -516,15 +515,74 @@ if total>0:
                            margin=dict(l=10,r=10,t=40,b=10))
     st.plotly_chart(fig_uniq, use_container_width=True)
 
-    df_uniq_view = df_uniq.rename(columns={
-        'Oponente_Personagem':'Personagem',
-        'Total_Partidas':'Partidas',
-        'Jogadores_Unicos':'Jogadores Únicos',
-        'Partidas_por_Jogador':'Média Partidas/Jogador'
-    })
-    st.dataframe(df_uniq_view, use_container_width=True, hide_index=True)
-    st.caption("💡 Razão alta = você enfrenta sempre os mesmos jogadores nesse matchup (amostra menos representativa).")
+    df_f['Data_Datetime_parsed'] = pd.to_datetime(df_f['Data_Datetime'])
+    hoje       = pd.Timestamp.now().normalize()
+    ponto_zero = df_f['Data_Datetime_parsed'].dt.normalize().min()
 
+    def stats_matchup(char):
+        sub = df_f[df_f['Oponente_Personagem'] == char].copy()
+        if sub.empty:
+            return pd.Series({'Ultima_Data': None, 'Dias_Desde': None, 'Freq_Media': None})
+
+        # Dias únicos com esse personagem — ignora múltiplas partidas no mesmo dia
+        dias_unicos = sorted(sub['Data_Datetime_parsed'].dt.normalize().drop_duplicates().tolist())
+
+        ultima     = dias_unicos[-1]
+        dias_desde = (hoje - ultima).days
+
+        # Pontos: ponto_zero → dia1 → dia2 → ... → hoje
+        pontos     = [ponto_zero] + dias_unicos + [hoje]
+        intervalos = [(pontos[i+1] - pontos[i]).days for i in range(len(pontos)-1)]
+
+        # Remove intervalos zero (caso ponto_zero coincida com primeiro confronto)
+        intervalos = [x for x in intervalos if x > 0]
+
+        media = round(sum(intervalos) / len(intervalos), 1) if intervalos else None
+
+        return pd.Series({
+            'Ultima_Data': ultima,
+            'Dias_Desde':  dias_desde,
+            'Freq_Media':  media
+        })
+
+    stats = df_uniq['Oponente_Personagem'].apply(stats_matchup)
+    df_uniq = pd.concat([df_uniq, stats], axis=1)
+
+    df_uniq_view = df_uniq.rename(columns={
+        'Oponente_Personagem': 'Personagem',
+        'Total_Partidas':      'Partidas',
+        'Jogadores_Unicos':    'Jogadores Únicos',
+        'Partidas_por_Jogador':'Média Partidas/Jogador',
+    })
+
+    def fmt_ultima(row):
+        if pd.isna(row['Ultima_Data']): return "—"
+        dias     = int(row['Dias_Desde'])
+        data_fmt = pd.Timestamp(row['Ultima_Data']).strftime('%d/%m/%Y')
+        if dias == 0:   sufixo = "hoje"
+        elif dias == 1: sufixo = "1 dia atrás"
+        else:           sufixo = f"{dias} dias atrás"
+        return f"{sufixo} · {data_fmt}"
+
+    def fmt_media(row):
+        if pd.isna(row['Freq_Media']): return "—"
+        d = row['Freq_Media']
+        return f"{d:.0f} dias"
+
+    df_uniq_view['Último Encontro']    = df_uniq_view.apply(fmt_ultima, axis=1)
+    df_uniq_view['Freq. Média (dias)'] = df_uniq_view.apply(fmt_media,  axis=1)
+
+    df_uniq_view = df_uniq_view.sort_values('Dias_Desde', ascending=False)
+
+    st.dataframe(
+        df_uniq_view[['Personagem','Partidas','Jogadores Únicos','Média Partidas/Jogador',
+                      'Último Encontro','Freq. Média (dias)']],
+        use_container_width=True, hide_index=True
+    )
+    st.caption("💡 Freq. Média = intervalo médio em dias entre sessões com aquele personagem (dias únicos), contando desde o início do histórico até hoje.")
+    
+    st.divider()
+    
     # 4c — Tier por personagem (se ativo)
     if cols_on.get("Tier"):
         st.markdown("#### 🏆 Tier do Oponente nos Matchups")
