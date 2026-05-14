@@ -1,0 +1,177 @@
+﻿Data,Dia da Semana,Hora Exata,Turno,Numero_Partida_No_Dia,Streak_Atual,Tipo Partida (Jogo),Meu_Lado,Meu_Resultado,Placar,Meu_Nome,Meu_Personagem,Meu_MR,Variacao_MR,Oponente_ID,Oponente_Nome,Oponente_Personagem,Oponente_Controle,Oponente_MR,Diferenca_MR,Nivel_Oponente,Arquetipo_Oponente,Tier_Oponente,Mirror_Match,Venceu_Primeiro_Round,Sequencia_Rounds,Meus_Golpes_Finais,Golpes_Oponente
+2026-05-10,Domingo,21:21,Noite,58,-1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,3012743108,Frenzy Virus,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-D,Critical Art (CA),"Normal, Perfect"
+2026-05-10,Domingo,21:19,Noite,57,3,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,3012743108,Frenzy Virus,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-10,Domingo,21:16,Noite,56,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,3986447391,Dpavaosantos,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-V,"Chip Damage (C), Normal",Normal
+2026-05-10,Domingo,21:13,Noite,55,1,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1922583407,Lufe,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-10,Domingo,21:10,Noite,54,-1,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1922583407,Lufe,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-10,Domingo,21:07,Noite,53,1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,3225926314,Rachid Lucas,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-D,Normal,"Normal, Critical Art (CA)"
+2026-05-10,Domingo,21:04,Noite,52,-2,Ranqueada,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,3225926314,Rachid Lucas,Ryu,Classic,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,21:03,Noite,51,-1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,3225926314,Rachid Lucas,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-D,Normal,"Normal, Perfect"
+2026-05-10,Domingo,21:00,Noite,50,3,Sala Personalizada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-10,Domingo,20:57,Noite,49,2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-10,Domingo,20:55,Noite,48,1,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-10,Domingo,20:53,Noite,47,-4,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-10,Domingo,20:51,Noite,46,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-10,Domingo,20:49,Noite,45,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-10,Domingo,20:46,Noite,44,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-10,Domingo,20:45,Noite,43,0,Sala Personalizada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-10,Domingo,20:41,Noite,42,-1,Ranqueada,Player 2,Empate ➖,2 x 2,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Não,D-V-V,"Normal, Empate","Normal, Empate"
+2026-05-10,Domingo,20:38,Noite,41,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-10,Domingo,20:35,Noite,40,-3,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,3340845398,Idonline,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-V,"Normal, Chip Damage (C)",Nenhum
+2026-05-10,Domingo,20:32,Noite,39,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3512075892,Kalleb,Dee Jay,Classic,0,0,Similar,Rushdown,B,False,Sim,V-D-D,Super Art (SA),"Super Art (SA), Normal"
+2026-05-10,Domingo,20:29,Noite,38,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3512075892,Kalleb,Dee Jay,Classic,0,0,Similar,Rushdown,B,False,Não,D-V-D,Over Drive (OD),"Normal, Normal"
+2026-05-10,Domingo,20:26,Noite,37,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1327616174,A7X JIMMY,Alex,Modern,0,0,Similar,Grappler,B,False,Sim,V-D-D,Super Art (SA),"Super Art (SA), Normal"
+2026-05-10,Domingo,19:23,Noite,36,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1835821716,Guyver01,Ed,Classic,0,0,Similar,Shoto,S,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-10,Domingo,19:21,Noite,35,9,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1835821716,Guyver01,Ed,Classic,0,0,Similar,Shoto,S,False,Não,D-V-D,Normal,"Super Art (SA), Normal"
+2026-05-10,Domingo,19:18,Noite,34,8,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1835821716,Guyver01,Ed,Classic,0,0,Similar,Shoto,S,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-10,Domingo,19:15,Noite,33,7,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,2344198558,Cone,Mai,Classic,0,0,Similar,Rushdown,S,False,Sim,V-V,"Normal, Over Drive (OD)",Nenhum
+2026-05-10,Domingo,19:13,Noite,32,6,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,2344198558,Cone,Mai,Classic,0,0,Similar,Rushdown,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,19:11,Noite,31,5,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,1470921879,Sallet,Dhalsim,Classic,0,0,Similar,Zoner,C,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,19:09,Noite,30,4,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,1470921879,Sallet,Dhalsim,Classic,0,0,Similar,Zoner,C,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-10,Domingo,19:06,Noite,29,3,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1266505582,Dengueboy,Ken,Modern,0,0,Similar,Shoto,B,False,Sim,V-D-V,"Normal, Normal",Critical Art (CA)
+2026-05-10,Domingo,19:01,Noite,28,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,2721552199,Gustah6661,Elena,Classic,0,0,Similar,Unorthodox,C,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-10,Domingo,18:58,Noite,27,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,2721552199,Gustah6661,Elena,Classic,0,0,Similar,Unorthodox,C,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,18:56,Noite,26,-1,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1146636619,aprendend htbox,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-10,Domingo,18:54,Noite,25,5,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1146636619,aprendend htbox,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Over Drive (OD), Super Art (SA)"
+2026-05-10,Domingo,18:53,Noite,24,4,Ranqueada,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,1146636619,aprendend htbox,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-10,Domingo,18:50,Noite,23,3,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1084882032,Alho,Akuma,Modern,0,0,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-10,Domingo,18:48,Noite,22,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1084882032,Alho,Akuma,Modern,0,0,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Normal",Super Art (SA)
+2026-05-10,Domingo,01:20,Madrugada,21,1,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1243069186,SephyJR,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-D-V,"Normal, Over Drive (OD)",Normal
+2026-05-10,Domingo,01:17,Madrugada,20,-1,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1243069186,SephyJR,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-10,Domingo,01:14,Madrugada,19,1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,3134994744,Marxnogueira,Manon,Classic,0,0,Similar,Grappler,C,False,Sim,V-D-D,Normal,"Normal, Over Drive (OD)"
+2026-05-10,Domingo,01:11,Madrugada,18,-4,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,2743525557,Spairouairou,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Super Art (SA)",Super Art (SA)
+2026-05-10,Domingo,01:07,Madrugada,17,-3,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,2796048348,Joyboy,Lily,Modern,0,0,Similar,Grappler,D,False,Sim,V-D-D,Chip Damage (C),"Super Art (SA), Over Drive (OD)"
+2026-05-10,Domingo,01:05,Madrugada,16,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,2796048348,Joyboy,Lily,Modern,0,0,Similar,Grappler,D,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-10,Domingo,01:02,Madrugada,15,-1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,1668140214,Projekt_Shodz,Edmond Honda,Classic,0,0,Similar,Desconhecido,?,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-05-10,Domingo,01:00,Madrugada,14,2,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,1668140214,Projekt_Shodz,Edmond Honda,Classic,0,0,Similar,Desconhecido,?,False,Não,D-V-D,Over Drive (OD),"Perfect, Normal"
+2026-05-10,Domingo,00:57,Madrugada,13,1,Ranqueada,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,3134994744,Marxnogueira,Manon,Classic,0,0,Similar,Grappler,C,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-10,Domingo,00:55,Madrugada,12,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,4183119500,UBB Ghostface,Jamie,Classic,0,0,Similar,All-Rounder,D,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,00:52,Madrugada,11,-1,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,3189452564,adaofgc,Kimberly,Classic,0,0,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-10,Domingo,00:50,Madrugada,10,1,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,3189452564,adaofgc,Kimberly,Classic,0,0,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
+2026-05-10,Domingo,00:47,Madrugada,9,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,3449215538,GORBULAS,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,00:46,Madrugada,8,3,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3449215538,GORBULAS,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-05-10,Domingo,00:43,Madrugada,7,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,3449215538,GORBULAS,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-10,Domingo,00:40,Madrugada,6,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,4151391862,Lykanzinho,Cammy,Classic,0,0,Similar,Rushdown,B,False,Não,D-V-V,"Normal, Normal",Over Drive (OD)
+2026-05-10,Domingo,00:38,Madrugada,5,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,4151391862,Lykanzinho,Cammy,Classic,0,0,Similar,Rushdown,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,00:35,Madrugada,4,1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,4151391862,Lykanzinho,Cammy,Classic,0,0,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-10,Domingo,00:33,Madrugada,3,-1,Ranqueada,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,1724712003,monkidluffy,Ryu,Modern,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-10,Domingo,00:32,Madrugada,2,1,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1724712003,monkidluffy,Ryu,Modern,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Super Art (SA), Normal"
+2026-05-10,Domingo,00:30,Madrugada,1,-1,Ranqueada,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,1724712003,monkidluffy,Ryu,Modern,0,0,Similar,Shoto,A,False,Sim,V-V,"Over Drive (OD), Super Art (SA)",Nenhum
+2026-05-09,Sábado,22:00,Noite,59,1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2052356950,Emalas,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-09,Sábado,21:57,Noite,58,-3,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,2052356950,Emalas,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-09,Sábado,21:55,Noite,57,-2,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2052356950,Emalas,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,21:53,Noite,56,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1233709225,tvPH,Juri,Modern,0,0,Similar,Rushdown,B,False,Sim,V-D-D,Normal,"Normal, Perfect"
+2026-05-09,Sábado,21:51,Noite,55,1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1233709225,tvPH,Juri,Modern,0,0,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,21:47,Noite,54,-1,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,3804034936,Jhones,Luke,Modern,0,0,Similar,All-Rounder,?,False,Sim,V-D-V,"Normal, Normal",Over Drive (OD)
+2026-05-09,Sábado,21:44,Noite,53,2,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,3804034936,Jhones,Luke,Modern,0,0,Similar,All-Rounder,?,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-09,Sábado,21:41,Noite,52,1,Ranqueada,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,3804034936,Jhones,Luke,Modern,0,0,Similar,All-Rounder,?,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-09,Sábado,21:39,Noite,51,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,3119850404,Chapolin,Mai,Classic,0,0,Similar,Rushdown,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-09,Sábado,21:38,Noite,50,3,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,3119850404,Chapolin,Mai,Classic,0,0,Similar,Rushdown,S,False,Não,D-D,Nenhum,"Super Art (SA), Normal"
+2026-05-09,Sábado,21:36,Noite,49,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,3119850404,Chapolin,Mai,Classic,0,0,Similar,Rushdown,S,False,Sim,V-D-V,"Normal, Normal",Perfect
+2026-05-09,Sábado,21:33,Noite,48,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,4009289755,Gibinha123,Mai,Classic,0,0,Similar,Rushdown,S,False,Não,D-V-V,"Over Drive (OD), Normal",Perfect
+2026-05-09,Sábado,21:30,Noite,47,-7,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,4009289755,Gibinha123,Mai,Classic,0,0,Similar,Rushdown,S,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-09,Sábado,21:28,Noite,46,-6,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,4009289755,Gibinha123,Mai,Classic,0,0,Similar,Rushdown,S,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-09,Sábado,21:25,Noite,45,-5,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,2448364029,Dripzin,Akuma,Modern,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-09,Sábado,21:23,Noite,44,-4,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,2448364029,Dripzin,Akuma,Modern,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,21:21,Noite,43,-3,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2070393798,Vergilk99,Edmond Honda,Modern,0,0,Similar,Desconhecido,?,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-09,Sábado,21:19,Noite,42,-2,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2070393798,Vergilk99,Edmond Honda,Modern,0,0,Similar,Desconhecido,?,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,21:17,Noite,41,-1,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1635940499,Mynks,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-09,Sábado,21:15,Noite,40,6,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1635940499,Mynks,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
+2026-05-09,Sábado,21:14,Noite,39,5,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1635940499,Mynks,Ryu,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Over Drive (OD)",Normal
+2026-05-09,Sábado,21:10,Noite,38,4,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,2085728505,Godin421,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-09,Sábado,21:07,Noite,37,3,Ranqueada,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2085728505,Godin421,Ryu,Classic,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-09,Sábado,17:08,Tarde,36,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,4266559137,Vidal,Terry,Classic,0,0,Similar,Shoto,S,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-09,Sábado,17:05,Tarde,35,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,4266559137,Vidal,Terry,Classic,0,0,Similar,Shoto,S,False,Sim,V-D-V,"Super Art (SA), Normal",Normal
+2026-05-09,Sábado,17:02,Tarde,34,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,2749354310,Akum@Trembol@do,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-09,Sábado,17:00,Tarde,33,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,2749354310,Akum@Trembol@do,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-09,Sábado,16:57,Tarde,32,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,2749354310,Akum@Trembol@do,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-09,Sábado,16:54,Tarde,31,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1492597405,Kaydan,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-09,Sábado,16:52,Tarde,30,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1492597405,Kaydan,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-D,Normal,"Critical Art (CA), Normal"
+2026-05-09,Sábado,16:50,Tarde,29,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,1492597405,Kaydan,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-09,Sábado,16:47,Tarde,28,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,Lily,0,0,3581047344,Sem Aliados,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-D,Normal,"Normal, Over Drive (OD)"
+2026-05-09,Sábado,16:44,Tarde,27,4,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,Lily,0,0,3581047344,Sem Aliados,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-D,Over Drive (OD),"Normal, Normal"
+2026-05-09,Sábado,16:41,Tarde,26,3,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,Lily,0,0,2819287843,XocoPinho,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-09,Sábado,16:39,Tarde,25,2,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,Lily,0,0,2819287843,XocoPinho,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-V,"Super Art (SA), Super Art (SA)",Normal
+2026-05-09,Sábado,16:35,Tarde,24,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,Lily,0,0,2329306248,スルジンウォオ,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-V-V,"Over Drive (OD), Perfect",Normal
+2026-05-09,Sábado,16:33,Tarde,23,-5,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,Lily,0,0,2329306248,スルジンウォオ,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Over Drive (OD)",Perfect
+2026-05-09,Sábado,16:31,Tarde,22,-4,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,Lily,0,0,2329306248,スルジンウォオ,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-09,Sábado,16:20,Tarde,21,-3,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,2899231633,Rock,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Over Drive (OD)"
+2026-05-09,Sábado,16:18,Tarde,20,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,2899231633,Rock,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-09,Sábado,16:14,Tarde,19,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,3791937575,SheduBR,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,16:13,Tarde,18,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3791937575,SheduBR,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-D,Normal,"Perfect, Normal"
+2026-05-09,Sábado,16:11,Tarde,17,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,3791937575,SheduBR,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-09,Sábado,16:08,Tarde,16,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1925065499,Banditi_Br,Zangief,Modern,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,16:06,Tarde,15,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1925065499,Banditi_Br,Zangief,Modern,0,0,Similar,Grappler,B,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-09,Sábado,16:04,Tarde,14,-3,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1925065499,Banditi_Br,Zangief,Modern,0,0,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-09,Sábado,16:01,Tarde,13,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,2736635006,ai_minha_coxa,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-09,Sábado,15:59,Tarde,12,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,2736635006,ai_minha_coxa,Akuma,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,15:57,Tarde,11,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1274981511,MODERN FALIDO,Zangief,Classic,0,0,Similar,Grappler,B,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-09,Sábado,15:55,Tarde,10,-3,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1274981511,MODERN FALIDO,Zangief,Classic,0,0,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Normal",Critical Art (CA)
+2026-05-09,Sábado,15:52,Tarde,9,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1274981511,MODERN FALIDO,Zangief,Classic,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-09,Sábado,15:49,Tarde,8,-1,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1925065499,Banditi_Br,Zangief,Modern,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Over Drive (OD), Normal"
+2026-05-09,Sábado,15:47,Tarde,7,1,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1925065499,Banditi_Br,Zangief,Modern,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Over Drive (OD), Normal"
+2026-05-09,Sábado,15:45,Tarde,6,-3,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,2973521408,FPPOLVORA,Zangief,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-09,Sábado,15:42,Tarde,5,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,2124742963,JuvenalMontanha,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Over Drive (OD), Super Art (SA)"
+2026-05-09,Sábado,15:40,Tarde,4,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,2124742963,JuvenalMontanha,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-D,Over Drive (OD),"Super Art (SA), Normal"
+2026-05-09,Sábado,15:37,Tarde,3,2,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,1300215149,むらさき さゆり,Lily,Modern,0,0,Similar,Grappler,D,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-09,Sábado,15:34,Tarde,2,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,1724712003,monkidluffy,Ryu,Modern,0,0,Similar,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-09,Sábado,15:32,Tarde,1,-3,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1724712003,monkidluffy,Ryu,Modern,0,0,Similar,Shoto,A,False,Não,D-V-V,"Normal, Over Drive (OD)",Normal
+2026-05-05,Terça-feira,12:39,Tarde,3,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,2916913621,Zaet,Jamie,Classic,0,0,Similar,All-Rounder,D,False,Não,D-D,Nenhum,"Over Drive (OD), Super Art (SA)"
+2026-05-05,Terça-feira,12:37,Tarde,2,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,2916913621,Zaet,Jamie,Classic,0,0,Similar,All-Rounder,D,False,Não,D-D,Nenhum,"Normal, Over Drive (OD)"
+2026-05-05,Terça-feira,12:35,Tarde,1,1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,3457039545,Twitch/stanisdc,A.K.I.,Classic,0,0,Similar,Unorthodox,B,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,23:19,Noite,26,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,3239080698,Caderudo,Dhalsim,Modern,0,0,Similar,Zoner,C,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,23:17,Noite,25,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3648288152,Victordante86,Luke,Classic,0,0,Similar,All-Rounder,?,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,23:14,Noite,24,2,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,3648288152,Victordante86,Luke,Classic,0,0,Similar,All-Rounder,?,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-04,Segunda-feira,23:12,Noite,23,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,4076714587,primoitt83,Zangief,Modern,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,23:10,Noite,22,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,4076714587,primoitt83,Zangief,Modern,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,23:07,Noite,21,-1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2507512836,Ayslan,Blanka,Classic,0,0,Similar,Unorthodox,A,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,23:03,Noite,20,1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1329690912,ブルーノ,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Over Drive (OD), Normal"
+2026-05-04,Segunda-feira,23:02,Noite,19,-3,Ranqueada,Player 2,Vitória 🏆,0 x 2,Andrey,C. Viper,0,0,1329690912,ブルーノ,Ryu,Classic,0,0,Similar,Shoto,A,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-04,Segunda-feira,22:59,Noite,18,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1329690912,ブルーノ,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Over Drive (OD)"
+2026-05-04,Segunda-feira,22:55,Noite,17,-1,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,1214362211,Vinih,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,22:53,Noite,16,1,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1214362211,Vinih,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Over Drive (OD), Super Art (SA)"
+2026-05-04,Segunda-feira,22:51,Noite,15,-10,Ranqueada,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,1214362211,Vinih,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-04,Segunda-feira,22:48,Noite,14,-9,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1474761081,79gamer,Blanka,Classic,0,0,Similar,Unorthodox,A,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,22:45,Noite,13,-8,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1474761081,79gamer,Blanka,Classic,0,0,Similar,Unorthodox,A,False,Sim,V-D-D,Normal,"Normal, Chip Damage (C)"
+2026-05-04,Segunda-feira,15:15,Tarde,12,-7,Ranqueada,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,1102922270,Rafazan,Zangief,Classic,0,0,Similar,Grappler,B,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-05-04,Segunda-feira,15:13,Tarde,11,-6,Ranqueada,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,1102922270,Rafazan,Zangief,Classic,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-04,Segunda-feira,15:11,Tarde,10,-5,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1565740584,Pandadan,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-D,Normal,"Super Art (SA), Normal"
+2026-05-04,Segunda-feira,15:08,Tarde,9,-4,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1565740584,Pandadan,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-04,Segunda-feira,15:06,Tarde,8,-3,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1707294489,*****,Mai,Classic,0,0,Similar,Rushdown,S,False,Não,D-V-D,Normal,"Over Drive (OD), Normal"
+2026-05-04,Segunda-feira,15:03,Tarde,7,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1707294489,*****,Mai,Classic,0,0,Similar,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-04,Segunda-feira,15:01,Tarde,6,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1391424655,KamikazeAiD,Manon,Classic,0,0,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-04,Segunda-feira,14:59,Tarde,5,1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1391424655,KamikazeAiD,Manon,Classic,0,0,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Perfect"
+2026-05-04,Segunda-feira,14:57,Tarde,4,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,3981073678,Oni.CFN,M. Bison,Classic,0,0,Similar,All-Rounder,A,False,Não,D-V-V,"Over Drive (OD), Time Over",Over Drive (OD)
+2026-05-04,Segunda-feira,14:53,Tarde,3,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,1707294489,*****,Mai,Classic,0,0,Similar,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-04,Segunda-feira,14:51,Tarde,2,1,Ranqueada,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1707294489,*****,Mai,Classic,0,0,Similar,Rushdown,S,False,Sim,V-D-D,Normal,"Super Art (SA), Normal"
+2026-05-04,Segunda-feira,14:49,Tarde,1,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,1707294489,*****,Mai,Classic,0,0,Similar,Rushdown,S,False,Sim,V-V,"Empate, Normal",Empate
+2026-04-30,Quinta-feira,12:25,Tarde,1,1,Ranqueada,Player 2,Derrota ❌,2 x 0,Andrey,C. Viper,0,0,3168979467,Zangão,Blanka,Classic,0,0,Similar,Unorthodox,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-24,Sexta-feira,13:53,Tarde,19,-4,Casual,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-V,"Normal, Normal",Super Art (SA)
+2026-04-24,Sexta-feira,13:51,Tarde,18,-3,Casual,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Não,D-V-D,Super Art (SA),"Normal, Normal"
+2026-04-24,Sexta-feira,13:48,Tarde,17,-2,Casual,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Não,D-D,Nenhum,"Over Drive (OD), Normal"
+2026-04-24,Sexta-feira,13:46,Tarde,16,-1,Casual,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-24,Sexta-feira,13:43,Tarde,15,3,Casual,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Não,D-V-D,Super Art (SA),"Over Drive (OD), Over Drive (OD)"
+2026-04-24,Sexta-feira,13:41,Tarde,14,2,Casual,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-04-24,Sexta-feira,13:38,Tarde,13,1,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-24,Sexta-feira,13:37,Tarde,12,-1,Casual,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Não,D-V-V,"Normal, Super Art (SA)",Super Art (SA)
+2026-04-24,Sexta-feira,13:35,Tarde,11,2,Casual,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-24,Sexta-feira,13:33,Tarde,10,1,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-04-24,Sexta-feira,13:31,Tarde,9,-2,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-04-24,Sexta-feira,13:30,Tarde,8,-1,Casual,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-24,Sexta-feira,13:28,Tarde,7,3,Casual,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-24,Sexta-feira,13:26,Tarde,6,2,Casual,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-04-24,Sexta-feira,13:24,Tarde,5,1,Casual,Player 1,Vitória 🏆,2 x 1,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-V,"Normal, Over Drive (OD)",Normal
+2026-04-24,Sexta-feira,13:22,Tarde,4,-1,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-V,"Normal, Chip Damage (C)",Nenhum
+2026-04-24,Sexta-feira,13:20,Tarde,3,1,Casual,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-D-D,Normal,"Normal, Over Drive (OD)"
+2026-04-24,Sexta-feira,13:18,Tarde,2,-3,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-24,Sexta-feira,13:16,Tarde,1,-2,Casual,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2761780681,BEM SINCERO,Ken,Classic,0,0,Similar,Shoto,B,False,Não,D-D,Nenhum,"Over Drive (OD), Normal"
+2026-04-23,Quinta-feira,20:46,Noite,10,-1,Casual,Player 1,Derrota ❌,0 x 2,Andrey,C. Viper,0,0,2863690244,Ystosid,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-D,Nenhum,"Normal, Over Drive (OD)"
+2026-04-23,Quinta-feira,20:44,Noite,9,2,Casual,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2863690244,Ystosid,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-D,Normal,"Over Drive (OD), Over Drive (OD)"
+2026-04-23,Quinta-feira,20:41,Noite,8,1,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2863690244,Ystosid,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-23,Quinta-feira,20:39,Noite,7,-2,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,2863690244,Ystosid,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-23,Quinta-feira,20:37,Noite,6,-1,Casual,Player 1,Derrota ❌,1 x 2,Andrey,C. Viper,0,0,2863690244,Ystosid,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-D,Normal,"Normal, Over Drive (OD)"
+2026-04-23,Quinta-feira,20:34,Noite,5,1,Casual,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,1317253806,PainVille,Akuma,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-23,Quinta-feira,20:30,Noite,4,-1,Casual,Player 1,Vitória 🏆,2 x 0,Andrey,C. Viper,0,0,4146292124,xandypires,Ken,Modern,0,0,Similar,Shoto,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-23,Quinta-feira,20:28,Noite,3,1,Casual,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3944798610,Benny1+,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-D,Normal,"Super Art (SA), Over Drive (OD)"
+2026-04-23,Quinta-feira,20:25,Noite,2,-1,Casual,Player 2,Vitória 🏆,1 x 2,Andrey,C. Viper,0,0,3944798610,Benny1+,Ryu,Classic,0,0,Similar,Shoto,A,False,Não,D-V-V,"Normal, Normal",Normal
+2026-04-23,Quinta-feira,20:23,Noite,1,0,Casual,Player 2,Derrota ❌,2 x 1,Andrey,C. Viper,0,0,3944798610,Benny1+,Ryu,Classic,0,0,Similar,Shoto,A,False,Sim,V-D-D,Normal,"Normal, Normal"
