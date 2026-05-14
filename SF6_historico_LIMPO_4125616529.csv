@@ -1,308 +1,430 @@
-﻿Data,Dia da Semana,Hora Exata,Turno,Tipo Partida (Jogo),Meu_Lado,Meu_Resultado,Placar,Meu_Nome,Meu_Personagem,Meu_MR,Variacao_MR,Oponente_Nome,Oponente_Personagem,Oponente_Controle,Oponente_MR,Venceu_Primeiro_Round,Sequencia_Rounds,Meus_Golpes_Finais,Golpes_Oponente
-2026-05-07,Quinta-feira,21:07,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1863,5,CleitinDJPOWER,Dee Jay,Classic,1738,Não,D-V-V,"Over Drive (OD), Super Art (SA)",Normal
-2026-05-07,Quinta-feira,21:04,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1858,0,CleitinDJPOWER,Dee Jay,Classic,1743,Sim,V-D-V,"Super Art (SA), Perfect",Critical Art (CA)
-2026-05-07,Quinta-feira,20:52,Noite,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-V-D,Normal,"Normal, Super Art (SA)"
-2026-05-07,Quinta-feira,20:49,Noite,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
-2026-05-07,Quinta-feira,20:46,Noite,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-07,Quinta-feira,20:44,Noite,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-V-V,"Super Art (SA), Super Art (SA)",Normal
-2026-05-07,Quinta-feira,20:40,Noite,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-05-07,Quinta-feira,20:37,Noite,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Sim,V-D-V,"Normal, Normal",Normal
-2026-05-07,Quinta-feira,20:34,Noite,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-V-V,"Normal, Normal",Perfect
-2026-05-07,Quinta-feira,20:31,Noite,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
-2026-05-07,Quinta-feira,20:29,Noite,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-V-D,Normal,"Normal, Normal"
-2026-05-07,Quinta-feira,20:26,Noite,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-07,Quinta-feira,20:24,Noite,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-07,Quinta-feira,20:22,Noite,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,ZSF Caio Cesar,Mai,Classic,1934,Não,D-D,Nenhum,"Normal, Perfect"
-2026-05-07,Quinta-feira,20:21,Noite,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,10,ZSF Caio Cesar,Mai,Classic,1934,Não,D-V-V,"Super Art (SA), Normal",Over Drive (OD)
-2026-05-07,Quinta-feira,20:15,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1848,10,TomzinMilgrau,JP,Classic,1922,Não,D-V-V,"Over Drive (OD), Critical Art (CA)",Normal
-2026-05-07,Quinta-feira,20:11,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1838,-7,TomzinMilgrau,JP,Classic,1932,Não,D-V-V,"Perfect, Perfect",Chip Damage (C)
-2026-05-07,Quinta-feira,20:08,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1845,-7,@Zenith,C. Viper,Classic,1909,Sim,V-D-D,Over Drive (OD),"Normal, Super Art (SA)"
-2026-05-07,Quinta-feira,20:05,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1852,-7,@Zenith,C. Viper,Classic,1902,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-07,Quinta-feira,20:03,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1859,-7,ZSF Caio Cesar,Mai,Classic,1919,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-07,Quinta-feira,20:01,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1866,7,ZSF Caio Cesar,Mai,Classic,1912,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
-2026-05-07,Quinta-feira,19:57,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1859,-9,Shinigami,Edmond Honda,Classic,1824,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-07,Quinta-feira,19:54,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1868,7,Shinigami,Edmond Honda,Classic,1815,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-05-07,Quinta-feira,19:52,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1861,-10,Shinigami,Edmond Honda,Classic,1822,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-07,Quinta-feira,19:50,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1871,-11,2G :1 CUP,Alex,Classic,1771,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-07,Quinta-feira,19:48,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1882,-8,2G :1 CUP,Alex,Classic,1760,Sim,V-D-D,Over Drive (OD),"Over Drive (OD), Over Drive (OD)"
-2026-05-07,Quinta-feira,19:43,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1890,-8,ZSF Zydani,Marisa,Classic,1906,Não,D-D,Nenhum,"Normal, Perfect"
-2026-05-07,Quinta-feira,19:41,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1898,8,ZSF Zydani,Marisa,Classic,1898,Não,D-V-D,Normal,"Normal, Perfect"
-2026-05-07,Quinta-feira,19:39,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1890,6,ZSF Zydani,Marisa,Classic,1906,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-07,Quinta-feira,19:34,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1884,7,RocksteadyBR,Blanka,Classic,1805,Sim,V-D-V,"Normal, Normal",Normal
-2026-05-07,Quinta-feira,19:31,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1877,-10,RocksteadyBR,Blanka,Classic,1812,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-07,Quinta-feira,19:28,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1887,-7,RocksteadyBR,Blanka,Classic,1802,Não,D-V-D,Perfect,"Normal, Normal"
-2026-05-06,Quarta-feira,20:41,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1894,9,ZSF Zydani,Marisa,Classic,1918,Não,D-V-D,Normal,"Normal, Normal"
-2026-05-06,Quarta-feira,20:38,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1885,-7,ZSF Zydani,Marisa,Classic,1927,Sim,V-D-V,"Normal, Normal",Normal
-2026-05-06,Quarta-feira,20:35,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1892,7,ZSF Zydani,Marisa,Classic,1920,Não,D-V-D,Normal,"Super Art (SA), Normal"
-2026-05-06,Quarta-feira,20:30,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1885,7,suna,A.K.I.,Classic,1820,Sim,V-D-V,"Normal, Normal",Super Art (SA)
-2026-05-06,Quarta-feira,20:27,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1878,7,suna,A.K.I.,Classic,1827,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-06,Quarta-feira,20:23,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1871,-9,YTBChaolin,Ken,Classic,1833,Não,D-V-V,"Over Drive (OD), Normal",Normal
-2026-05-06,Quarta-feira,20:19,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1880,7,YTBChaolin,Ken,Classic,1824,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-06,Quarta-feira,20:17,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1873,7,YTBChaolin,Ken,Classic,1831,Sim,V-V,"Super Art (SA), Normal",Nenhum
-2026-05-06,Quarta-feira,20:14,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1866,8,HickzX,Kimberly,Classic,1835,Sim,V-D-V,"Normal, Over Drive (OD)",Over Drive (OD)
-2026-05-06,Quarta-feira,20:11,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1858,-9,HickzX,Kimberly,Classic,1843,Sim,V-D-V,"Normal, Super Art (SA)",Perfect
-2026-05-06,Quarta-feira,20:09,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1867,7,HickzX,Kimberly,Classic,1834,Não,D-D,Nenhum,"Normal, Chip Damage (C)"
-2026-05-06,Quarta-feira,20:06,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1860,7,KzThierry,Elena,Classic,1813,Sim,V-D-V,"Super Art (SA), Super Art (SA)",Normal
-2026-05-06,Quarta-feira,20:03,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1853,10,KzThierry,Elena,Classic,1820,Sim,V-V,"Over Drive (OD), Normal",Nenhum
-2026-05-06,Quarta-feira,19:59,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1843,-7,ZSF Caio Cesar,Mai,Classic,1915,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-06,Quarta-feira,19:57,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1850,10,ZSF Caio Cesar,Mai,Classic,1908,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-06,Quarta-feira,19:56,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1840,8,ZSF Caio Cesar,Mai,Classic,1918,Sim,V-D-V,"Normal, Normal",Super Art (SA)
-2026-05-06,Quarta-feira,19:51,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1832,8,IW | Maxi07,Blanka,Classic,1829,Sim,V-V,"Normal, Critical Art (CA)",Nenhum
-2026-05-06,Quarta-feira,19:49,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1824,7,IW | Maxi07,Blanka,Classic,1837,Sim,V-D-V,"Normal, Super Art (SA)",Normal
-2026-05-06,Quarta-feira,19:45,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1817,7,PERIGOdasPROMO,Akuma,Modern,1772,Não,D-V-V,"Super Art (SA), Over Drive (OD)",Normal
-2026-05-06,Quarta-feira,19:42,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1810,-9,PERIGOdasPROMO,Akuma,Modern,1779,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-06,Quarta-feira,19:40,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1819,8,PERIGOdasPROMO,Akuma,Modern,1770,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-05-06,Quarta-feira,19:36,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1811,9,YTBChaolin,Ken,Classic,1829,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-06,Quarta-feira,19:34,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1802,8,YTBChaolin,Ken,Classic,1838,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-06,Quarta-feira,19:30,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1794,9,KzThierry,Elena,Classic,1808,Não,D-V-V,"Normal, Normal",Super Art (SA)
-2026-05-06,Quarta-feira,19:27,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1785,7,KzThierry,Elena,Classic,1817,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-06,Quarta-feira,19:25,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1778,7,IronHeart,Zangief,Classic,1729,Não,D-V-V,"Super Art (SA), Normal",Over Drive (OD)
-2026-05-06,Quarta-feira,19:22,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1771,6,IronHeart,Zangief,Classic,1736,Não,D-V-V,"Normal, Normal",Normal
-2026-05-06,Quarta-feira,19:19,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1765,6,Ítalo,Juri,Classic,1676,Sim,V-D-V,"Over Drive (OD), Super Art (SA)",Critical Art (CA)
-2026-05-06,Quarta-feira,19:16,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1759,7,Ítalo,Juri,Classic,1682,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-06,Quarta-feira,19:14,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1752,8,IronHeart,Zangief,Classic,1729,Não,D-V-V,"Normal, Super Art (SA)",Normal
-2026-05-06,Quarta-feira,19:11,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1744,-9,IronHeart,Zangief,Classic,1737,Sim,V-D-V,"Normal, Over Drive (OD)",Normal
-2026-05-06,Quarta-feira,19:08,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1753,8,SDD_JacintoGod,Marisa,Classic,1731,Não,D-V-D,Over Drive (OD),"Normal, Super Art (SA)"
-2026-05-06,Quarta-feira,19:05,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1745,-9,SDD_JacintoGod,Marisa,Classic,1739,Sim,V-V,"Normal, Perfect",Nenhum
-2026-05-06,Quarta-feira,19:04,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1754,-8,SDD_JacintoGod,Marisa,Classic,1730,Não,D-V-D,Normal,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,21:18,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1762,-8,Ale Maaseik,A.K.I.,Classic,1770,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-05,Terça-feira,21:16,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1770,-7,Ale Maaseik,A.K.I.,Classic,1762,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,21:14,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1777,-8,YTBChaolin,Ken,Classic,1809,Não,D-V-D,Normal,"Over Drive (OD), Normal"
-2026-05-05,Terça-feira,21:11,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1785,8,YTBChaolin,Ken,Classic,1801,Sim,V-D-D,Super Art (SA),"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,21:07,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1777,8,Bankai,Ken,Classic,1758,Não,D-V-V,"Normal, Normal",Normal
-2026-05-05,Terça-feira,21:05,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1769,-8,Bankai,Ken,Classic,1766,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-05,Terça-feira,21:03,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1777,8,CapangaDoSapo1,Sagat,Classic,1764,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-05-05,Terça-feira,21:01,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1769,-8,CapangaDoSapo1,Sagat,Classic,1772,Não,D-V-V,"Normal, Perfect",Normal
-2026-05-05,Terça-feira,20:58,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1777,9,CapangaDoSapo1,Sagat,Classic,1764,Não,D-V-D,Normal,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,20:53,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1768,9,Ale Maaseik,A.K.I.,Classic,1793,Sim,V-D-V,"Normal, Super Art (SA)",Normal
-2026-05-05,Terça-feira,20:50,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1759,-9,Ale Maaseik,A.K.I.,Classic,1802,Sim,V-D-V,"Normal, Normal",Normal
-2026-05-05,Terça-feira,20:46,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1768,-9,Kazu,Cammy,Classic,1746,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,20:44,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1777,-11,Kazu,Cammy,Classic,1737,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-05,Terça-feira,20:38,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1788,-11,KiwiMol,Zangief,Classic,1653,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-05,Terça-feira,20:36,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1799,8,KiwiMol,Zangief,Classic,1642,Não,D-V-D,Chip Damage (C),"Super Art (SA), Critical Art (CA)"
-2026-05-05,Terça-feira,20:31,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1791,8,Ale Maaseik,A.K.I.,Classic,1795,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-05,Terça-feira,20:29,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1783,-6,Ale Maaseik,A.K.I.,Classic,1803,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-05,Terça-feira,20:27,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1789,-7,Lily,Lily,Modern,1867,Não,D-V-D,Normal,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,20:25,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1796,-7,Lily,Lily,Modern,1860,Não,D-D,Nenhum,"Over Drive (OD), Over Drive (OD)"
-2026-05-05,Terça-feira,20:22,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1803,-7,Salvatore,Cammy,Classic,1859,Não,D-V-D,Critical Art (CA),"Normal, Normal"
-2026-05-05,Terça-feira,20:19,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1810,10,Salvatore,Cammy,Classic,1852,Não,D-D,Nenhum,"Perfect, Super Art (SA)"
-2026-05-05,Terça-feira,20:16,Noite,Ranqueada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1800,-6,GuillerBR,Guile,Classic,1878,Sim,V-V,"Super Art (SA), Normal",Nenhum
-2026-05-05,Terça-feira,20:13,Noite,Ranqueada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1806,10,GuillerBR,Guile,Classic,1872,Sim,V-D-D,Time Over,"Normal, Normal"
-2026-05-05,Terça-feira,20:09,Noite,Ranqueada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1796,-7,GuillerBR,Guile,Classic,1882,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-05,Terça-feira,19:58,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1803,-8,Lily,Lily,Modern,1840,Sim,V-D-D,Normal,"Normal, Chip Damage (C)"
-2026-05-05,Terça-feira,19:56,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1811,6,Lily,Lily,Modern,1832,Não,D-V-D,Normal,"Perfect, Normal"
-2026-05-05,Terça-feira,19:51,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1805,6,1JZ-,Sagat,Classic,1714,Sim,V-V,"Super Art (SA), Normal",Nenhum
-2026-05-05,Terça-feira,19:49,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1799,5,1JZ-,Sagat,Classic,1720,Não,D-V-V,"Over Drive (OD), Normal",Normal
-2026-05-05,Terça-feira,19:43,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1794,-12,KiwiMol,Zangief,Classic,1651,Sim,V-D-V,"Normal, Super Art (SA)",Normal
-2026-05-05,Terça-feira,19:41,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1806,5,KiwiMol,Zangief,Classic,1639,Não,D-V-D,Normal,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,19:37,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1801,-5,KiwiMol,Zangief,Classic,1644,Não,D-V-V,"Normal, Over Drive (OD)",Normal
-2026-05-05,Terça-feira,19:32,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1806,-5,Shaka,Dhalsim,Classic,1938,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-05,Terça-feira,19:30,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1811,-8,Shaka,Dhalsim,Classic,1933,Não,D-V-D,Normal,"Normal, Normal"
-2026-05-05,Terça-feira,19:26,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1819,-8,Gui_,JP,Classic,1837,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,19:23,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1827,8,Gui_,JP,Classic,1829,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-05,Terça-feira,19:21,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1819,-9,Gui_,JP,Classic,1837,Não,D-V-V,"Normal, Normal",Normal
-2026-05-05,Terça-feira,19:16,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1828,-10,NotleLinc,Ryu,Classic,1778,Não,D-D,Nenhum,"Super Art (SA), Normal"
-2026-05-05,Terça-feira,19:14,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1838,7,NotleLinc,Ryu,Classic,1768,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-05-05,Terça-feira,19:11,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1831,-9,YTBChaolin,Ken,Classic,1796,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-05,Terça-feira,19:09,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1840,7,YTBChaolin,Ken,Classic,1787,Não,D-D,Nenhum,"Perfect, Normal"
-2026-05-05,Terça-feira,19:07,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1833,7,YTBChaolin,Ken,Classic,1794,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-04,Segunda-feira,21:03,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1826,8,HickzX,Kimberly,Classic,1790,Sim,V-D-V,"Super Art (SA), Perfect",Over Drive (OD)
-2026-05-04,Segunda-feira,21:01,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1818,-9,HickzX,Kimberly,Classic,1798,Não,D-V-V,"Normal, Super Art (SA)",Super Art (SA)
-2026-05-04,Segunda-feira,20:58,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1827,-11,HickzX,Kimberly,Classic,1789,Não,D-V-D,Normal,"Over Drive (OD), Super Art (SA)"
-2026-05-04,Segunda-feira,20:53,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1838,-12,InevitableDSRE,Juri,Classic,1696,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-04,Segunda-feira,20:51,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1850,5,InevitableDSRE,Juri,Classic,1684,Não,D-V-D,Normal,"Normal, Normal"
-2026-05-04,Segunda-feira,20:48,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1845,7,InevitableDSRE,Juri,Classic,1689,Sim,V-V,"Over Drive (OD), Critical Art (CA)",Nenhum
-2026-05-04,Segunda-feira,20:45,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1838,-9,YTBChaolin,Ken,Classic,1811,Sim,V-V,"Over Drive (OD), Normal",Nenhum
-2026-05-04,Segunda-feira,20:43,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1847,7,YTBChaolin,Ken,Classic,1802,Não,D-V-D,Normal,"Normal, Normal"
-2026-05-04,Segunda-feira,20:40,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1840,7,YTBChaolin,Ken,Classic,1809,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,20:38,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1833,8,HickzX,Kimberly,Classic,1809,Sim,V-V,"Over Drive (OD), Normal",Nenhum
-2026-05-04,Segunda-feira,20:36,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1825,9,HickzX,Kimberly,Classic,1817,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,20:24,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1816,9,TomzinMilgrau,JP,Classic,1844,Sim,V-D-V,"Normal, Normal",Normal
-2026-05-04,Segunda-feira,20:21,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1807,9,TomzinMilgrau,JP,Classic,1853,Sim,V-D-V,"Normal, Critical Art (CA)",Normal
-2026-05-04,Segunda-feira,20:15,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1798,-8,HickzX,Kimberly,Classic,1835,Sim,V-D-V,"Normal, Normal",Over Drive (OD)
-2026-05-04,Segunda-feira,20:12,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1806,9,HickzX,Kimberly,Classic,1827,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
-2026-05-04,Segunda-feira,20:09,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1797,10,HickzX,Kimberly,Classic,1836,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-04,Segunda-feira,20:02,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1787,11,JUNINHO-RAS,Mai,Classic,1888,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-04,Segunda-feira,20:00,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1776,-5,JUNINHO-RAS,Mai,Classic,1899,Sim,V-D-V,"Normal, Super Art (SA)",Normal
-2026-05-04,Segunda-feira,19:58,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1781,8,JUNINHO-RAS,Mai,Classic,1894,Não,D-V-D,Normal,"Normal, Normal"
-2026-05-04,Segunda-feira,19:54,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1773,8,Nappa,Blanka,Classic,1755,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,19:52,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1765,6,Nappa,Blanka,Classic,1763,Sim,V-V,"Over Drive (OD), Normal",Nenhum
-2026-05-04,Segunda-feira,19:51,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1759,6,Macacoso,Elena,Classic,1650,Sim,V-V,"Super Art (SA), Normal",Nenhum
-2026-05-04,Segunda-feira,19:49,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1753,9,Macacoso,Elena,Classic,1656,Sim,V-D-V,"Normal, Normal",Normal
-2026-05-04,Segunda-feira,19:46,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1744,9,tundi,Cammy,Classic,1772,Não,D-V-V,"Normal, Normal",Normal
-2026-05-04,Segunda-feira,19:43,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1735,8,tundi,Cammy,Classic,1781,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-04,Segunda-feira,19:40,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1727,8,KzThierry,Elena,Classic,1726,Sim,V-V,"Normal, Perfect",Nenhum
-2026-05-04,Segunda-feira,19:38,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1719,6,KzThierry,Elena,Classic,1734,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-04,Segunda-feira,19:34,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1713,-10,JAGUATIRIRIKA,Alex,Classic,1635,Sim,V-V,"Perfect, Super Art (SA)",Nenhum
-2026-05-04,Segunda-feira,19:33,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1723,6,JAGUATIRIRIKA,Alex,Classic,1625,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-04,Segunda-feira,19:32,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1717,7,JAGUATIRIRIKA,Alex,Classic,1631,Sim,V-D-V,"Normal, Super Art (SA)",Perfect
-2026-05-04,Segunda-feira,19:27,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1710,8,KiwiMol,Zangief,Classic,1685,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,19:25,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1702,8,KiwiMol,Zangief,Classic,1693,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,19:23,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1694,8,1JZ-,Sagat,Classic,1692,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,19:22,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1686,7,1JZ-,Sagat,Classic,1700,Sim,V-V,"Perfect, Super Art (SA)",Nenhum
-2026-05-04,Segunda-feira,19:20,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1679,7,Yutta,Ed,Classic,1642,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,19:17,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1672,1672,Yutta,Ed,Classic,1649,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,19:14,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,0,BraianVicio,Juri,Classic,0,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,17:33,Tarde,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,0,dks3100,Sagat,Classic,0,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,17:31,Tarde,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,0,dks3100,Sagat,Classic,0,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-04,Segunda-feira,17:29,Tarde,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,-1697,dks3100,Sagat,Classic,0,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-03,Domingo,16:38,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1697,7,TomGM,Lily,Classic,1661,Sim,V-V,"Super Art (SA), Normal",Nenhum
-2026-05-03,Domingo,16:35,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1690,8,TomGM,Lily,Classic,1668,Sim,V-V,"Perfect, Normal",Nenhum
-2026-05-03,Domingo,16:31,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1682,-8,NotleLinc,Ryu,Classic,1684,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-03,Domingo,16:30,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,1690,8,NotleLinc,Ryu,Classic,1676,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-05-03,Domingo,16:27,Tarde,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1682,7,NotleLinc,Ryu,Classic,1684,Sim,V-D-V,"Normal, Normal",Normal
-2026-05-03,Domingo,16:24,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1675,7,DeivisonFGC,Ken,Classic,1630,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-03,Domingo,16:22,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1668,7,DeivisonFGC,Ken,Classic,1637,Sim,V-V,"Over Drive (OD), Super Art (SA)",Nenhum
-2026-05-03,Domingo,16:20,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1661,7,Krauser1001,Ryu,Classic,1598,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-03,Domingo,16:18,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1654,8,Krauser1001,Ryu,Classic,1605,Sim,V-V,"Chip Damage (C), Super Art (SA)",Nenhum
-2026-05-03,Domingo,16:13,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1646,9,Farx,Juri,Classic,1660,Sim,V-V,"Super Art (SA), Over Drive (OD)",Nenhum
-2026-05-03,Domingo,16:12,Tarde,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1637,-8,Farx,Juri,Classic,1669,Sim,V-D-V,"Normal, Perfect",Over Drive (OD)
-2026-05-03,Domingo,16:09,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,1645,9,Farx,Juri,Classic,1661,Não,D-V-D,Perfect,"Normal, Normal"
-2026-05-03,Domingo,16:06,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1636,1636,3n6 5,Sagat,Classic,1666,Sim,V-V,"Normal, Perfect",Nenhum
-2026-05-03,Domingo,16:04,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,0,-1557,Cleo,Rashid,Classic,0,Sim,V-V,"Normal, Normal",Nenhum
-2026-05-03,Domingo,16:00,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1557,-6,Jho-GoForBroke,Chun-Li,Classic,1657,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-03,Domingo,15:58,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1563,-7,Jho-GoForBroke,Chun-Li,Classic,1651,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-03,Domingo,15:53,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1570,-7,piccolo,Akuma,Classic,1615,Não,D-V-D,Normal,"Normal, Super Art (SA)"
-2026-05-03,Domingo,15:50,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1577,-6,piccolo,Akuma,Classic,1608,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-03,Domingo,15:47,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1583,-4,3n6 5,Sagat,Classic,1665,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-03,Domingo,15:44,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1587,13,Shinigami,Edmond Honda,Classic,1790,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-05-03,Domingo,15:42,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1574,-4,Shinigami,Edmond Honda,Classic,1803,Sim,V-V,"Over Drive (OD), Normal",Nenhum
-2026-05-03,Domingo,15:40,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1578,8,Shinigami,Edmond Honda,Classic,1799,Não,D-D,Nenhum,"Normal, Perfect"
-2026-05-03,Domingo,15:38,Tarde,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1570,9,Guizo,Blanka,Classic,1575,Sim,V-D-V,"Chip Damage (C), Super Art (SA)",Over Drive (OD)
-2026-05-03,Domingo,15:36,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1561,-8,Guizo,Blanka,Classic,1584,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-05-03,Domingo,15:34,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1569,-6,Guizo,Blanka,Classic,1576,Não,D-V-D,Super Art (SA),"Over Drive (OD), Normal"
-2026-05-03,Domingo,15:26,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1575,11,Elchango,Cammy,Classic,1666,Sim,V-D-D,Normal,"Normal, Normal"
-2026-05-03,Domingo,15:23,Tarde,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1564,-6,Elchango,Cammy,Classic,1677,Não,D-V-V,"Normal, Normal",Super Art (SA)
-2026-05-03,Domingo,15:21,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1570,-10,Elchango,Cammy,Classic,1671,Não,D-D,Nenhum,"Normal, Normal"
-2026-05-03,Domingo,15:18,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1580,6,Kazaru,Alex,Classic,1497,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
-2026-05-03,Domingo,15:16,Tarde,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1574,1574,Kazaru,Alex,Classic,1503,Sim,V-V,"Over Drive (OD), Normal",Nenhum
-2026-05-03,Domingo,15:14,Tarde,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,0,-1771,Kazaru,Alex,Classic,0,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-30,Quinta-feira,20:48,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1771,8,MEGA,Chun-Li,Classic,1777,Sim,V-D-V,"Normal, Super Art (SA)",Normal
-2026-04-30,Quinta-feira,20:44,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1763,8,KiwiMol,Zangief,Classic,1743,Sim,V-D-V,"Normal, Super Art (SA)",Normal
-2026-04-30,Quinta-feira,20:41,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1755,-8,KiwiMol,Zangief,Classic,1751,Não,D-V-V,"Normal, Super Art (SA)",Normal
-2026-04-30,Quinta-feira,20:39,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1763,-8,KiwiMol,Zangief,Classic,1743,Sim,V-D-D,Normal,"Over Drive (OD), Super Art (SA)"
-2026-04-30,Quinta-feira,20:35,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1771,8,Tenóbio,Marisa,Classic,1765,Não,D-D,Nenhum,"Normal, Perfect"
-2026-04-30,Quinta-feira,20:34,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1763,-8,Tenóbio,Marisa,Classic,1773,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-30,Quinta-feira,20:32,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1771,8,Tenóbio,Marisa,Classic,1765,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-04-30,Quinta-feira,20:30,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1763,7,Gil_Darkryu,Kimberly,Classic,1748,Sim,V-D-V,"Normal, Normal",Normal
-2026-04-30,Quinta-feira,20:27,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1756,7,Febo_Abel,Alex,Classic,1717,Não,D-V-V,"Normal, Normal",Normal
-2026-04-30,Quinta-feira,20:25,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1749,-7,Febo_Abel,Alex,Classic,1724,Sim,V-V,"Perfect, Normal",Nenhum
-2026-04-30,Quinta-feira,20:20,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1756,-8,Tenóbio,Marisa,Classic,1782,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-30,Quinta-feira,20:19,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1764,7,Tenóbio,Marisa,Classic,1774,Não,D-D,Nenhum,"Super Art (SA), Perfect"
-2026-04-30,Quinta-feira,20:17,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1757,7,0Vaca,Ryu,Classic,1715,Sim,V-D-V,"Super Art (SA), Over Drive (OD)",Super Art (SA)
-2026-04-30,Quinta-feira,20:14,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1750,7,0Vaca,Ryu,Classic,1722,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-30,Quinta-feira,20:09,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1743,8,Wwwwww,Kimberly,Classic,1709,Não,D-V-V,"Normal, Normal",Normal
-2026-04-30,Quinta-feira,20:07,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1735,-8,Wwwwww,Kimberly,Classic,1717,Não,D-V-V,"Chip Damage (C), Super Art (SA)",Normal
-2026-04-30,Quinta-feira,20:03,Noite,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1743,-9,Marinho,Ryu,Classic,1733,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-30,Quinta-feira,20:00,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1752,8,Marinho,Ryu,Classic,1724,Não,D-D,Nenhum,"Perfect, Normal"
-2026-04-30,Quinta-feira,19:58,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1744,-9,Wwwwww,Kimberly,Classic,1736,Não,D-V-V,"Normal, Normal",Super Art (SA)
-2026-04-30,Quinta-feira,19:56,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1753,8,Wwwwww,Kimberly,Classic,1727,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-30,Quinta-feira,19:54,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1745,10,Wwwwww,Kimberly,Classic,1735,Sim,V-V,"Perfect, Super Art (SA)",Nenhum
-2026-04-30,Quinta-feira,19:52,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1735,11,UadsonFGC,Akuma,Classic,1839,Não,D-V-V,"Normal, Super Art (SA)",Normal
-2026-04-30,Quinta-feira,19:49,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1724,8,UadsonFGC,Akuma,Classic,1850,Não,D-V-V,"Normal, Super Art (SA)",Normal
-2026-04-30,Quinta-feira,19:46,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1716,9,Wslayerbr,Dee Jay,Classic,1721,Sim,V-D-V,"Normal, Perfect",Over Drive (OD)
-2026-04-30,Quinta-feira,19:43,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1707,7,Wslayerbr,Dee Jay,Classic,1730,Sim,V-D-V,"Normal, Critical Art (CA)",Super Art (SA)
-2026-04-30,Quinta-feira,19:40,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1700,7,shinchan,Akuma,Classic,1646,Não,D-V-V,"Normal, Normal",Normal
-2026-04-30,Quinta-feira,19:37,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1693,11,shinchan,Akuma,Classic,1653,Sim,V-V,"Normal, Perfect",Nenhum
-2026-04-30,Quinta-feira,19:35,Noite,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1682,12,3520,Ryu,Classic,1830,Sim,V-D-V,"Normal, Perfect",Super Art (SA)
-2026-04-30,Quinta-feira,19:32,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1670,-9,3520,Ryu,Classic,1842,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-30,Quinta-feira,19:29,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1679,-9,NatanWS,Alex,Classic,1653,Não,D-D,Nenhum,"Normal, Normal"
-2026-04-30,Quinta-feira,19:28,Noite,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1688,9,NatanWS,Alex,Classic,1644,Não,D-D,Nenhum,"Normal, Normal"
-2026-04-30,Quinta-feira,19:25,Noite,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1679,1679,Huevo+Mermelada,Sagat,Classic,1709,Sim,V-V,"Chip Damage (C), Normal",Nenhum
-2026-04-30,Quinta-feira,15:09,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-30,Quinta-feira,15:07,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Não,D-V-V,"Normal, Normal",Normal
-2026-04-30,Quinta-feira,15:04,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Over Drive (OD)",Nenhum
-2026-04-30,Quinta-feira,15:02,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-30,Quinta-feira,15:00,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-30,Quinta-feira,14:58,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-30,Quinta-feira,14:54,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Perfect",Nenhum
-2026-04-30,Quinta-feira,14:53,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-30,Quinta-feira,14:51,Tarde,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,-2073,Aron4,Alex,Classic,0,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-29,Quarta-feira,21:10,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Não,D-V-V,"Normal, Super Art (SA)",Normal
-2026-04-29,Quarta-feira,21:07,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Sim,V-V,"Super Art (SA), Normal",Nenhum
-2026-04-29,Quarta-feira,21:05,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-29,Quarta-feira,21:03,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Sim,V-D-D,Normal,"Normal, Normal"
-2026-04-29,Quarta-feira,20:59,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
-2026-04-29,Quarta-feira,20:56,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Não,D-D,Nenhum,"Normal, Chip Damage (C)"
-2026-04-29,Quarta-feira,20:54,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Não,D-D,Nenhum,"Normal, Perfect"
-2026-04-29,Quarta-feira,20:52,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Não,D-V-V,"Normal, Normal",Over Drive (OD)
-2026-04-29,Quarta-feira,20:50,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Não,D-V-D,Normal,"Normal, Perfect"
-2026-04-29,Quarta-feira,20:47,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Sim,V-V,"Normal, Perfect",Nenhum
-2026-04-29,Quarta-feira,20:45,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,KBM! Kyuki,JP,Classic,2147,Sim,V-D-D,Normal,"Normal, Perfect"
-2026-04-29,Quarta-feira,20:42,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,123,KBM! Kyuki,JP,Classic,2147,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
-2026-04-26,Domingo,19:44,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1950,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Normal,"Normal, Normal"
-2026-04-26,Domingo,19:42,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1950,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Chip Damage (C), Normal"
-2026-04-26,Domingo,19:40,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1950,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Over Drive (OD)"
-2026-04-26,Domingo,19:38,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1950,0,Siinon,Manon,Classic,2061,Não,D-V-V,"Normal, Normal",Normal
-2026-04-26,Domingo,19:35,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1950,0,Siinon,Manon,Classic,2061,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-26,Domingo,19:34,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1950,0,Siinon,Manon,Classic,2061,Não,D-V-V,"Normal, Normal",Normal
-2026-04-26,Domingo,19:31,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1950,-76,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
-2026-04-26,Domingo,19:20,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Normal,"Normal, Normal"
-2026-04-26,Domingo,19:17,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Super Art (SA), Critical Art (CA)"
-2026-04-26,Domingo,19:14,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-26,Domingo,19:12,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-26,Domingo,19:10,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-26,Domingo,19:08,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Normal"
-2026-04-26,Domingo,19:06,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
-2026-04-26,Domingo,19:05,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Chip Damage (C), Critical Art (CA)"
-2026-04-26,Domingo,19:03,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Normal"
-2026-04-26,Domingo,19:01,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-26,Domingo,18:57,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Over Drive (OD),"Normal, Normal"
-2026-04-26,Domingo,18:55,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-26,Domingo,18:53,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Super Art (SA),"Critical Art (CA), Normal"
-2026-04-26,Domingo,18:50,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Super Art (SA),"Over Drive (OD), Super Art (SA)"
-2026-04-26,Domingo,18:47,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-V-D,Perfect,"Normal, Normal"
-2026-04-26,Domingo,18:45,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-26,Domingo,18:43,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-V,"Normal, Super Art (SA)",Super Art (SA)
-2026-04-26,Domingo,18:40,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
-2026-04-26,Domingo,18:38,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Over Drive (OD), Normal"
-2026-04-26,Domingo,18:36,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Normal,"Over Drive (OD), Super Art (SA)"
-2026-04-26,Domingo,18:33,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-26,Domingo,18:31,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-V,"Normal, Super Art (SA)",Over Drive (OD)
-2026-04-26,Domingo,18:29,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Perfect,"Normal, Normal"
-2026-04-26,Domingo,18:26,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
-2026-04-26,Domingo,18:23,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-D,Nenhum,"Normal, Perfect"
-2026-04-26,Domingo,18:22,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,Siinon,Manon,Classic,2061,Não,D-V-D,Normal,"Over Drive (OD), Critical Art (CA)"
-2026-04-26,Domingo,18:19,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,52,Siinon,Manon,Classic,2061,Não,D-V-D,Super Art (SA),"Normal, Over Drive (OD)"
-2026-04-22,Quarta-feira,22:56,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-22,Quarta-feira,22:53,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Não,D-V-D,Normal,"Normal, Chip Damage (C)"
-2026-04-22,Quarta-feira,22:50,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Não,D-D,Nenhum,"Normal, Normal"
-2026-04-22,Quarta-feira,22:48,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-22,Quarta-feira,22:46,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Não,D-V-V,"Normal, Normal",Over Drive (OD)
-2026-04-22,Quarta-feira,22:43,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Sim,V-D-D,Normal,"Perfect, Super Art (SA)"
-2026-04-22,Quarta-feira,22:41,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Sim,V-D-D,Normal,"Normal, Normal"
-2026-04-22,Quarta-feira,22:38,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-22,Quarta-feira,22:35,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-22,Quarta-feira,22:33,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1974,0,Dragon_Legend,Rashid,Classic,2218,Sim,V-V,"Over Drive (OD), Normal",Nenhum
-2026-04-22,Quarta-feira,22:32,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,-25,Dragon_Legend,Rashid,Classic,2218,Não,D-V-D,Normal,"Normal, Over Drive (OD)"
-2026-04-21,Terça-feira,00:04,Madrugada,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,ZSF ferps,Terry,Classic,2181,Não,D-D,Nenhum,"Normal, Super Art (SA)"
-2026-04-21,Terça-feira,00:02,Madrugada,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,ZSF ferps,Terry,Classic,2181,Sim,V-V,"Perfect, Over Drive (OD)",Nenhum
-2026-04-21,Terça-feira,00:01,Madrugada,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,ZSF ferps,Terry,Classic,2181,Não,D-V-D,Super Art (SA),"Normal, Super Art (SA)"
-2026-04-20,Segunda-feira,23:58,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,ZSF ferps,Terry,Classic,2181,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
-2026-04-20,Segunda-feira,23:56,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,ZSF ferps,Terry,Classic,2181,Sim,V-D-V,"Super Art (SA), Over Drive (OD)",Super Art (SA)
-2026-04-20,Segunda-feira,23:45,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,HickzX,Kimberly,Classic,2025,Não,D-V-V,"Over Drive (OD), Normal",Chip Damage (C)
-2026-04-20,Segunda-feira,23:42,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,HickzX,Kimberly,Classic,2025,Não,D-V-V,"Super Art (SA), Super Art (SA)",Over Drive (OD)
-2026-04-20,Segunda-feira,23:39,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,HickzX,Kimberly,Classic,2025,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-20,Segunda-feira,23:37,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,HickzX,Kimberly,Classic,2025,Sim,V-D-D,Normal,"Critical Art (CA), Super Art (SA)"
-2026-04-20,Segunda-feira,23:34,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,HickzX,Kimberly,Classic,2025,Não,D-D,Nenhum,"Super Art (SA), Normal"
-2026-04-20,Segunda-feira,23:30,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,DR-Wendson PC,JP,Classic,2007,Sim,V-V,"Normal, Perfect",Nenhum
-2026-04-20,Segunda-feira,23:28,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,DR-Wendson PC,JP,Classic,2007,Não,D-D,Nenhum,"Normal, Normal"
-2026-04-20,Segunda-feira,23:25,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,DR-Wendson PC,JP,Classic,2007,Não,D-D,Nenhum,"Over Drive (OD), Perfect"
-2026-04-20,Segunda-feira,23:23,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,DR-Wendson PC,JP,Classic,2007,Sim,V-V,"Super Art (SA), Normal",Nenhum
-2026-04-20,Segunda-feira,23:21,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,DR-Wendson PC,JP,Classic,2007,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-20,Segunda-feira,23:06,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,Cell-PC,M. Bison,Classic,2003,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-20,Segunda-feira,23:03,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,Cell-PC,M. Bison,Classic,2003,Sim,V-V,"Normal, Super Art (SA)",Nenhum
-2026-04-20,Segunda-feira,23:02,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,Cell-PC,M. Bison,Classic,2003,Não,D-V-D,Normal,"Normal, Super Art (SA)"
-2026-04-20,Segunda-feira,22:59,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,Cell-PC,M. Bison,Classic,2003,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-20,Segunda-feira,22:43,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,LF | Smokii,Luke,Classic,1825,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-20,Segunda-feira,22:42,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,LF | Smokii,Luke,Classic,1825,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-20,Segunda-feira,22:40,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,LF | Smokii,Luke,Classic,1825,Sim,V-D-V,"Normal, Normal",Normal
-2026-04-20,Segunda-feira,21:58,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,Rico Suave,Jamie,Classic,1771,Sim,V-V,"Normal, Perfect",Nenhum
-2026-04-20,Segunda-feira,21:56,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,Rico Suave,Jamie,Classic,1771,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-20,Segunda-feira,21:54,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,Rico Suave,Jamie,Classic,1771,Sim,V-D-D,Normal,"Normal, Normal"
-2026-04-20,Segunda-feira,21:45,Noite,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,ZSF Caio Cesar,Ken,Classic,2180,Sim,V-V,"Normal, Normal",Nenhum
-2026-04-20,Segunda-feira,21:43,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,ZSF Caio Cesar,Ken,Classic,2180,Sim,V-D-V,"Perfect, Normal",Critical Art (CA)
-2026-04-20,Segunda-feira,21:31,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,EviLCiD,Edmond Honda,Classic,1603,Sim,V-D-V,"Normal, Normal",Over Drive (OD)
-2026-04-20,Segunda-feira,21:28,Noite,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,EviLCiD,Edmond Honda,Classic,1603,Sim,V-D-V,"Perfect, Over Drive (OD)",Super Art (SA)
-2026-04-20,Segunda-feira,21:25,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,EviLCiD,Edmond Honda,Classic,1603,Não,D-V-D,Normal,"Normal, Normal"
-2026-04-20,Segunda-feira,21:11,Noite,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,ZSF Zydani,A.K.I.,Classic,2093,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+﻿Data,Dia da Semana,Hora Exata,Turno,Numero_Partida_No_Dia,Streak_Atual,Tipo Partida (Jogo),Meu_Lado,Meu_Resultado,Placar,Meu_Nome,Meu_Personagem,Meu_MR,Variacao_MR,Oponente_ID,Oponente_Nome,Oponente_Personagem,Oponente_Controle,Oponente_MR,Diferenca_MR,Nivel_Oponente,Arquetipo_Oponente,Tier_Oponente,Mirror_Match,Venceu_Primeiro_Round,Sequencia_Rounds,Meus_Golpes_Finais,Golpes_Oponente
+2026-05-13,Quarta-feira,21:20,Noite,23,-3,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Mai,1704,-143,2933851368,JUST ME,Juri,Classic,1751,47,Similar,Rushdown,B,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-13,Quarta-feira,21:16,Noite,22,-2,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1847,143,2933851368,JUST ME,Juri,Classic,1751,-96,Inferior,Rushdown,B,False,Sim,V-D-D,Super Art (SA),"Normal, Normal"
+2026-05-13,Quarta-feira,20:42,Noite,21,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,1704,0,4160494664,Nebraka,Juri,Classic,1912,208,Muito Superior,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-13,Quarta-feira,20:40,Noite,20,1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,1704,-143,4160494664,Nebraka,Juri,Classic,1912,208,Muito Superior,Rushdown,B,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-13,Quarta-feira,20:27,Noite,19,-1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1847,143,1501085057,tilti1,Edmond Honda,Classic,1720,-127,Inferior,Desconhecido,?,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-13,Quarta-feira,20:25,Noite,18,5,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,1704,0,1501085057,tilti1,Edmond Honda,Classic,1720,16,Similar,Desconhecido,?,False,Sim,V-D-D,Super Art (SA),"Perfect, Super Art (SA)"
+2026-05-13,Quarta-feira,20:23,Noite,17,4,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1501085057,tilti1,Edmond Honda,Classic,1720,16,Similar,Desconhecido,?,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-13,Quarta-feira,20:13,Noite,16,3,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,3544254659,meidzz,Terry,Classic,1471,-233,Muito Inferior,Shoto,S,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-13,Quarta-feira,20:11,Noite,15,2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,3544254659,meidzz,Terry,Classic,1471,-233,Muito Inferior,Shoto,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-13,Quarta-feira,18:50,Noite,14,1,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-13,Quarta-feira,18:47,Noite,13,-1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-13,Quarta-feira,18:45,Noite,12,8,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-13,Quarta-feira,18:43,Noite,11,7,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-13,Quarta-feira,18:40,Noite,10,6,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Over Drive (OD), Super Art (SA)",Nenhum
+2026-05-13,Quarta-feira,18:39,Noite,9,5,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-13,Quarta-feira,18:37,Noite,8,4,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-13,Quarta-feira,18:34,Noite,7,3,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-13,Quarta-feira,18:32,Noite,6,2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-05-13,Quarta-feira,18:30,Noite,5,1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-13,Quarta-feira,18:27,Noite,4,-1,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-D-V,"Normal, Super Art (SA)",Super Art (SA)
+2026-05-13,Quarta-feira,18:25,Noite,3,3,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-13,Quarta-feira,18:23,Noite,2,2,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1704,0,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-D-V,"Super Art (SA), Over Drive (OD)",Over Drive (OD)
+2026-05-13,Quarta-feira,18:19,Noite,1,1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1704,-137,1693847953,Pendragon_BR,Rashid,Classic,1850,146,Muito Superior,Rushdown,A,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-12,Terça-feira,22:00,Noite,44,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1841,-11,2728808235,Malakabadoz,Kimberly,Classic,1750,-91,Inferior,Rushdown,B,False,Não,D-V-V,"Super Art (SA), Super Art (SA)",Normal
+2026-05-12,Terça-feira,21:57,Noite,43,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1852,6,2728808235,Malakabadoz,Kimberly,Classic,1739,-113,Inferior,Rushdown,B,False,Não,D-V-D,Critical Art (CA),"Normal, Normal"
+2026-05-12,Terça-feira,21:54,Noite,42,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1846,-9,2728808235,Malakabadoz,Kimberly,Classic,1745,-101,Inferior,Rushdown,B,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-12,Terça-feira,21:50,Noite,41,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1855,-9,2292894796,ReD.Dr@GoN,Akuma,Classic,1812,-43,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-12,Terça-feira,21:48,Noite,40,3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1864,7,2292894796,ReD.Dr@GoN,Akuma,Classic,1803,-61,Inferior,Shoto,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-12,Terça-feira,21:45,Noite,39,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1857,8,2292894796,ReD.Dr@GoN,Akuma,Classic,1810,-47,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-12,Terça-feira,21:42,Noite,38,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1849,9,2986074881,JAH_LEXE,Mai,Classic,1868,19,Similar,Rushdown,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-12,Terça-feira,21:40,Noite,37,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1840,-7,2986074881,JAH_LEXE,Mai,Classic,1877,37,Similar,Rushdown,S,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-12,Terça-feira,21:37,Noite,36,-1,Ranqueada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1847,-7,2828990287,KzThierry,Elena,Classic,1891,44,Similar,Unorthodox,C,True,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-12,Terça-feira,21:34,Noite,35,2,Ranqueada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1854,7,2828990287,KzThierry,Elena,Classic,1884,30,Similar,Unorthodox,C,True,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-12,Terça-feira,21:29,Noite,34,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1847,7,1229890165,BrandonHeat77,C. Viper,Classic,1795,-52,Inferior,High-Risk,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-12,Terça-feira,21:27,Noite,33,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1840,-9,1229890165,BrandonHeat77,C. Viper,Classic,1802,-38,Similar,High-Risk,A,False,Sim,V-V,"Normal, Over Drive (OD)",Nenhum
+2026-05-12,Terça-feira,21:25,Noite,32,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1849,8,1229890165,BrandonHeat77,C. Viper,Classic,1793,-56,Inferior,High-Risk,A,False,Não,D-V-D,Super Art (SA),"Normal, Normal"
+2026-05-12,Terça-feira,20:57,Noite,31,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1841,8,1389368346,Gui_,JP,Classic,1820,-21,Similar,Zoner,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-12,Terça-feira,20:55,Noite,30,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1833,-8,1389368346,Gui_,JP,Classic,1828,-5,Similar,Zoner,S,False,Sim,V-D-V,"Normal, Normal",Super Art (SA)
+2026-05-12,Terça-feira,20:51,Noite,29,2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1841,8,1389368346,Gui_,JP,Classic,1820,-21,Similar,Zoner,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-12,Terça-feira,20:48,Noite,28,1,Ranqueada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1833,9,3123159186,GuillerBR,Guile,Classic,1852,19,Similar,Zoner,C,False,Sim,V-V,"Normal, Over Drive (OD)",Nenhum
+2026-05-12,Terça-feira,20:46,Noite,27,-3,Ranqueada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1824,-7,3123159186,GuillerBR,Guile,Classic,1861,37,Similar,Zoner,C,False,Sim,V-D-V,"Normal, Super Art (SA)",Over Drive (OD)
+2026-05-12,Terça-feira,20:42,Noite,26,-2,Ranqueada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1831,-5,3123159186,GuillerBR,Guile,Classic,1854,23,Similar,Zoner,C,False,Sim,V-D-D,Super Art (SA),"Normal, Normal"
+2026-05-12,Terça-feira,20:35,Noite,25,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1836,-5,2637440966,TomzinMilgrau,JP,Classic,1960,124,Muito Superior,Zoner,S,False,Sim,V-D-D,Normal,"Normal, Perfect"
+2026-05-12,Terça-feira,20:32,Noite,24,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1841,4,2637440966,TomzinMilgrau,JP,Classic,1955,114,Muito Superior,Zoner,S,False,Sim,V-D-D,Over Drive (OD),"Normal, Over Drive (OD)"
+2026-05-12,Terça-feira,20:28,Noite,23,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1837,4,4200588622,Welington_FGC,Sagat,Classic,1647,-190,Inferior,All-Rounder,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-12,Terça-feira,20:26,Noite,22,-4,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1833,-5,4200588622,Welington_FGC,Sagat,Classic,1651,-182,Inferior,All-Rounder,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-12,Terça-feira,20:23,Noite,21,-3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1838,-6,3518861911,Shaka,Dhalsim,Classic,1962,124,Muito Superior,Zoner,C,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-12,Terça-feira,20:20,Noite,20,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1844,-7,3518861911,Shaka,Dhalsim,Classic,1956,112,Muito Superior,Zoner,C,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-12,Terça-feira,20:17,Noite,19,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1851,-7,4160494664,Nebraka,Juri,Classic,1906,55,Superior,Rushdown,B,False,Sim,V-D-D,Normal,"Super Art (SA), Normal"
+2026-05-12,Terça-feira,20:14,Noite,18,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1858,9,4160494664,Nebraka,Juri,Classic,1899,41,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-12,Terça-feira,20:12,Noite,17,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1849,-6,4160494664,Nebraka,Juri,Classic,1908,59,Superior,Rushdown,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-12,Terça-feira,20:08,Noite,16,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1855,-6,3518861911,Shaka,Dhalsim,Classic,1943,88,Superior,Zoner,C,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-12,Terça-feira,20:06,Noite,15,6,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1861,8,3518861911,Shaka,Dhalsim,Classic,1937,76,Superior,Zoner,C,False,Não,D-D,Nenhum,"Super Art (SA), Perfect"
+2026-05-12,Terça-feira,20:01,Noite,14,5,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1853,8,3670273569,tundi,Cammy,Classic,1845,-8,Similar,Rushdown,B,False,Sim,V-D-V,"Super Art (SA), Normal",Over Drive (OD)
+2026-05-12,Terça-feira,19:59,Noite,13,4,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1845,7,3670273569,tundi,Cammy,Classic,1853,8,Similar,Rushdown,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-12,Terça-feira,19:55,Noite,12,3,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1838,7,4247866173,Shifty,JP,Classic,1786,-52,Inferior,Zoner,S,False,Sim,V-V,"Super Art (SA), Super Art (SA)",Nenhum
+2026-05-12,Terça-feira,19:53,Noite,11,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1831,10,4247866173,Shifty,JP,Classic,1793,-38,Similar,Zoner,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-12,Terça-feira,19:50,Noite,10,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1821,10,1154684827,Salvatore,Mai,Classic,1902,81,Superior,Rushdown,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-12,Terça-feira,19:48,Noite,9,-3,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1811,-6,1154684827,Salvatore,Mai,Classic,1912,101,Muito Superior,Rushdown,S,False,Não,D-V-V,"Normal, Over Drive (OD)",Normal
+2026-05-12,Terça-feira,19:45,Noite,8,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1817,-9,1154684827,Salvatore,Mai,Classic,1906,89,Superior,Rushdown,S,False,Sim,V-D-D,Normal,"Perfect, Normal"
+2026-05-12,Terça-feira,19:42,Noite,7,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1826,-10,1833345449,Kawa/Kay,Zangief,Classic,1767,-59,Inferior,Grappler,B,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-05-12,Terça-feira,19:38,Noite,6,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1836,6,1833345449,Kawa/Kay,Zangief,Classic,1757,-79,Inferior,Grappler,B,False,Sim,V-D-D,Chip Damage (C),"Super Art (SA), Normal"
+2026-05-12,Terça-feira,19:33,Noite,5,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1830,6,1711960546,Super Din,Sagat,Classic,1735,-95,Inferior,All-Rounder,S,False,Não,D-V-V,"Super Art (SA), Normal",Normal
+2026-05-12,Terça-feira,19:31,Noite,4,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1824,-7,1711960546,Super Din,Sagat,Classic,1741,-83,Inferior,All-Rounder,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-12,Terça-feira,19:28,Noite,3,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1831,-7,3944248778,HickzX,Kimberly,Classic,1894,63,Superior,Rushdown,B,False,Não,D-V-D,Normal,"Super Art (SA), Super Art (SA)"
+2026-05-12,Terça-feira,19:24,Noite,2,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1838,10,3944248778,HickzX,Kimberly,Classic,1887,49,Similar,Rushdown,B,False,Não,D-V-D,Super Art (SA),"Over Drive (OD), Chip Damage (C)"
+2026-05-12,Terça-feira,19:22,Noite,1,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1828,-18,3944248778,HickzX,Kimberly,Classic,1897,69,Superior,Rushdown,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-11,Segunda-feira,21:24,Noite,55,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1846,-9,4199727158,Pertusi77,Terry,Classic,1823,-23,Similar,Shoto,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,21:23,Noite,54,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1855,8,4199727158,Pertusi77,Terry,Classic,1814,-41,Similar,Shoto,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-11,Segunda-feira,21:20,Noite,53,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1847,-8,1377315476,Cell-PC,M. Bison,Classic,1861,14,Similar,All-Rounder,A,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-11,Segunda-feira,21:17,Noite,52,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1855,8,1377315476,Cell-PC,M. Bison,Classic,1853,-2,Similar,All-Rounder,A,False,Não,D-V-D,Normal,"Normal, Critical Art (CA)"
+2026-05-11,Segunda-feira,21:14,Noite,51,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1847,-6,1377315476,Cell-PC,M. Bison,Classic,1861,14,Similar,All-Rounder,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-11,Segunda-feira,21:08,Noite,50,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1853,-6,2616132292,NotPedro,Ken,Classic,1963,110,Muito Superior,Shoto,B,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,21:06,Noite,49,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1859,11,2616132292,NotPedro,Ken,Classic,1957,98,Superior,Shoto,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-11,Segunda-feira,21:03,Noite,48,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1848,-9,2616132292,NotPedro,Ken,Classic,1968,120,Muito Superior,Shoto,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-11,Segunda-feira,20:59,Noite,47,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1857,-9,2555796603,Shinigami,Edmond Honda,Classic,1817,-40,Similar,Desconhecido,?,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,20:58,Noite,46,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1866,7,2555796603,Shinigami,Edmond Honda,Classic,1808,-58,Inferior,Desconhecido,?,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-11,Segunda-feira,20:56,Noite,45,-3,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1859,-8,2555796603,Shinigami,Edmond Honda,Classic,1815,-44,Similar,Desconhecido,?,False,Não,D-V-V,"Over Drive (OD), Normal",Over Drive (OD)
+2026-05-11,Segunda-feira,20:53,Noite,44,-2,Ranqueada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1867,-9,2828990287,KzThierry,Elena,Classic,1861,-6,Similar,Unorthodox,C,True,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-11,Segunda-feira,20:51,Noite,43,-1,Ranqueada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1876,-7,2828990287,KzThierry,Elena,Classic,1852,-24,Similar,Unorthodox,C,True,Não,D-V-D,Over Drive (OD),"Normal, Normal"
+2026-05-11,Segunda-feira,20:47,Noite,42,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1883,9,2637440966,TomzinMilgrau,JP,Classic,1913,30,Similar,Zoner,S,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,20:44,Noite,41,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1874,-7,2637440966,TomzinMilgrau,JP,Classic,1922,48,Similar,Zoner,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-11,Segunda-feira,20:42,Noite,40,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1881,-10,2637440966,TomzinMilgrau,JP,Classic,1915,34,Similar,Zoner,S,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,20:37,Noite,39,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1891,6,1314492193,JrxSemedo,Ryu,Classic,1782,-109,Inferior,Shoto,A,False,Sim,V-D-D,Over Drive (OD),"Over Drive (OD), Normal"
+2026-05-11,Segunda-feira,20:34,Noite,38,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1885,-11,1314492193,JrxSemedo,Ryu,Classic,1788,-97,Inferior,Shoto,A,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-11,Segunda-feira,20:31,Noite,37,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1896,-6,1314492193,JrxSemedo,Ryu,Classic,1777,-119,Inferior,Shoto,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,20:29,Noite,36,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1902,11,3631316984,KBM! Kyuki,JP,Classic,1995,93,Superior,Zoner,S,False,Não,D-D,Nenhum,"Perfect, Super Art (SA)"
+2026-05-11,Segunda-feira,20:28,Noite,35,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1891,-6,3631316984,KBM! Kyuki,JP,Classic,2006,115,Muito Superior,Zoner,S,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-11,Segunda-feira,20:24,Noite,34,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1897,7,3631316984,KBM! Kyuki,JP,Classic,2000,103,Muito Superior,Zoner,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,20:15,Noite,33,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1890,-9,2828990287,KzThierry,Elena,Classic,1849,-41,Similar,Unorthodox,C,True,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-11,Segunda-feira,20:12,Noite,32,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1899,7,2828990287,KzThierry,Elena,Classic,1840,-59,Inferior,Unorthodox,C,True,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,20:09,Noite,31,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1892,8,2828990287,KzThierry,Elena,Classic,1847,-45,Similar,Unorthodox,C,True,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-11,Segunda-feira,20:06,Noite,30,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1884,8,2378180637,VeNoM,Ed,Classic,1879,-5,Similar,Shoto,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-11,Segunda-feira,20:04,Noite,29,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1876,-8,2378180637,VeNoM,Ed,Classic,1887,11,Similar,Shoto,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-11,Segunda-feira,20:02,Noite,28,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1884,7,2378180637,VeNoM,Ed,Classic,1879,-5,Similar,Shoto,S,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,19:57,Noite,27,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1877,7,3670273569,tundi,Cammy,Classic,1839,-38,Similar,Rushdown,B,False,Sim,V-V,"Perfect, Normal",Nenhum
+2026-05-11,Segunda-feira,19:55,Noite,26,-4,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1870,-7,3670273569,tundi,Cammy,Classic,1846,-24,Similar,Rushdown,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-11,Segunda-feira,19:53,Noite,25,-3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1877,-8,2241720179,MiniBomba,Kimberly,Classic,1912,35,Similar,Rushdown,B,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,19:50,Noite,24,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1885,-9,2241720179,MiniBomba,Kimberly,Classic,1904,19,Similar,Rushdown,B,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-11,Segunda-feira,19:46,Noite,23,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1894,-10,2828990287,KzThierry,Elena,Classic,1847,-47,Similar,Unorthodox,C,True,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-11,Segunda-feira,19:44,Noite,22,2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1904,8,2828990287,KzThierry,Elena,Classic,1837,-67,Inferior,Unorthodox,C,True,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,19:39,Noite,21,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1896,9,3381453962,Blaz 2G,Sagat,Classic,1900,4,Similar,All-Rounder,S,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-11,Segunda-feira,19:36,Noite,20,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1887,-8,3381453962,Blaz 2G,Sagat,Classic,1909,22,Similar,All-Rounder,S,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-11,Segunda-feira,19:34,Noite,19,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1895,3,3381453962,Blaz 2G,Sagat,Classic,1901,6,Similar,All-Rounder,S,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-11,Segunda-feira,19:30,Noite,18,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1892,3,2113266193,Ramza,M. Bison,Classic,1662,-230,Muito Inferior,All-Rounder,A,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-11,Segunda-feira,19:27,Noite,17,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1889,8,2113266193,Ramza,M. Bison,Classic,1665,-224,Muito Inferior,All-Rounder,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-11,Segunda-feira,19:24,Noite,16,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1881,-8,2241720179,MiniBomba,Kimberly,Classic,1892,11,Similar,Rushdown,B,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-11,Segunda-feira,19:22,Noite,15,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1889,8,2241720179,MiniBomba,Kimberly,Classic,1884,-5,Similar,Rushdown,B,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-11,Segunda-feira,19:20,Noite,14,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1881,8,2241720179,MiniBomba,Kimberly,Classic,1892,11,Similar,Rushdown,B,False,Não,D-V-V,"Normal, Perfect",Super Art (SA)
+2026-05-11,Segunda-feira,19:17,Noite,13,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1873,8,2378180637,VeNoM,Ed,Classic,1875,2,Similar,Shoto,S,False,Sim,V-V,"Perfect, Super Art (SA)",Nenhum
+2026-05-11,Segunda-feira,19:15,Noite,12,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1865,-8,2378180637,VeNoM,Ed,Classic,1883,18,Similar,Shoto,S,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-11,Segunda-feira,19:13,Noite,11,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1873,-8,1154684827,Salvatore,Mai,Classic,1890,17,Similar,Rushdown,S,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-05-11,Segunda-feira,19:11,Noite,10,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1881,10,1154684827,Salvatore,Mai,Classic,1882,1,Similar,Rushdown,S,False,Não,D-D,Nenhum,"Super Art (SA), Over Drive (OD)"
+2026-05-11,Segunda-feira,19:08,Noite,9,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1871,-6,1886807314,HKDASH,M. Bison,Classic,1980,109,Muito Superior,All-Rounder,A,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-11,Segunda-feira,19:06,Noite,8,3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1877,11,1886807314,HKDASH,M. Bison,Classic,1974,97,Superior,All-Rounder,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-11,Segunda-feira,19:04,Noite,7,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1866,8,1886807314,HKDASH,M. Bison,Classic,1985,119,Muito Superior,All-Rounder,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-11,Segunda-feira,19:01,Noite,6,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1858,8,1552508795,RocksteadyBR,Blanka,Classic,1842,-16,Similar,Unorthodox,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-11,Segunda-feira,18:59,Noite,5,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1850,-8,1552508795,RocksteadyBR,Blanka,Classic,1850,0,Similar,Unorthodox,A,False,Sim,V-V,"Over Drive (OD), Over Drive (OD)",Nenhum
+2026-05-11,Segunda-feira,18:57,Noite,4,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1858,2,1552508795,RocksteadyBR,Blanka,Classic,1842,-16,Similar,Unorthodox,A,False,Sim,V-D-D,Super Art (SA),"Normal, Over Drive (OD)"
+2026-05-11,Segunda-feira,18:53,Noite,3,-2,Ranqueada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1856,-6,1383809656,Covarde,Guile,Classic,1536,-320,Muito Inferior,Zoner,C,False,Sim,V-V,"Perfect, Perfect",Nenhum
+2026-05-11,Segunda-feira,18:50,Noite,2,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1862,-6,1346704274,theforce90,Ed,Modern,1956,94,Superior,Shoto,S,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-11,Segunda-feira,18:48,Noite,1,2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1868,5,1346704274,theforce90,Ed,Modern,1950,82,Superior,Shoto,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-07,Quinta-feira,21:07,Noite,32,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1863,5,3438894034,CleitinDJPOWER,Dee Jay,Classic,1738,-125,Inferior,Rushdown,B,False,Não,D-V-V,"Over Drive (OD), Super Art (SA)",Normal
+2026-05-07,Quinta-feira,21:04,Noite,31,-3,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1858,0,3438894034,CleitinDJPOWER,Dee Jay,Classic,1743,-115,Inferior,Rushdown,B,False,Sim,V-D-V,"Super Art (SA), Perfect",Critical Art (CA)
+2026-05-07,Quinta-feira,20:52,Noite,30,-2,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-07,Quinta-feira,20:49,Noite,29,-1,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-07,Quinta-feira,20:46,Noite,28,1,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-07,Quinta-feira,20:44,Noite,27,-1,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-V-V,"Super Art (SA), Super Art (SA)",Normal
+2026-05-07,Quinta-feira,20:40,Noite,26,2,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-07,Quinta-feira,20:37,Noite,25,1,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-07,Quinta-feira,20:34,Noite,24,-3,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-V-V,"Normal, Normal",Perfect
+2026-05-07,Quinta-feira,20:31,Noite,23,-2,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
+2026-05-07,Quinta-feira,20:29,Noite,22,-1,Sala Personalizada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-07,Quinta-feira,20:26,Noite,21,1,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-07,Quinta-feira,20:24,Noite,20,-1,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-07,Quinta-feira,20:22,Noite,19,3,Sala Personalizada,Player 1,Derrota ❌,0 x 2,ZSF | Winter 冬,Elena,1858,0,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Perfect"
+2026-05-07,Quinta-feira,20:21,Noite,18,2,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Elena,1858,10,1768397125,ZSF Caio Cesar,Mai,Classic,1934,76,Superior,Rushdown,S,False,Não,D-V-V,"Super Art (SA), Normal",Over Drive (OD)
+2026-05-07,Quinta-feira,20:15,Noite,17,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1848,10,2637440966,TomzinMilgrau,JP,Classic,1922,74,Superior,Zoner,S,False,Não,D-V-V,"Over Drive (OD), Critical Art (CA)",Normal
+2026-05-07,Quinta-feira,20:11,Noite,16,-4,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1838,-7,2637440966,TomzinMilgrau,JP,Classic,1932,94,Superior,Zoner,S,False,Não,D-V-V,"Perfect, Perfect",Chip Damage (C)
+2026-05-07,Quinta-feira,20:08,Noite,15,-3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1845,-7,1165762004,@Zenith,C. Viper,Classic,1909,64,Superior,High-Risk,A,False,Sim,V-D-D,Over Drive (OD),"Normal, Super Art (SA)"
+2026-05-07,Quinta-feira,20:05,Noite,14,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1852,-7,1165762004,@Zenith,C. Viper,Classic,1902,50,Superior,High-Risk,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-07,Quinta-feira,20:03,Noite,13,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1859,-7,1768397125,ZSF Caio Cesar,Mai,Classic,1919,60,Superior,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-07,Quinta-feira,20:01,Noite,12,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1866,7,1768397125,ZSF Caio Cesar,Mai,Classic,1912,46,Similar,Rushdown,S,False,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
+2026-05-07,Quinta-feira,19:57,Noite,11,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1859,-9,2555796603,Shinigami,Edmond Honda,Classic,1824,-35,Similar,Desconhecido,?,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-07,Quinta-feira,19:54,Noite,10,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1868,7,2555796603,Shinigami,Edmond Honda,Classic,1815,-53,Inferior,Desconhecido,?,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-07,Quinta-feira,19:52,Noite,9,-4,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1861,-10,2555796603,Shinigami,Edmond Honda,Classic,1822,-39,Similar,Desconhecido,?,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-07,Quinta-feira,19:50,Noite,8,-3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1871,-11,2194761134,2G :1 CUP,Alex,Classic,1771,-100,Inferior,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-07,Quinta-feira,19:48,Noite,7,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1882,-8,2194761134,2G :1 CUP,Alex,Classic,1760,-122,Inferior,Grappler,B,False,Sim,V-D-D,Over Drive (OD),"Over Drive (OD), Over Drive (OD)"
+2026-05-07,Quinta-feira,19:43,Noite,6,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1890,-8,1363370579,ZSF Zydani,Marisa,Classic,1906,16,Similar,Grappler,D,False,Não,D-D,Nenhum,"Normal, Perfect"
+2026-05-07,Quinta-feira,19:41,Noite,5,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1898,8,1363370579,ZSF Zydani,Marisa,Classic,1898,0,Similar,Grappler,D,False,Não,D-V-D,Normal,"Normal, Perfect"
+2026-05-07,Quinta-feira,19:39,Noite,4,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1890,6,1363370579,ZSF Zydani,Marisa,Classic,1906,16,Similar,Grappler,D,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-07,Quinta-feira,19:34,Noite,3,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1884,7,1552508795,RocksteadyBR,Blanka,Classic,1805,-79,Inferior,Unorthodox,A,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-07,Quinta-feira,19:31,Noite,2,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1877,-10,1552508795,RocksteadyBR,Blanka,Classic,1812,-65,Inferior,Unorthodox,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-07,Quinta-feira,19:28,Noite,1,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1887,-7,1552508795,RocksteadyBR,Blanka,Classic,1802,-85,Inferior,Unorthodox,A,False,Não,D-V-D,Perfect,"Normal, Normal"
+2026-05-06,Quarta-feira,20:41,Noite,34,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1894,9,1363370579,ZSF Zydani,Marisa,Classic,1918,24,Similar,Grappler,D,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-06,Quarta-feira,20:38,Noite,33,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1885,-7,1363370579,ZSF Zydani,Marisa,Classic,1927,42,Similar,Grappler,D,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-06,Quarta-feira,20:35,Noite,32,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1892,7,1363370579,ZSF Zydani,Marisa,Classic,1920,28,Similar,Grappler,D,False,Não,D-V-D,Normal,"Super Art (SA), Normal"
+2026-05-06,Quarta-feira,20:30,Noite,31,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1885,7,2804158364,suna,A.K.I.,Classic,1820,-65,Inferior,Unorthodox,B,False,Sim,V-D-V,"Normal, Normal",Super Art (SA)
+2026-05-06,Quarta-feira,20:27,Noite,30,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1878,7,2804158364,suna,A.K.I.,Classic,1827,-51,Inferior,Unorthodox,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-06,Quarta-feira,20:23,Noite,29,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1871,-9,1343776734,YTBChaolin,Ken,Classic,1833,-38,Similar,Shoto,B,False,Não,D-V-V,"Over Drive (OD), Normal",Normal
+2026-05-06,Quarta-feira,20:19,Noite,28,3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1880,7,1343776734,YTBChaolin,Ken,Classic,1824,-56,Inferior,Shoto,B,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-06,Quarta-feira,20:17,Noite,27,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1873,7,1343776734,YTBChaolin,Ken,Classic,1831,-42,Similar,Shoto,B,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-06,Quarta-feira,20:14,Noite,26,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1866,8,3944248778,HickzX,Kimberly,Classic,1835,-31,Similar,Rushdown,B,False,Sim,V-D-V,"Normal, Over Drive (OD)",Over Drive (OD)
+2026-05-06,Quarta-feira,20:11,Noite,25,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1858,-9,3944248778,HickzX,Kimberly,Classic,1843,-15,Similar,Rushdown,B,False,Sim,V-D-V,"Normal, Super Art (SA)",Perfect
+2026-05-06,Quarta-feira,20:09,Noite,24,3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1867,7,3944248778,HickzX,Kimberly,Classic,1834,-33,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Chip Damage (C)"
+2026-05-06,Quarta-feira,20:06,Noite,23,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1860,7,2828990287,KzThierry,Elena,Classic,1813,-47,Similar,Unorthodox,C,True,Sim,V-D-V,"Super Art (SA), Super Art (SA)",Normal
+2026-05-06,Quarta-feira,20:03,Noite,22,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1853,10,2828990287,KzThierry,Elena,Classic,1820,-33,Similar,Unorthodox,C,True,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-05-06,Quarta-feira,19:59,Noite,21,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1843,-7,1768397125,ZSF Caio Cesar,Mai,Classic,1915,72,Superior,Rushdown,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-06,Quarta-feira,19:57,Noite,20,5,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1850,10,1768397125,ZSF Caio Cesar,Mai,Classic,1908,58,Superior,Rushdown,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-06,Quarta-feira,19:56,Noite,19,4,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1840,8,1768397125,ZSF Caio Cesar,Mai,Classic,1918,78,Superior,Rushdown,S,False,Sim,V-D-V,"Normal, Normal",Super Art (SA)
+2026-05-06,Quarta-feira,19:51,Noite,18,3,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1832,8,3728452428,IW | Maxi07,Blanka,Classic,1829,-3,Similar,Unorthodox,A,False,Sim,V-V,"Normal, Critical Art (CA)",Nenhum
+2026-05-06,Quarta-feira,19:49,Noite,17,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1824,7,3728452428,IW | Maxi07,Blanka,Classic,1837,13,Similar,Unorthodox,A,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-06,Quarta-feira,19:45,Noite,16,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1817,7,1895572048,PERIGOdasPROMO,Akuma,Modern,1772,-45,Similar,Shoto,A,False,Não,D-V-V,"Super Art (SA), Over Drive (OD)",Normal
+2026-05-06,Quarta-feira,19:42,Noite,15,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1810,-9,1895572048,PERIGOdasPROMO,Akuma,Modern,1779,-31,Similar,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-06,Quarta-feira,19:40,Noite,14,10,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1819,8,1895572048,PERIGOdasPROMO,Akuma,Modern,1770,-49,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-06,Quarta-feira,19:36,Noite,13,9,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1811,9,1343776734,YTBChaolin,Ken,Classic,1829,18,Similar,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-06,Quarta-feira,19:34,Noite,12,8,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1802,8,1343776734,YTBChaolin,Ken,Classic,1838,36,Similar,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-06,Quarta-feira,19:30,Noite,11,7,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1794,9,2828990287,KzThierry,Elena,Classic,1808,14,Similar,Unorthodox,C,True,Não,D-V-V,"Normal, Normal",Super Art (SA)
+2026-05-06,Quarta-feira,19:27,Noite,10,6,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1785,7,2828990287,KzThierry,Elena,Classic,1817,32,Similar,Unorthodox,C,True,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-06,Quarta-feira,19:25,Noite,9,5,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1778,7,1833345449,IronHeart,Zangief,Classic,1729,-49,Similar,Grappler,B,False,Não,D-V-V,"Super Art (SA), Normal",Over Drive (OD)
+2026-05-06,Quarta-feira,19:22,Noite,8,4,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1771,6,1833345449,IronHeart,Zangief,Classic,1736,-35,Similar,Grappler,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-06,Quarta-feira,19:19,Noite,7,3,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1765,6,1702100650,Ítalo,Juri,Classic,1676,-89,Inferior,Rushdown,B,False,Sim,V-D-V,"Over Drive (OD), Super Art (SA)",Critical Art (CA)
+2026-05-06,Quarta-feira,19:16,Noite,6,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1759,7,1702100650,Ítalo,Juri,Classic,1682,-77,Inferior,Rushdown,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-06,Quarta-feira,19:14,Noite,5,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1752,8,1833345449,IronHeart,Zangief,Classic,1729,-23,Similar,Grappler,B,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-05-06,Quarta-feira,19:11,Noite,4,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1744,-9,1833345449,IronHeart,Zangief,Classic,1737,-7,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Over Drive (OD)",Normal
+2026-05-06,Quarta-feira,19:08,Noite,3,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1753,8,2604809135,SDD_JacintoGod,Marisa,Classic,1731,-22,Similar,Grappler,D,False,Não,D-V-D,Over Drive (OD),"Normal, Super Art (SA)"
+2026-05-06,Quarta-feira,19:05,Noite,2,-5,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1745,-9,2604809135,SDD_JacintoGod,Marisa,Classic,1739,-6,Similar,Grappler,D,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-06,Quarta-feira,19:04,Noite,1,-4,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1754,-8,2604809135,SDD_JacintoGod,Marisa,Classic,1730,-24,Similar,Grappler,D,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,21:18,Noite,41,-3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1762,-8,2322553817,Ale Maaseik,A.K.I.,Classic,1770,8,Similar,Unorthodox,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-05,Terça-feira,21:16,Noite,40,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1770,-7,2322553817,Ale Maaseik,A.K.I.,Classic,1762,-8,Similar,Unorthodox,B,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,21:14,Noite,39,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1777,-8,1343776734,YTBChaolin,Ken,Classic,1809,32,Similar,Shoto,B,False,Não,D-V-D,Normal,"Over Drive (OD), Normal"
+2026-05-05,Terça-feira,21:11,Noite,38,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1785,8,1343776734,YTBChaolin,Ken,Classic,1801,16,Similar,Shoto,B,False,Sim,V-D-D,Super Art (SA),"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,21:07,Noite,37,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1777,8,3687879729,Bankai,Ken,Classic,1758,-19,Similar,Shoto,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-05,Terça-feira,21:05,Noite,36,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1769,-8,3687879729,Bankai,Ken,Classic,1766,-3,Similar,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-05,Terça-feira,21:03,Noite,35,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1777,8,3540253634,CapangaDoSapo1,Sagat,Classic,1764,-13,Similar,All-Rounder,S,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-05,Terça-feira,21:01,Noite,34,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1769,-8,3540253634,CapangaDoSapo1,Sagat,Classic,1772,3,Similar,All-Rounder,S,False,Não,D-V-V,"Normal, Perfect",Normal
+2026-05-05,Terça-feira,20:58,Noite,33,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1777,9,3540253634,CapangaDoSapo1,Sagat,Classic,1764,-13,Similar,All-Rounder,S,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,20:53,Noite,32,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1768,9,2322553817,Ale Maaseik,A.K.I.,Classic,1793,25,Similar,Unorthodox,B,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-05,Terça-feira,20:50,Noite,31,-4,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1759,-9,2322553817,Ale Maaseik,A.K.I.,Classic,1802,43,Similar,Unorthodox,B,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-05,Terça-feira,20:46,Noite,30,-3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1768,-9,2297103911,Kazu,Cammy,Classic,1746,-22,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,20:44,Noite,29,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1777,-11,2297103911,Kazu,Cammy,Classic,1737,-40,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-05,Terça-feira,20:38,Noite,28,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1788,-11,3547003950,KiwiMol,Zangief,Classic,1653,-135,Inferior,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-05,Terça-feira,20:36,Noite,27,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1799,8,3547003950,KiwiMol,Zangief,Classic,1642,-157,Inferior,Grappler,B,False,Não,D-V-D,Chip Damage (C),"Super Art (SA), Critical Art (CA)"
+2026-05-05,Terça-feira,20:31,Noite,26,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1791,8,2322553817,Ale Maaseik,A.K.I.,Classic,1795,4,Similar,Unorthodox,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-05,Terça-feira,20:29,Noite,25,-4,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1783,-6,2322553817,Ale Maaseik,A.K.I.,Classic,1803,20,Similar,Unorthodox,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-05,Terça-feira,20:27,Noite,24,-3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1789,-7,1688733948,Lily,Lily,Modern,1867,78,Superior,Grappler,D,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,20:25,Noite,23,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1796,-7,1688733948,Lily,Lily,Modern,1860,64,Superior,Grappler,D,False,Não,D-D,Nenhum,"Over Drive (OD), Over Drive (OD)"
+2026-05-05,Terça-feira,20:22,Noite,22,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1803,-7,1154684827,Salvatore,Cammy,Classic,1859,56,Superior,Rushdown,B,False,Não,D-V-D,Critical Art (CA),"Normal, Normal"
+2026-05-05,Terça-feira,20:19,Noite,21,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1810,10,1154684827,Salvatore,Cammy,Classic,1852,42,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Perfect, Super Art (SA)"
+2026-05-05,Terça-feira,20:16,Noite,20,-1,Ranqueada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1800,-6,3123159186,GuillerBR,Guile,Classic,1878,78,Superior,Zoner,C,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-05,Terça-feira,20:13,Noite,19,1,Ranqueada,Player 1,Derrota ❌,1 x 2,ZSF | Winter 冬,Elena,1806,10,3123159186,GuillerBR,Guile,Classic,1872,66,Superior,Zoner,C,False,Sim,V-D-D,Time Over,"Normal, Normal"
+2026-05-05,Terça-feira,20:09,Noite,18,-2,Ranqueada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Elena,1796,-7,3123159186,GuillerBR,Guile,Classic,1882,86,Superior,Zoner,C,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-05,Terça-feira,19:58,Noite,17,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1803,-8,1688733948,Lily,Lily,Modern,1840,37,Similar,Grappler,D,False,Sim,V-D-D,Normal,"Normal, Chip Damage (C)"
+2026-05-05,Terça-feira,19:56,Noite,16,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1811,6,1688733948,Lily,Lily,Modern,1832,21,Similar,Grappler,D,False,Não,D-V-D,Normal,"Perfect, Normal"
+2026-05-05,Terça-feira,19:51,Noite,15,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1805,6,1844024316,1JZ-,Sagat,Classic,1714,-91,Inferior,All-Rounder,S,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-05,Terça-feira,19:49,Noite,14,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1799,5,1844024316,1JZ-,Sagat,Classic,1720,-79,Inferior,All-Rounder,S,False,Não,D-V-V,"Over Drive (OD), Normal",Normal
+2026-05-05,Terça-feira,19:43,Noite,13,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1794,-12,3547003950,KiwiMol,Zangief,Classic,1651,-143,Inferior,Grappler,B,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-05,Terça-feira,19:41,Noite,12,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1806,5,3547003950,KiwiMol,Zangief,Classic,1639,-167,Inferior,Grappler,B,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,19:37,Noite,11,-4,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1801,-5,3547003950,KiwiMol,Zangief,Classic,1644,-157,Inferior,Grappler,B,False,Não,D-V-V,"Normal, Over Drive (OD)",Normal
+2026-05-05,Terça-feira,19:32,Noite,10,-3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1806,-5,3518861911,Shaka,Dhalsim,Classic,1938,132,Muito Superior,Zoner,C,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-05,Terça-feira,19:30,Noite,9,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1811,-8,3518861911,Shaka,Dhalsim,Classic,1933,122,Muito Superior,Zoner,C,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-05,Terça-feira,19:26,Noite,8,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1819,-8,1389368346,Gui_,JP,Classic,1837,18,Similar,Zoner,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,19:23,Noite,7,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1827,8,1389368346,Gui_,JP,Classic,1829,2,Similar,Zoner,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-05,Terça-feira,19:21,Noite,6,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1819,-9,1389368346,Gui_,JP,Classic,1837,18,Similar,Zoner,S,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-05,Terça-feira,19:16,Noite,5,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1828,-10,3839145420,NotleLinc,Ryu,Classic,1778,-50,Inferior,Shoto,A,False,Não,D-D,Nenhum,"Super Art (SA), Normal"
+2026-05-05,Terça-feira,19:14,Noite,4,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1838,7,3839145420,NotleLinc,Ryu,Classic,1768,-70,Inferior,Shoto,A,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-05,Terça-feira,19:11,Noite,3,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1831,-9,1343776734,YTBChaolin,Ken,Classic,1796,-35,Similar,Shoto,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-05,Terça-feira,19:09,Noite,2,3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1840,7,1343776734,YTBChaolin,Ken,Classic,1787,-53,Inferior,Shoto,B,False,Não,D-D,Nenhum,"Perfect, Normal"
+2026-05-05,Terça-feira,19:07,Noite,1,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1833,7,1343776734,YTBChaolin,Ken,Classic,1794,-39,Similar,Shoto,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-04,Segunda-feira,21:03,Noite,40,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1826,8,3944248778,HickzX,Kimberly,Classic,1790,-36,Similar,Rushdown,B,False,Sim,V-D-V,"Super Art (SA), Perfect",Over Drive (OD)
+2026-05-04,Segunda-feira,21:01,Noite,39,-3,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1818,-9,3944248778,HickzX,Kimberly,Classic,1798,-20,Similar,Rushdown,B,False,Não,D-V-V,"Normal, Super Art (SA)",Super Art (SA)
+2026-05-04,Segunda-feira,20:58,Noite,38,-2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1827,-11,3944248778,HickzX,Kimberly,Classic,1789,-38,Similar,Rushdown,B,False,Não,D-V-D,Normal,"Over Drive (OD), Super Art (SA)"
+2026-05-04,Segunda-feira,20:53,Noite,37,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1838,-12,4289797259,InevitableDSRE,Juri,Classic,1696,-142,Inferior,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-04,Segunda-feira,20:51,Noite,36,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1850,5,4289797259,InevitableDSRE,Juri,Classic,1684,-166,Inferior,Rushdown,B,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,20:48,Noite,35,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1845,7,4289797259,InevitableDSRE,Juri,Classic,1689,-156,Inferior,Rushdown,B,False,Sim,V-V,"Over Drive (OD), Critical Art (CA)",Nenhum
+2026-05-04,Segunda-feira,20:45,Noite,34,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1838,-9,1343776734,YTBChaolin,Ken,Classic,1811,-27,Similar,Shoto,B,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-05-04,Segunda-feira,20:43,Noite,33,6,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1847,7,1343776734,YTBChaolin,Ken,Classic,1802,-45,Similar,Shoto,B,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,20:40,Noite,32,5,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1840,7,1343776734,YTBChaolin,Ken,Classic,1809,-31,Similar,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,20:38,Noite,31,4,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1833,8,3944248778,HickzX,Kimberly,Classic,1809,-24,Similar,Rushdown,B,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-05-04,Segunda-feira,20:36,Noite,30,3,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1825,9,3944248778,HickzX,Kimberly,Classic,1817,-8,Similar,Rushdown,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,20:24,Noite,29,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1816,9,2637440966,TomzinMilgrau,JP,Classic,1844,28,Similar,Zoner,S,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-04,Segunda-feira,20:21,Noite,28,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1807,9,2637440966,TomzinMilgrau,JP,Classic,1853,46,Similar,Zoner,S,False,Sim,V-D-V,"Normal, Critical Art (CA)",Normal
+2026-05-04,Segunda-feira,20:15,Noite,27,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1798,-8,3944248778,HickzX,Kimberly,Classic,1835,37,Similar,Rushdown,B,False,Sim,V-D-V,"Normal, Normal",Over Drive (OD)
+2026-05-04,Segunda-feira,20:12,Noite,26,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1806,9,3944248778,HickzX,Kimberly,Classic,1827,21,Similar,Rushdown,B,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-05-04,Segunda-feira,20:09,Noite,25,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1797,10,3944248778,HickzX,Kimberly,Classic,1836,39,Similar,Rushdown,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-04,Segunda-feira,20:02,Noite,24,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1787,11,2622990354,JUNINHO-RAS,Mai,Classic,1888,101,Muito Superior,Rushdown,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-04,Segunda-feira,20:00,Noite,23,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1776,-5,2622990354,JUNINHO-RAS,Mai,Classic,1899,123,Muito Superior,Rushdown,S,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-05-04,Segunda-feira,19:58,Noite,22,9,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1781,8,2622990354,JUNINHO-RAS,Mai,Classic,1894,113,Muito Superior,Rushdown,S,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-05-04,Segunda-feira,19:54,Noite,21,8,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1773,8,2146360544,Nappa,Blanka,Classic,1755,-18,Similar,Unorthodox,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,19:52,Noite,20,7,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1765,6,2146360544,Nappa,Blanka,Classic,1763,-2,Similar,Unorthodox,A,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-05-04,Segunda-feira,19:51,Noite,19,6,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1759,6,2981321444,Macacoso,Elena,Classic,1650,-109,Inferior,Unorthodox,C,True,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-04,Segunda-feira,19:49,Noite,18,5,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1753,9,2981321444,Macacoso,Elena,Classic,1656,-97,Inferior,Unorthodox,C,True,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-04,Segunda-feira,19:46,Noite,17,4,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1744,9,3670273569,tundi,Cammy,Classic,1772,28,Similar,Rushdown,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-05-04,Segunda-feira,19:43,Noite,16,3,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1735,8,3670273569,tundi,Cammy,Classic,1781,46,Similar,Rushdown,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-04,Segunda-feira,19:40,Noite,15,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1727,8,2828990287,KzThierry,Elena,Classic,1726,-1,Similar,Unorthodox,C,True,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-04,Segunda-feira,19:38,Noite,14,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1719,6,2828990287,KzThierry,Elena,Classic,1734,15,Similar,Unorthodox,C,True,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-04,Segunda-feira,19:34,Noite,13,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1713,-10,3365711992,JAGUATIRIRIKA,Alex,Classic,1635,-78,Inferior,Grappler,B,False,Sim,V-V,"Perfect, Super Art (SA)",Nenhum
+2026-05-04,Segunda-feira,19:33,Noite,12,14,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1723,6,3365711992,JAGUATIRIRIKA,Alex,Classic,1625,-98,Inferior,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-04,Segunda-feira,19:32,Noite,11,13,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1717,7,3365711992,JAGUATIRIRIKA,Alex,Classic,1631,-86,Inferior,Grappler,B,False,Sim,V-D-V,"Normal, Super Art (SA)",Perfect
+2026-05-04,Segunda-feira,19:27,Noite,10,12,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1710,8,3547003950,KiwiMol,Zangief,Classic,1685,-25,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,19:25,Noite,9,11,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1702,8,3547003950,KiwiMol,Zangief,Classic,1693,-9,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,19:23,Noite,8,10,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1694,8,1844024316,1JZ-,Sagat,Classic,1692,-2,Similar,All-Rounder,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,19:22,Noite,7,9,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1686,7,1844024316,1JZ-,Sagat,Classic,1700,14,Similar,All-Rounder,S,False,Sim,V-V,"Perfect, Super Art (SA)",Nenhum
+2026-05-04,Segunda-feira,19:20,Noite,6,8,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1679,7,2489784401,Yutta,Ed,Classic,1642,-37,Similar,Shoto,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,19:17,Noite,5,7,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1672,1672,2489784401,Yutta,Ed,Classic,1649,-23,Similar,Shoto,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,19:14,Noite,4,6,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,0,1505403876,BraianVicio,Juri,Classic,0,0,Similar,Rushdown,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,17:33,Tarde,3,5,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,0,1431423686,dks3100,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,17:31,Tarde,2,4,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,0,1431423686,dks3100,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-04,Segunda-feira,17:29,Tarde,1,3,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,0,-1697,1431423686,dks3100,Sagat,Classic,0,0,Similar,All-Rounder,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-03,Domingo,16:38,Tarde,31,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1697,7,4199785477,TomGM,Lily,Classic,1661,-36,Similar,Grappler,D,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-05-03,Domingo,16:35,Tarde,30,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1690,8,4199785477,TomGM,Lily,Classic,1668,-22,Similar,Grappler,D,False,Sim,V-V,"Perfect, Normal",Nenhum
+2026-05-03,Domingo,16:31,Tarde,29,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1682,-8,3839145420,NotleLinc,Ryu,Classic,1684,2,Similar,Shoto,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-03,Domingo,16:30,Tarde,28,7,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,1690,8,3839145420,NotleLinc,Ryu,Classic,1676,-14,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-05-03,Domingo,16:27,Tarde,27,6,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1682,7,3839145420,NotleLinc,Ryu,Classic,1684,2,Similar,Shoto,A,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-05-03,Domingo,16:24,Tarde,26,5,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1675,7,3524754334,DeivisonFGC,Ken,Classic,1630,-45,Similar,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-03,Domingo,16:22,Tarde,25,4,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1668,7,3524754334,DeivisonFGC,Ken,Classic,1637,-31,Similar,Shoto,B,False,Sim,V-V,"Over Drive (OD), Super Art (SA)",Nenhum
+2026-05-03,Domingo,16:20,Tarde,24,3,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1661,7,1987594721,Krauser1001,Ryu,Classic,1598,-63,Inferior,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-03,Domingo,16:18,Tarde,23,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1654,8,1987594721,Krauser1001,Ryu,Classic,1605,-49,Similar,Shoto,A,False,Sim,V-V,"Chip Damage (C), Super Art (SA)",Nenhum
+2026-05-03,Domingo,16:13,Tarde,22,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1646,9,3945366163,Farx,Juri,Classic,1660,14,Similar,Rushdown,B,False,Sim,V-V,"Super Art (SA), Over Drive (OD)",Nenhum
+2026-05-03,Domingo,16:12,Tarde,21,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,1637,-8,3945366163,Farx,Juri,Classic,1669,32,Similar,Rushdown,B,False,Sim,V-D-V,"Normal, Perfect",Over Drive (OD)
+2026-05-03,Domingo,16:09,Tarde,20,2,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,1645,9,3945366163,Farx,Juri,Classic,1661,16,Similar,Rushdown,B,False,Não,D-V-D,Perfect,"Normal, Normal"
+2026-05-03,Domingo,16:06,Tarde,19,1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,1636,1636,2735468979,3n6 5,Sagat,Classic,1666,30,Similar,All-Rounder,S,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-05-03,Domingo,16:04,Tarde,18,-6,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,0,-1557,3504859261,Cleo,Rashid,Classic,0,0,Similar,Rushdown,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-05-03,Domingo,16:00,Tarde,17,-5,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1557,-6,3201375376,Jho-GoForBroke,Chun-Li,Classic,1657,100,Muito Superior,All-Rounder,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-03,Domingo,15:58,Tarde,16,-4,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1563,-7,3201375376,Jho-GoForBroke,Chun-Li,Classic,1651,88,Superior,All-Rounder,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-03,Domingo,15:53,Tarde,15,-3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1570,-7,3006115057,piccolo,Akuma,Classic,1615,45,Similar,Shoto,A,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-05-03,Domingo,15:50,Tarde,14,-2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1577,-6,3006115057,piccolo,Akuma,Classic,1608,31,Similar,Shoto,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-03,Domingo,15:47,Tarde,13,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1583,-4,2735468979,3n6 5,Sagat,Classic,1665,82,Superior,All-Rounder,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-03,Domingo,15:44,Tarde,12,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1587,13,2555796603,Shinigami,Edmond Honda,Classic,1790,203,Muito Superior,Desconhecido,?,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-05-03,Domingo,15:42,Tarde,11,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1574,-4,2555796603,Shinigami,Edmond Honda,Classic,1803,229,Muito Superior,Desconhecido,?,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-05-03,Domingo,15:40,Tarde,10,2,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1578,8,2555796603,Shinigami,Edmond Honda,Classic,1799,221,Muito Superior,Desconhecido,?,False,Não,D-D,Nenhum,"Normal, Perfect"
+2026-05-03,Domingo,15:38,Tarde,9,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1570,9,2442762874,Guizo,Blanka,Classic,1575,5,Similar,Unorthodox,A,False,Sim,V-D-V,"Chip Damage (C), Super Art (SA)",Over Drive (OD)
+2026-05-03,Domingo,15:36,Tarde,8,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1561,-8,2442762874,Guizo,Blanka,Classic,1584,23,Similar,Unorthodox,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-05-03,Domingo,15:34,Tarde,7,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1569,-6,2442762874,Guizo,Blanka,Classic,1576,7,Similar,Unorthodox,A,False,Não,D-V-D,Super Art (SA),"Over Drive (OD), Normal"
+2026-05-03,Domingo,15:26,Tarde,6,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1575,11,2241690774,Elchango,Cammy,Classic,1666,91,Superior,Rushdown,B,True,Sim,V-D-D,Normal,"Normal, Normal"
+2026-05-03,Domingo,15:23,Tarde,5,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1564,-6,2241690774,Elchango,Cammy,Classic,1677,113,Muito Superior,Rushdown,B,True,Não,D-V-V,"Normal, Normal",Super Art (SA)
+2026-05-03,Domingo,15:21,Tarde,4,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1570,-10,2241690774,Elchango,Cammy,Classic,1671,101,Muito Superior,Rushdown,B,True,Não,D-D,Nenhum,"Normal, Normal"
+2026-05-03,Domingo,15:18,Tarde,3,1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1580,6,1407714459,Kazaru,Alex,Classic,1497,-83,Inferior,Grappler,B,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-05-03,Domingo,15:16,Tarde,2,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1574,1574,1407714459,Kazaru,Alex,Classic,1503,-71,Inferior,Grappler,B,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-05-03,Domingo,15:14,Tarde,1,3,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,0,-1771,1407714459,Kazaru,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-30,Quinta-feira,20:48,Noite,41,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1771,8,3368528148,MEGA,Chun-Li,Classic,1777,6,Similar,All-Rounder,A,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-04-30,Quinta-feira,20:44,Noite,40,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1763,8,3547003950,KiwiMol,Zangief,Classic,1743,-20,Similar,Grappler,B,False,Sim,V-D-V,"Normal, Super Art (SA)",Normal
+2026-04-30,Quinta-feira,20:41,Noite,39,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1755,-8,3547003950,KiwiMol,Zangief,Classic,1751,-4,Similar,Grappler,B,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-04-30,Quinta-feira,20:39,Noite,38,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1763,-8,3547003950,KiwiMol,Zangief,Classic,1743,-20,Similar,Grappler,B,False,Sim,V-D-D,Normal,"Over Drive (OD), Super Art (SA)"
+2026-04-30,Quinta-feira,20:35,Noite,37,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1771,8,1478385256,Tenóbio,Marisa,Classic,1765,-6,Similar,Grappler,D,False,Não,D-D,Nenhum,"Normal, Perfect"
+2026-04-30,Quinta-feira,20:34,Noite,36,-1,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1763,-8,1478385256,Tenóbio,Marisa,Classic,1773,10,Similar,Grappler,D,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-30,Quinta-feira,20:32,Noite,35,3,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1771,8,1478385256,Tenóbio,Marisa,Classic,1765,-6,Similar,Grappler,D,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-04-30,Quinta-feira,20:30,Noite,34,2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1763,7,1947525021,Gil_Darkryu,Kimberly,Classic,1748,-15,Similar,Rushdown,B,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-04-30,Quinta-feira,20:27,Noite,33,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1756,7,4291947079,Febo_Abel,Alex,Classic,1717,-39,Similar,Grappler,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-04-30,Quinta-feira,20:25,Noite,32,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1749,-7,4291947079,Febo_Abel,Alex,Classic,1724,-25,Similar,Grappler,B,False,Sim,V-V,"Perfect, Normal",Nenhum
+2026-04-30,Quinta-feira,20:20,Noite,31,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1756,-8,1478385256,Tenóbio,Marisa,Classic,1782,26,Similar,Grappler,D,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-30,Quinta-feira,20:19,Noite,30,4,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1764,7,1478385256,Tenóbio,Marisa,Classic,1774,10,Similar,Grappler,D,False,Não,D-D,Nenhum,"Super Art (SA), Perfect"
+2026-04-30,Quinta-feira,20:17,Noite,29,3,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1757,7,1015522922,0Vaca,Ryu,Classic,1715,-42,Similar,Shoto,A,False,Sim,V-D-V,"Super Art (SA), Over Drive (OD)",Super Art (SA)
+2026-04-30,Quinta-feira,20:14,Noite,28,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1750,7,1015522922,0Vaca,Ryu,Classic,1722,-28,Similar,Shoto,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-30,Quinta-feira,20:09,Noite,27,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1743,8,2267567696,Wwwwww,Kimberly,Classic,1709,-34,Similar,Rushdown,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-04-30,Quinta-feira,20:07,Noite,26,-2,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1735,-8,2267567696,Wwwwww,Kimberly,Classic,1717,-18,Similar,Rushdown,B,False,Não,D-V-V,"Chip Damage (C), Super Art (SA)",Normal
+2026-04-30,Quinta-feira,20:03,Noite,25,-1,Ranqueada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Cammy,1743,-9,3377590999,Marinho,Ryu,Classic,1733,-10,Similar,Shoto,A,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-30,Quinta-feira,20:00,Noite,24,1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1752,8,3377590999,Marinho,Ryu,Classic,1724,-28,Similar,Shoto,A,False,Não,D-D,Nenhum,"Perfect, Normal"
+2026-04-30,Quinta-feira,19:58,Noite,23,-1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1744,-9,2267567696,Wwwwww,Kimberly,Classic,1736,-8,Similar,Rushdown,B,False,Não,D-V-V,"Normal, Normal",Super Art (SA)
+2026-04-30,Quinta-feira,19:56,Noite,22,9,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1753,8,2267567696,Wwwwww,Kimberly,Classic,1727,-26,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-30,Quinta-feira,19:54,Noite,21,8,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1745,10,2267567696,Wwwwww,Kimberly,Classic,1735,-10,Similar,Rushdown,B,False,Sim,V-V,"Perfect, Super Art (SA)",Nenhum
+2026-04-30,Quinta-feira,19:52,Noite,20,7,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1735,11,1868978050,UadsonFGC,Akuma,Classic,1839,104,Muito Superior,Shoto,A,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-04-30,Quinta-feira,19:49,Noite,19,6,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1724,8,1868978050,UadsonFGC,Akuma,Classic,1850,126,Muito Superior,Shoto,A,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-04-30,Quinta-feira,19:46,Noite,18,5,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1716,9,3149949608,Wslayerbr,Dee Jay,Classic,1721,5,Similar,Rushdown,B,False,Sim,V-D-V,"Normal, Perfect",Over Drive (OD)
+2026-04-30,Quinta-feira,19:43,Noite,17,4,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1707,7,3149949608,Wslayerbr,Dee Jay,Classic,1730,23,Similar,Rushdown,B,False,Sim,V-D-V,"Normal, Critical Art (CA)",Super Art (SA)
+2026-04-30,Quinta-feira,19:40,Noite,16,3,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1700,7,2539504147,shinchan,Akuma,Classic,1646,-54,Inferior,Shoto,A,False,Não,D-V-V,"Normal, Normal",Normal
+2026-04-30,Quinta-feira,19:37,Noite,15,2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1693,11,2539504147,shinchan,Akuma,Classic,1653,-40,Similar,Shoto,A,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-04-30,Quinta-feira,19:35,Noite,14,1,Ranqueada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Cammy,1682,12,1478642939,3520,Ryu,Classic,1830,148,Muito Superior,Shoto,A,False,Sim,V-D-V,"Normal, Perfect",Super Art (SA)
+2026-04-30,Quinta-feira,19:32,Noite,13,-2,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1670,-9,1478642939,3520,Ryu,Classic,1842,172,Muito Superior,Shoto,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-30,Quinta-feira,19:29,Noite,12,-1,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1679,-9,3500197644,NatanWS,Alex,Classic,1653,-26,Similar,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-30,Quinta-feira,19:28,Noite,11,13,Ranqueada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Cammy,1688,9,3500197644,NatanWS,Alex,Classic,1644,-44,Similar,Grappler,B,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-30,Quinta-feira,19:25,Noite,10,12,Ranqueada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Cammy,1679,1679,3768617404,Huevo+Mermelada,Sagat,Classic,1709,30,Similar,All-Rounder,S,False,Sim,V-V,"Chip Damage (C), Normal",Nenhum
+2026-04-30,Quinta-feira,15:09,Tarde,9,11,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-30,Quinta-feira,15:07,Tarde,8,10,Sala Personalizada,Player 1,Vitória 🏆,2 x 1,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Não,D-V-V,"Normal, Normal",Normal
+2026-04-30,Quinta-feira,15:04,Tarde,7,9,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Over Drive (OD)",Nenhum
+2026-04-30,Quinta-feira,15:02,Tarde,6,8,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-30,Quinta-feira,15:00,Tarde,5,7,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-30,Quinta-feira,14:58,Tarde,4,6,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-30,Quinta-feira,14:54,Tarde,3,5,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-04-30,Quinta-feira,14:53,Tarde,2,4,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,0,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-30,Quinta-feira,14:51,Tarde,1,3,Sala Personalizada,Player 1,Vitória 🏆,2 x 0,ZSF | Winter 冬,Cammy,0,-2073,3698617357,Aron4,Alex,Classic,0,0,Similar,Grappler,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-29,Quarta-feira,21:10,Noite,12,2,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Não,D-V-V,"Normal, Super Art (SA)",Normal
+2026-04-29,Quarta-feira,21:07,Noite,11,1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-04-29,Quarta-feira,21:05,Noite,10,-4,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-29,Quarta-feira,21:03,Noite,9,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-29,Quarta-feira,20:59,Noite,8,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-04-29,Quarta-feira,20:56,Noite,7,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Não,D-D,Nenhum,"Normal, Chip Damage (C)"
+2026-04-29,Quarta-feira,20:54,Noite,6,1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Não,D-D,Nenhum,"Normal, Perfect"
+2026-04-29,Quarta-feira,20:52,Noite,5,-1,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Não,D-V-V,"Normal, Normal",Over Drive (OD)
+2026-04-29,Quarta-feira,20:50,Noite,4,1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Não,D-V-D,Normal,"Normal, Perfect"
+2026-04-29,Quarta-feira,20:47,Noite,3,-5,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-04-29,Quarta-feira,20:45,Noite,2,-4,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,0,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Sim,V-D-D,Normal,"Normal, Perfect"
+2026-04-29,Quarta-feira,20:42,Noite,1,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,2073,123,3631316984,KBM! Kyuki,JP,Classic,2147,74,Superior,Zoner,S,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-04-26,Domingo,19:44,Noite,34,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1950,0,2469323975,Siinon,Manon,Classic,2061,111,Muito Superior,Grappler,C,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-26,Domingo,19:42,Noite,33,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1950,0,2469323975,Siinon,Manon,Classic,2061,111,Muito Superior,Grappler,C,False,Não,D-D,Nenhum,"Chip Damage (C), Normal"
+2026-04-26,Domingo,19:40,Noite,32,3,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1950,0,2469323975,Siinon,Manon,Classic,2061,111,Muito Superior,Grappler,C,False,Não,D-D,Nenhum,"Normal, Over Drive (OD)"
+2026-04-26,Domingo,19:38,Noite,31,2,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1950,0,2469323975,Siinon,Manon,Classic,2061,111,Muito Superior,Grappler,C,False,Não,D-V-V,"Normal, Normal",Normal
+2026-04-26,Domingo,19:35,Noite,30,1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1950,0,2469323975,Siinon,Manon,Classic,2061,111,Muito Superior,Grappler,C,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-26,Domingo,19:34,Noite,29,-12,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1950,0,2469323975,Siinon,Manon,Classic,2061,111,Muito Superior,Grappler,C,False,Não,D-V-V,"Normal, Normal",Normal
+2026-04-26,Domingo,19:31,Noite,28,-11,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1950,-76,2469323975,Siinon,Manon,Classic,2061,111,Muito Superior,Grappler,C,False,Não,D-D,Nenhum,"Normal, Critical Art (CA)"
+2026-04-26,Domingo,19:20,Noite,27,-10,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-26,Domingo,19:17,Noite,26,-9,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Super Art (SA), Critical Art (CA)"
+2026-04-26,Domingo,19:14,Noite,25,-8,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-26,Domingo,19:12,Noite,24,-7,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-26,Domingo,19:10,Noite,23,-6,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-26,Domingo,19:08,Noite,22,-5,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-26,Domingo,19:06,Noite,21,-4,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Super Art (SA), Super Art (SA)"
+2026-04-26,Domingo,19:05,Noite,20,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Chip Damage (C), Critical Art (CA)"
+2026-04-26,Domingo,19:03,Noite,19,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-26,Domingo,19:01,Noite,18,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-26,Domingo,18:57,Noite,17,1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Over Drive (OD),"Normal, Normal"
+2026-04-26,Domingo,18:55,Noite,16,-4,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-26,Domingo,18:53,Noite,15,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Super Art (SA),"Critical Art (CA), Normal"
+2026-04-26,Domingo,18:50,Noite,14,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Super Art (SA),"Over Drive (OD), Super Art (SA)"
+2026-04-26,Domingo,18:47,Noite,13,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-V-D,Perfect,"Normal, Normal"
+2026-04-26,Domingo,18:45,Noite,12,1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-26,Domingo,18:43,Noite,11,-4,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-V,"Normal, Super Art (SA)",Super Art (SA)
+2026-04-26,Domingo,18:40,Noite,10,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-04-26,Domingo,18:38,Noite,9,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Over Drive (OD), Normal"
+2026-04-26,Domingo,18:36,Noite,8,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Normal,"Over Drive (OD), Super Art (SA)"
+2026-04-26,Domingo,18:33,Noite,7,1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-26,Domingo,18:31,Noite,6,-9,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-V,"Normal, Super Art (SA)",Over Drive (OD)
+2026-04-26,Domingo,18:29,Noite,5,-8,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Perfect,"Normal, Normal"
+2026-04-26,Domingo,18:26,Noite,4,-7,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Sim,V-D-D,Normal,"Normal, Super Art (SA)"
+2026-04-26,Domingo,18:23,Noite,3,-6,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-D,Nenhum,"Normal, Perfect"
+2026-04-26,Domingo,18:22,Noite,2,-5,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,0,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-V-D,Normal,"Over Drive (OD), Critical Art (CA)"
+2026-04-26,Domingo,18:19,Noite,1,-4,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Mai,2026,52,2469323975,Siinon,Manon,Classic,2061,35,Similar,Grappler,C,False,Não,D-V-D,Super Art (SA),"Normal, Over Drive (OD)"
+2026-04-22,Quarta-feira,22:56,Noite,11,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-22,Quarta-feira,22:53,Noite,10,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-V-D,Normal,"Normal, Chip Damage (C)"
+2026-04-22,Quarta-feira,22:50,Noite,9,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-22,Quarta-feira,22:48,Noite,8,1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-22,Quarta-feira,22:46,Noite,7,-4,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-V-V,"Normal, Normal",Over Drive (OD)
+2026-04-22,Quarta-feira,22:43,Noite,6,-3,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Sim,V-D-D,Normal,"Perfect, Super Art (SA)"
+2026-04-22,Quarta-feira,22:41,Noite,5,-2,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-22,Quarta-feira,22:38,Noite,4,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-22,Quarta-feira,22:35,Noite,3,1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-22,Quarta-feira,22:33,Noite,2,-2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1974,0,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Sim,V-V,"Over Drive (OD), Normal",Nenhum
+2026-04-22,Quarta-feira,22:32,Noite,1,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1974,-25,3556175623,Dragon_Legend,Rashid,Classic,2218,244,Muito Superior,Rushdown,A,False,Não,D-V-D,Normal,"Normal, Over Drive (OD)"
+2026-04-21,Terça-feira,00:04,Madrugada,3,1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,1438481602,ZSF ferps,Terry,Classic,2181,182,Muito Superior,Shoto,S,False,Não,D-D,Nenhum,"Normal, Super Art (SA)"
+2026-04-21,Terça-feira,00:02,Madrugada,2,-2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1438481602,ZSF ferps,Terry,Classic,2181,182,Muito Superior,Shoto,S,False,Sim,V-V,"Perfect, Over Drive (OD)",Nenhum
+2026-04-21,Terça-feira,00:01,Madrugada,1,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,1438481602,ZSF ferps,Terry,Classic,2181,182,Muito Superior,Shoto,S,False,Não,D-V-D,Super Art (SA),"Normal, Super Art (SA)"
+2026-04-20,Segunda-feira,23:58,Noite,28,4,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,1438481602,ZSF ferps,Terry,Classic,2181,182,Muito Superior,Shoto,S,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
+2026-04-20,Segunda-feira,23:56,Noite,27,3,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,1438481602,ZSF ferps,Terry,Classic,2181,182,Muito Superior,Shoto,S,False,Sim,V-D-V,"Super Art (SA), Over Drive (OD)",Super Art (SA)
+2026-04-20,Segunda-feira,23:45,Noite,26,2,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,3944248778,HickzX,Kimberly,Classic,2025,26,Similar,Rushdown,B,False,Não,D-V-V,"Over Drive (OD), Normal",Chip Damage (C)
+2026-04-20,Segunda-feira,23:42,Noite,25,1,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,3944248778,HickzX,Kimberly,Classic,2025,26,Similar,Rushdown,B,False,Não,D-V-V,"Super Art (SA), Super Art (SA)",Over Drive (OD)
+2026-04-20,Segunda-feira,23:39,Noite,24,-2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,3944248778,HickzX,Kimberly,Classic,2025,26,Similar,Rushdown,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-20,Segunda-feira,23:37,Noite,23,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,3944248778,HickzX,Kimberly,Classic,2025,26,Similar,Rushdown,B,False,Sim,V-D-D,Normal,"Critical Art (CA), Super Art (SA)"
+2026-04-20,Segunda-feira,23:34,Noite,22,1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,3944248778,HickzX,Kimberly,Classic,2025,26,Similar,Rushdown,B,False,Não,D-D,Nenhum,"Super Art (SA), Normal"
+2026-04-20,Segunda-feira,23:30,Noite,21,-2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1365424087,DR-Wendson PC,JP,Classic,2007,8,Similar,Zoner,S,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-04-20,Segunda-feira,23:28,Noite,20,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,1365424087,DR-Wendson PC,JP,Classic,2007,8,Similar,Zoner,S,False,Não,D-D,Nenhum,"Normal, Normal"
+2026-04-20,Segunda-feira,23:25,Noite,19,4,Sala Personalizada,Player 2,Derrota ❌,2 x 0,ZSF | Winter 冬,Elena,1999,0,1365424087,DR-Wendson PC,JP,Classic,2007,8,Similar,Zoner,S,False,Não,D-D,Nenhum,"Over Drive (OD), Perfect"
+2026-04-20,Segunda-feira,23:23,Noite,18,3,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1365424087,DR-Wendson PC,JP,Classic,2007,8,Similar,Zoner,S,False,Sim,V-V,"Super Art (SA), Normal",Nenhum
+2026-04-20,Segunda-feira,23:21,Noite,17,2,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1365424087,DR-Wendson PC,JP,Classic,2007,8,Similar,Zoner,S,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-20,Segunda-feira,23:06,Noite,16,1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1377315476,Cell-PC,M. Bison,Classic,2003,4,Similar,All-Rounder,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-20,Segunda-feira,23:03,Noite,15,-1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1377315476,Cell-PC,M. Bison,Classic,2003,4,Similar,All-Rounder,A,False,Sim,V-V,"Normal, Super Art (SA)",Nenhum
+2026-04-20,Segunda-feira,23:02,Noite,14,6,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,1377315476,Cell-PC,M. Bison,Classic,2003,4,Similar,All-Rounder,A,False,Não,D-V-D,Normal,"Normal, Super Art (SA)"
+2026-04-20,Segunda-feira,22:59,Noite,13,5,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1377315476,Cell-PC,M. Bison,Classic,2003,4,Similar,All-Rounder,A,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-20,Segunda-feira,22:43,Noite,12,4,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1816632325,LF | Smokii,Luke,Classic,1825,-174,Inferior,All-Rounder,?,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-20,Segunda-feira,22:42,Noite,11,3,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1816632325,LF | Smokii,Luke,Classic,1825,-174,Inferior,All-Rounder,?,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-20,Segunda-feira,22:40,Noite,10,2,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,1816632325,LF | Smokii,Luke,Classic,1825,-174,Inferior,All-Rounder,?,False,Sim,V-D-V,"Normal, Normal",Normal
+2026-04-20,Segunda-feira,21:58,Noite,9,1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,3141027966,Rico Suave,Jamie,Classic,1771,-228,Muito Inferior,All-Rounder,D,False,Sim,V-V,"Normal, Perfect",Nenhum
+2026-04-20,Segunda-feira,21:56,Noite,8,-1,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,3141027966,Rico Suave,Jamie,Classic,1771,-228,Muito Inferior,All-Rounder,D,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-20,Segunda-feira,21:54,Noite,7,4,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,3141027966,Rico Suave,Jamie,Classic,1771,-228,Muito Inferior,All-Rounder,D,False,Sim,V-D-D,Normal,"Normal, Normal"
+2026-04-20,Segunda-feira,21:45,Noite,6,3,Sala Personalizada,Player 2,Vitória 🏆,0 x 2,ZSF | Winter 冬,Elena,1999,0,1768397125,ZSF Caio Cesar,Ken,Classic,2180,181,Muito Superior,Shoto,B,False,Sim,V-V,"Normal, Normal",Nenhum
+2026-04-20,Segunda-feira,21:43,Noite,5,2,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,1768397125,ZSF Caio Cesar,Ken,Classic,2180,181,Muito Superior,Shoto,B,False,Sim,V-D-V,"Perfect, Normal",Critical Art (CA)
+2026-04-20,Segunda-feira,21:31,Noite,4,1,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,3327973053,EviLCiD,Edmond Honda,Classic,1603,-396,Muito Inferior,Desconhecido,?,False,Sim,V-D-V,"Normal, Normal",Over Drive (OD)
+2026-04-20,Segunda-feira,21:28,Noite,3,-2,Sala Personalizada,Player 2,Vitória 🏆,1 x 2,ZSF | Winter 冬,Elena,1999,0,3327973053,EviLCiD,Edmond Honda,Classic,1603,-396,Muito Inferior,Desconhecido,?,False,Sim,V-D-V,"Perfect, Over Drive (OD)",Super Art (SA)
+2026-04-20,Segunda-feira,21:25,Noite,2,-1,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,3327973053,EviLCiD,Edmond Honda,Classic,1603,-396,Muito Inferior,Desconhecido,?,False,Não,D-V-D,Normal,"Normal, Normal"
+2026-04-20,Segunda-feira,21:11,Noite,1,0,Sala Personalizada,Player 2,Derrota ❌,2 x 1,ZSF | Winter 冬,Elena,1999,0,1363370579,ZSF Zydani,A.K.I.,Classic,2093,94,Superior,Unorthodox,B,False,Sim,V-D-D,Normal,"Over Drive (OD), Normal"
