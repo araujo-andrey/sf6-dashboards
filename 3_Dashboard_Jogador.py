@@ -3,18 +3,26 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from streamlit_sortables import sort_items
+import os
+from PIL import Image
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ⚙️  PÁGINA
 # ══════════════════════════════════════════════════════════════════════════════
 JOGADOR_ID = "4125616529"
-ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}.csv"
-st.set_page_config(page_title="SF6 – Análise de Desempenho", layout="wide", page_icon="❄️")
+ARQUIVO    = f"SF6_historico_LIMPO_{JOGADOR_ID}.parquet"
+
+st.set_page_config(
+    page_title="SF6 – Análise de Desempenho",
+    layout="wide",
+    page_icon="❄️"
+)
 st.title("📊 Análise de Desempenho – Street Fighter 6")
 
 with st.expander("📌 Informações sobre a Base de Dados", expanded=False):
     st.markdown("""
-    * ⚠️ **Limite:** A Capcom disponibiliza apenas as últimas 100 partidas por modo de jogo: **Ranqueada, Casual, Sala Personalizada e Battle Hub**.
+    * ⚠️ **Limite:** A Capcom disponibiliza apenas as últimas 100 partidas por modo de jogo.
     * 🔄 **Coleta:** Dados extraídos periodicamente via script de automação.
     * 📅 **Período coberto:** A partir de **20/04/2026**.
     * 🔌 **Rage Quit:** Partidas por desconexão geralmente não são registradas.
@@ -30,13 +38,13 @@ ARQUETIPOS_PADRAO = {
     "All-Rounder": ["Ryu","Ken","Akuma","Terry","Ed","Mai","Luke","Chun-Li","Sagat"],
     "Rushdown":    ["Cammy","Juri","Kimberly","Rashid","Dee Jay","Jamie","M. Bison"],
     "Grappler":    ["Zangief","Marisa","Manon","Lily","Alex"],
-    "Zoner":       ["Guile","Dhalsim","JP"],
+    "Zoner":       ["Guile","Dhalsim","JP", "Ingrid"],
     "Unorthodox":  ["Elena","A.K.I.","Blanka","Edmond Honda","C. Viper"],
 }
 
 TIER_PADRAO = {
     "S+": ["JP","Ed"],
-    "S":  ["Blanka","Sagat","M. Bison","Terry","Mai","Akuma","Guile","Rashid","C. Viper"],
+    "S":  ["Blanka","Sagat","M. Bison","Terry","Mai","Akuma","Guile","Rashid","C. Viper", "Ingrid"],
     "A":  ["Dee Jay","Ryu","Kimberly","Juri","Dhalsim","Ken","Cammy","Zangief","Alex"],
     "B":  ["Chun-Li","Jamie","Luke","Elena","A.K.I."],
     "C":  ["Manon","Lily","Edmond Honda"],
@@ -50,47 +58,45 @@ TODOS_CHARS_SF6 = sorted([
     "A.K.I.", "Akuma", "Alex", "Blanka", "Cammy", "Chun-Li", "C. Viper",
     "Dee Jay", "Dhalsim", "Ed", "Edmond Honda", "Elena", "Guile", "Jamie",
     "JP", "Juri", "Ken", "Kimberly", "Lily", "Luke", "M. Bison", "Mai",
-    "Manon", "Marisa", "Rashid", "Ryu", "Sagat", "Terry", "Zangief",
+    "Manon", "Marisa", "Rashid", "Ryu", "Sagat", "Terry", "Zangief", "Ingrid"
 ])
 
 CORES_TIER = {
-    "S+": "#8C00FF",
-    "S":  "#FF0000",
-    "A":  "#FF9100",
-    "B":  "#DEEE05",
-    "C":  "#63F52A",
-    "D":  "#308F0B",
-    "E":  "#2C3E50",
+    "S+": "#8C00FF", "S": "#FF0000", "A": "#FF9100",
+    "B":  "#DEEE05", "C": "#63F52A", "D": "#308F0B", "E": "#2C3E50",
 }
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ⚙️  SESSION STATE — inicializa configs padrão
+# ⚙️  SESSION STATE
 # ══════════════════════════════════════════════════════════════════════════════
 def init_state():
-    if 'arq_config'    not in st.session_state:
-        st.session_state.arq_config  = {k: list(v) for k,v in ARQUETIPOS_PADRAO.items()}
-    if 'tier_config'   not in st.session_state:
-        st.session_state.tier_config = {k: list(v) for k,v in TIER_PADRAO.items()}
-    if 'wr_verde'      not in st.session_state: st.session_state.wr_verde   = 55
-    if 'wr_amarelo'    not in st.session_state: st.session_state.wr_amarelo = 45
-    if 'lim_muito_inf' not in st.session_state: st.session_state.lim_muito_inf = -200
-    if 'lim_inf'       not in st.session_state: st.session_state.lim_inf       = -50
-    if 'lim_sup'       not in st.session_state: st.session_state.lim_sup       =  50
-    if 'lim_muito_sup' not in st.session_state: st.session_state.lim_muito_sup =  100
-    if 'cols_ativas'   not in st.session_state:
-        st.session_state.cols_ativas = {
-            "Tier": True, "Arquétipo": True, "Nível": True, "Mirror Match": True
-        }
+    defaults = {
+        'arq_config':    {k: list(v) for k,v in ARQUETIPOS_PADRAO.items()},
+        'tier_config':   {k: list(v) for k,v in TIER_PADRAO.items()},
+        'wr_verde':      55,
+        'wr_amarelo':    45,
+        'lim_muito_inf': -200,
+        'lim_inf':       -50,
+        'lim_sup':        50,
+        'lim_muito_sup':  100,
+        'cols_ativas': {
+            "Tier": True, "Arquétipo": True,
+            "Nível": True, "Mirror Match": True
+        },
+    }
+    for k, v in defaults.items():
+        if k not in st.session_state:
+            st.session_state[k] = v
 
 init_state()
 
 # ══════════════════════════════════════════════════════════════════════════════
-# 📥  CARREGAR DADOS  ← movido para antes das configurações
+# 📥  CARREGAR DADOS
 # ══════════════════════════════════════════════════════════════════════════════
 @st.cache_data
-def carregar_dados():
+def carregar_dados(arquivo):
     try:
-        df = pd.read_csv(ARQUIVO)
+        df = pd.read_parquet(arquivo)
         df['Data_Datetime']         = pd.to_datetime(df['Data'])
         df['Oponente_MR']           = pd.to_numeric(df['Oponente_MR'],           errors='coerce').fillna(0).astype(int)
         df['Meu_MR']                = pd.to_numeric(df['Meu_MR'],                errors='coerce').fillna(0).astype(int)
@@ -103,15 +109,88 @@ def carregar_dados():
     except FileNotFoundError:
         return None
 
-df_base = carregar_dados()
+df_base = carregar_dados(ARQUIVO)
 if df_base is None:
     st.error(f"Arquivo '{ARQUIVO}' não encontrado. Execute o script de limpeza primeiro.")
     st.stop()
 
 nome_jogador = df_base['Meu_Nome'].iloc[0]
 
+# ── MR por personagem — calculado direto do parquet, sem arquivo auxiliar ─────
+@st.cache_data
+def calcular_mr_por_char(arquivo):
+    df = pd.read_parquet(arquivo)
+    df_rank = df[df['Tipo Partida (Jogo)'] == 'Ranqueada'].copy()
+    df_rank['Meu_MR'] = pd.to_numeric(df_rank['Meu_MR'], errors='coerce').fillna(0).astype(int)
+    df_rank['Data_Datetime'] = pd.to_datetime(df_rank['Data'])
+    df_rank = df_rank.sort_values('Data_Datetime', ascending=False)
+    mr_chars = (
+        df_rank.groupby('Meu_Personagem')
+        .agg(MR_Atual=('Meu_MR','first'), MR_Maximo=('Meu_MR','max'), Partidas=('Meu_MR','count'))
+        .reset_index()
+        .sort_values('MR_Atual', ascending=False)
+    )
+    # Só mostra personagens com MR > 0 (são Masters) — derivado automaticamente
+    return mr_chars[mr_chars['MR_Atual'] > 0]
+
+df_mr_chars = calcular_mr_por_char(ARQUIVO)
+
 # ══════════════════════════════════════════════════════════════════════════════
-# ⚙️  PAINEL DE CONFIGURAÇÕES
+# 🔧  FUNÇÕES AUXILIARES
+# ══════════════════════════════════════════════════════════════════════════════
+def semaforo(taxa):
+    VERDE   = st.session_state.wr_verde
+    AMARELO = st.session_state.wr_amarelo
+    if taxa >= VERDE:  return "🟢"
+    if taxa > AMARELO: return "🟡"
+    return "🔴"
+
+def classificar_nivel(d):
+    mi = st.session_state.lim_muito_inf; i  = st.session_state.lim_inf
+    s  = st.session_state.lim_sup;       ms = st.session_state.lim_muito_sup
+    if d <= mi: return "Muito Inferior"
+    elif d <= i: return "Inferior"
+    elif d < s:  return "Similar"
+    elif d < ms: return "Superior"
+    else:        return "Muito Superior"
+
+def wr(sub):
+    t = len(sub)
+    return (sub['Meu_Resultado'] == "Vitória 🏆").sum() / t * 100 if t > 0 else 0.0
+
+def tabela_wr(df_grp, col_group, sort_by='WR_num', ascending=False):
+    t = df_grp.groupby(col_group, observed=True).agg(
+        Lutas    =('Meu_Resultado', 'count'),
+        Vitórias =('Meu_Resultado', lambda x: (x == "Vitória 🏆").sum()),
+        Derrotas =('Meu_Resultado', lambda x: (x == "Derrota ❌").sum())
+    ).reset_index()
+    t['WR_num'] = t['Vitórias'] / t['Lutas'] * 100
+    t['']       = t['WR_num'].apply(semaforo)
+    t['WR (%)'] = t['WR_num'].apply(lambda x: f"{x:.1f}%")
+    return t.sort_values(sort_by, ascending=ascending)
+
+def aviso_importante(texto):
+    """Faixa vermelha discreta para avisos informativos importantes."""
+    st.markdown(
+        f"""
+        <div style="
+            background: rgba(230, 57, 70, 0.12);
+            border-left: 4px solid #E63946;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin: 6px 0 14px 0;
+            color: #ECF0F1;
+            font-size: 13px;
+            line-height: 1.5;
+        ">
+            ⚠️ {texto}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ⚙️  PAINEL DE CONFIGURAÇÕES  (mantido aqui — será movido para pages/ depois)
 # ══════════════════════════════════════════════════════════════════════════════
 with st.expander("⚙️ Configurações — Personalize tudo aqui", expanded=False):
 
@@ -127,29 +206,24 @@ with st.expander("⚙️ Configurações — Personalize tudo aqui", expanded=Fa
     with tab_semaforo:
         st.markdown("Define quando uma taxa de vitória é considerada **boa**, **média** ou **ruim**.")
         st.write("")
-
-        verde_atual    = st.session_state.wr_verde
-        vermelho_atual = st.session_state.wr_amarelo
-
         cs1, cs2, cs3 = st.columns(3)
         with cs1:
-            st.markdown("🟢 **Boa — Win Rate ≥ (maior ou igual a)**")
+            st.markdown("🟢 **Boa — Win Rate ≥**")
             novo_verde = st.number_input("Verde (%)", min_value=1, max_value=100,
-                                         value=verde_atual, step=1,
+                                         value=st.session_state.wr_verde, step=1,
                                          label_visibility="collapsed")
         with cs3:
-            st.markdown("🔴 **Ruim — Win Rate < (menor ou igual a)**")
+            st.markdown("🔴 **Ruim — Win Rate <**")
             novo_vermelho = st.number_input("Vermelho (%)", min_value=1, max_value=100,
-                                            value=vermelho_atual, step=1,
+                                            value=st.session_state.wr_amarelo, step=1,
                                             label_visibility="collapsed")
         with cs2:
             st.markdown("🟡 **Média — automático**")
             st.markdown(f"### Entre {novo_vermelho}% e {novo_verde}%")
-            st.caption("(calculado automaticamente entre o verde e o vermelho)")
 
         st.write("")
         if novo_vermelho >= novo_verde:
-            st.error("⚠️ O limite do vermelho precisa ser menor que o limite do verde.")
+            st.error("⚠️ O limite do vermelho precisa ser menor que o verde.")
         else:
             if st.button("💾 Salvar indicador de Win Rate"):
                 st.session_state.wr_verde   = novo_verde
@@ -158,63 +232,36 @@ with st.expander("⚙️ Configurações — Personalize tudo aqui", expanded=Fa
 
     # ── Faixas de nível ───────────────────────────────────────────────────────
     with tab_nivel:
-        st.markdown(f"Compara e classifica o nível do jogador baseado na diferença de MR com **{nome_jogador}** antes da partida.")
-        st.caption(f"Diferença de MR = MR do Oponente − MR do {nome_jogador}. Se negativo, o oponente é inferior.")
+        st.markdown(f"Classifica o nível do oponente pela diferença de MR com **{nome_jogador}**.")
         st.write("")
-
-        mi_atual = st.session_state.lim_muito_inf
-        i_atual  = st.session_state.lim_inf
-        ms_atual = st.session_state.lim_muito_sup
-        s_atual  = st.session_state.lim_sup
-
         cn1, cn2, cn3, cn4, cn5 = st.columns(5)
         with cn1:
             st.markdown("**🔵 Muito Inferior**")
-            st.caption("Diferença ≤ este valor")
-            n_mi = st.number_input("MI", value=mi_atual, step=25, label_visibility="collapsed")
+            n_mi = st.number_input("MI", value=st.session_state.lim_muito_inf, step=25, label_visibility="collapsed")
         with cn2:
             st.markdown("**🟢 Inferior**")
-            st.caption("Entre Muito Inf. e este valor")
-            n_i = st.number_input("I", value=i_atual, step=25, label_visibility="collapsed")
+            n_i = st.number_input("I", value=st.session_state.lim_inf, step=25, label_visibility="collapsed")
         with cn4:
             st.markdown("**🟠 Superior**")
-            st.caption("Entre Similar e este valor")
-            n_ms_sup = st.number_input("SUP", value=s_atual, step=25, label_visibility="collapsed")
+            n_ms_sup = st.number_input("SUP", value=st.session_state.lim_sup, step=25, label_visibility="collapsed")
         with cn5:
             st.markdown("**🔴 Muito Superior**")
-            st.caption("Diferença ≥ este valor")
-            n_ms = st.number_input("MS", value=ms_atual, step=25, label_visibility="collapsed")
+            n_ms = st.number_input("MS", value=st.session_state.lim_muito_sup, step=25, label_visibility="collapsed")
         with cn3:
             st.markdown("**🟡 Similar — automático**")
             st.markdown(f"### Entre {n_i + 1} e {n_ms_sup - 1}")
-            st.caption("(calculado automaticamente entre Inferior e Superior)")
 
         st.write("")
+        erros_nivel = []
+        if n_mi >= n_i:       erros_nivel.append("❌ Muito Inferior precisa ser menor que Inferior.")
+        if n_i >= n_ms_sup:   erros_nivel.append("❌ Inferior precisa ser menor que Superior.")
+        if n_ms_sup >= n_ms:  erros_nivel.append("❌ Superior precisa ser menor que Muito Superior.")
+        if n_ms_sup <= 0 or n_ms <= 0: erros_nivel.append("❌ Superior e Muito Superior precisam ser positivos.")
+        if n_mi >= 0 or n_i >= 0:      erros_nivel.append("❌ Muito Inferior e Inferior precisam ser negativos.")
 
-        erros = []
-        if n_mi >= n_i:
-            erros.append("❌ **Muito Inferior** precisa ser menor que **Inferior**.")
-        if n_i >= n_ms_sup:
-            erros.append("❌ **Inferior** precisa ser menor que **Superior**.")
-        if n_ms_sup >= n_ms:
-            erros.append("❌ **Superior** precisa ser menor que **Muito Superior**.")
-        if n_ms_sup <= 0 or n_ms <= 0:
-            erros.append("❌ **Superior** e **Muito Superior** precisam ser positivos.")
-        if n_mi >= 0 or n_i >= 0:
-            erros.append("❌ **Muito Inferior** e **Inferior** precisam ser negativos.")
-
-        if erros:
-            for e in erros:
-                st.error(e)
-        else:
-            st.info(
-                f"🔵 Muito Inferior: ≤ {n_mi} · "
-                f"🟢 Inferior: {n_mi+1} a {n_i} · "
-                f"🟡 Similar: {n_i+1} a {n_ms_sup-1} · "
-                f"🟠 Superior: {n_ms_sup} a {n_ms-1} · "
-                f"🔴 Muito Superior: ≥ {n_ms}"
-            )
-            if st.button("💾 Salvar classificação do nível dos jogadores"):
+        for e in erros_nivel: st.error(e)
+        if not erros_nivel:
+            if st.button("💾 Salvar faixas de nível"):
                 st.session_state.lim_muito_inf = n_mi
                 st.session_state.lim_inf       = n_i
                 st.session_state.lim_sup       = n_ms_sup
@@ -222,90 +269,51 @@ with st.expander("⚙️ Configurações — Personalize tudo aqui", expanded=Fa
                 st.success("✅ Faixas atualizadas!")
                 st.rerun()
 
-    # ── Arquétipos (drag-and-drop) ────────────────────────────────────────────
+    # ── Arquétipos ────────────────────────────────────────────────────────────
     with tab_arq:
-        st.markdown("**Arraste os personagens entre os arquétipos.** Clique em Salvar para aplicar.")
-        st.write("")
-        arq_input = [
-            {"header": arq, "items": list(pers)}
-            for arq, pers in st.session_state.arq_config.items()
-        ]
+        st.markdown("**Arraste os personagens entre os arquétipos.**")
+        arq_input    = [{"header": arq, "items": list(pers)} for arq, pers in st.session_state.arq_config.items()]
         arq_resultado = sort_items(arq_input, multi_containers=True, key="sort_arq")
-        st.write("")
         if st.button("💾 Salvar arquétipos"):
-            novo_arq = {bloco["header"]: bloco["items"] for bloco in arq_resultado}
-            st.session_state.arq_config = novo_arq
+            st.session_state.arq_config = {b["header"]: b["items"] for b in arq_resultado}
             st.success("✅ Arquétipos atualizados!")
             st.rerun()
+        sem_arq = [p for p in TODOS_PERSONAGENS if not any(p in v for v in st.session_state.arq_config.values())]
+        if sem_arq: st.warning(f"⚠️ Sem arquétipo: **{', '.join(sem_arq)}**")
 
-        sem_arq = [p for p in TODOS_PERSONAGENS
-                   if not any(p in v for v in st.session_state.arq_config.values())]
-        if sem_arq:
-            st.warning(f"⚠️ Sem arquétipo: **{', '.join(sem_arq)}** → aparecerão como 'Desconhecido'.")
-
-    # ── Tier List (drag-and-drop) ─────────────────────────────────────────────
+    # ── Tier List ─────────────────────────────────────────────────────────────
     with tab_tier:
-        st.markdown("**Arraste os personagens entre os tiers.** Clique em Salvar para aplicar.")
+        st.markdown("**Arraste os personagens entre os tiers.**")
         st.caption("Meta de referência: pós-patch abril 2026 (Tierlist feita pelo Winter)")
-        st.write("")
-        tier_input = [
-            {"header": f"Tier {tier}", "items": list(pers)}
-            for tier, pers in st.session_state.tier_config.items()
-        ]
+        tier_input    = [{"header": f"Tier {t}", "items": list(p)} for t, p in st.session_state.tier_config.items()]
         tier_resultado = sort_items(tier_input, multi_containers=True, key="sort_tier")
-        st.write("")
         if st.button("💾 Salvar tier list"):
-            novo_tier = {
-                bloco["header"].replace("Tier ", ""): bloco["items"]
-                for bloco in tier_resultado
-            }
-            st.session_state.tier_config = novo_tier
+            st.session_state.tier_config = {b["header"].replace("Tier ",""): b["items"] for b in tier_resultado}
             st.success("✅ Tier list atualizada!")
             st.rerun()
-
-        sem_tier = [p for p in TODOS_PERSONAGENS
-                    if not any(p in v for v in st.session_state.tier_config.values())]
-        if sem_tier:
-            st.warning(f"⚠️ Sem tier: **{', '.join(sem_tier)}** → aparecerão como '?'.")
+        sem_tier = [p for p in TODOS_PERSONAGENS if not any(p in v for v in st.session_state.tier_config.values())]
+        if sem_tier: st.warning(f"⚠️ Sem tier: **{', '.join(sem_tier)}**")
 
     # ── Colunas ativas ────────────────────────────────────────────────────────
     with tab_cols:
-        st.markdown("Ative ou desative as classificações que aparecem no dashboard e na tabela final.")
-        st.write("")
-        cc1,cc2,cc3,cc4 = st.columns(4)
+        st.markdown("Ative ou desative classificações no dashboard.")
+        cc1, cc2, cc3, cc4 = st.columns(4)
         nova_cols = {}
         with cc1: nova_cols["Tier"]         = st.toggle("🏆 Tier List",    value=st.session_state.cols_ativas.get("Tier", True))
         with cc2: nova_cols["Arquétipo"]    = st.toggle("🥋 Arquétipos",   value=st.session_state.cols_ativas.get("Arquétipo", True))
         with cc3: nova_cols["Nível"]        = st.toggle("🎯 Nível",        value=st.session_state.cols_ativas.get("Nível", True))
         with cc4: nova_cols["Mirror Match"] = st.toggle("🪞 Mirror Match", value=st.session_state.cols_ativas.get("Mirror Match", True))
-        st.write("")
-        if st.button("💾 Salvar preferências de colunas"):
+        if st.button("💾 Salvar preferências"):
             st.session_state.cols_ativas = nova_cols
             st.success("✅ Preferências salvas!")
             st.rerun()
 
-# Monta dicionários ativos
+# ── Mapas ativos ──────────────────────────────────────────────────────────────
 arq_map  = {p: arq  for arq,  lista in st.session_state.arq_config.items()  for p in lista}
 tier_map = {p: tier for tier, lista in st.session_state.tier_config.items() for p in lista}
 cols_on  = st.session_state.cols_ativas
-VERDE    = st.session_state.wr_verde
-AMARELO  = st.session_state.wr_amarelo
 
-def semaforo(taxa):
-    if taxa >= VERDE:  return "🟢"
-    if taxa > AMARELO: return "🟡"
-    return "🔴"
-
-def classificar_nivel(d):
-    mi = st.session_state.lim_muito_inf; i = st.session_state.lim_inf
-    s  = st.session_state.lim_sup;       ms= st.session_state.lim_muito_sup
-    if d<=mi:  return "Muito Inferior"
-    elif d<=i: return "Inferior"
-    elif d<s:  return "Similar"
-    elif d<ms: return "Superior"
-    else:      return "Muito Superior"
-
-# Recalcula colunas dinâmicas com configs atuais
+# Recalcula colunas dinâmicas
 df_base['Arquetipo_Oponente'] = df_base['Oponente_Personagem'].map(arq_map).fillna("Desconhecido")
 df_base['Tier_Oponente']      = df_base['Oponente_Personagem'].map(tier_map).fillna("?")
 df_base['Nivel_Oponente']     = df_base['Diferenca_MR'].apply(classificar_nivel)
@@ -324,33 +332,29 @@ filtro_meu_char  = st.sidebar.multiselect("Meu Personagem:",         options=lis
 lista_op_chars   = sorted(df_base['Oponente_Personagem'].dropna().unique())
 filtro_op_char   = st.sidebar.multiselect("Personagem do Oponente:", options=lista_op_chars,   default=[], placeholder="Todos")
 
+filtro_arq = []
 if cols_on.get("Arquétipo"):
     lista_arq  = sorted(df_base['Arquetipo_Oponente'].dropna().unique())
     filtro_arq = st.sidebar.multiselect("Arquétipo do Oponente:", options=lista_arq, default=[], placeholder="Todos")
-else:
-    filtro_arq = []
 
+filtro_tier = []
 if cols_on.get("Tier"):
     filtro_tier = st.sidebar.multiselect("Tier do Oponente:", options=ORDEM_TIER, default=[], placeholder="Todos")
-else:
-    filtro_tier = []
 
 lista_modos  = sorted(df_base['Tipo Partida (Jogo)'].dropna().unique())
 filtro_modo  = st.sidebar.multiselect("Modo de Jogo:", options=lista_modos, default=[], placeholder="Todos")
 
+filtro_nivel = []
 if cols_on.get("Nível"):
     filtro_nivel = st.sidebar.multiselect("Nível do Oponente:", options=ORDEM_NIVEL, default=[], placeholder="Todos")
-else:
-    filtro_nivel = []
 
 filtro_resultado = st.sidebar.multiselect("Resultado:",
     options=["Vitória 🏆","Derrota ❌","Empate ➖"], default=[], placeholder="Todos")
 
+filtro_mirror = "Todos"
 if cols_on.get("Mirror Match"):
     filtro_mirror = st.sidebar.selectbox("Mirror Match:",
         options=["Todos","Apenas Mirrors","Excluir Mirrors"], index=0)
-else:
-    filtro_mirror = "Todos"
 
 filtro_mr = st.sidebar.number_input("MR do Oponente (Mínimo):", min_value=0, max_value=5000, value=0, step=50)
 
@@ -359,14 +363,10 @@ filtro_oponente = st.sidebar.selectbox("Oponente Específico:",
     options=[None]+list(lista_oponentes), index=0,
     format_func=lambda x: "— Todos —" if x is None else x)
 
-min_date = df_base['Data_Datetime'].min().date()
-max_date = df_base['Data_Datetime'].max().date()
+min_date    = df_base['Data_Datetime'].min().date()
+max_date    = df_base['Data_Datetime'].max().date()
 filtro_data = st.sidebar.date_input("Intervalo de Data:", value=[], min_value=min_date, max_value=max_date)
-st.sidebar.info("📅 1º clique = início · 2º clique = fim")
-
-if st.sidebar.button("🔄 Atualizar Dados"):
-    st.cache_data.clear()
-    st.rerun()
+st.sidebar.caption("📅 1º clique = início · 2º clique = fim")
 
 # ══════════════════════════════════════════════════════════════════════════════
 # 🔄  APLICAR FILTROS
@@ -381,32 +381,25 @@ if filtro_nivel:     df_f = df_f[df_f['Nivel_Oponente'].isin(filtro_nivel)]
 if filtro_resultado: df_f = df_f[df_f['Meu_Resultado'].isin(filtro_resultado)]
 if filtro_mr > 0:    df_f = df_f[df_f['Oponente_MR'] >= filtro_mr]
 if filtro_oponente:  df_f = df_f[df_f['Oponente_Nome'] == filtro_oponente]
-if filtro_mirror == "Apenas Mirrors":  df_f = df_f[df_f['Mirror_Match']==True]
-if filtro_mirror == "Excluir Mirrors": df_f = df_f[df_f['Mirror_Match']==False]
-if len(filtro_data)==2:
-    df_f = df_f[(df_f['Data_Datetime'].dt.date>=filtro_data[0])&(df_f['Data_Datetime'].dt.date<=filtro_data[1])]
-elif len(filtro_data)==1:
-    df_f = df_f[df_f['Data_Datetime'].dt.date==filtro_data[0]]
+if filtro_mirror == "Apenas Mirrors":  df_f = df_f[df_f['Mirror_Match'] == True]
+if filtro_mirror == "Excluir Mirrors": df_f = df_f[df_f['Mirror_Match'] == False]
+if len(filtro_data) == 2:
+    df_f = df_f[
+        (df_f['Data_Datetime'].dt.date >= filtro_data[0]) &
+        (df_f['Data_Datetime'].dt.date <= filtro_data[1])
+    ]
+elif len(filtro_data) == 1:
+    df_f = df_f[df_f['Data_Datetime'].dt.date == filtro_data[0]]
+
+# ── Guarda única ──────────────────────────────────────────────────────────────
+if df_f.empty:
+    st.warning("⚠️ Nenhuma partida encontrada para os filtros selecionados.")
+    st.stop()
 
 total    = len(df_f)
-vitorias = (df_f['Meu_Resultado']=="Vitória 🏆").sum()
-derrotas = (df_f['Meu_Resultado']=="Derrota ❌").sum()
-win_rate = vitorias/total*100 if total>0 else 0
-
-def wr(sub):
-    t=len(sub); return (sub['Meu_Resultado']=="Vitória 🏆").sum()/t*100 if t>0 else 0.0
-
-def tabela_wr(df_grp, col_group, sort_by='WR_num', ascending=False):
-    t = df_grp.groupby(col_group, observed=True).agg(
-        Lutas=('Meu_Resultado','count'),
-        Vitórias=('Meu_Resultado', lambda x:(x=="Vitória 🏆").sum()),
-        Derrotas=('Meu_Resultado', lambda x:(x=="Derrota ❌").sum())
-    ).reset_index()
-    t['WR_num'] = t['Vitórias']/t['Lutas']*100
-    t['']       = t['WR_num'].apply(semaforo)
-    t['WR (%)'] = t['WR_num'].apply(lambda x:f"{x:.1f}%")
-    t = t.sort_values(sort_by, ascending=ascending)
-    return t  # mantém WR_num para ordenação correta no st.dataframe via column_config
+vitorias = (df_f['Meu_Resultado'] == "Vitória 🏆").sum()
+derrotas = (df_f['Meu_Resultado'] == "Derrota ❌").sum()
+win_rate = vitorias / total * 100 if total > 0 else 0
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 1 — VISÃO GERAL
@@ -414,68 +407,285 @@ def tabela_wr(df_grp, col_group, sort_by='WR_num', ascending=False):
 st.markdown("---")
 st.markdown("### 🏆 Visão Geral")
 
-# MR máximo histórico geral (todas as partidas ranqueadas, independente de personagem)
-df_rank_global = df_base[df_base['Tipo Partida (Jogo)'] == 'Ranqueada']
+df_rank_global  = df_base[df_base['Tipo Partida (Jogo)'] == 'Ranqueada']
 mr_maximo_geral = int(df_rank_global['Meu_MR'].max()) if len(df_rank_global) > 0 else 0
+jogadores_unicos = df_f['Oponente_ID'].nunique()
 
-# Jogadores únicos enfrentados
-jogadores_unicos = df_f['Oponente_ID'].nunique() if 'Oponente_ID' in df_f.columns else df_f['Oponente_Nome'].nunique()
+k1, k2, k3, k4, k5 = st.columns(5)
+k1.metric("MR Máximo Atingido",            f"{mr_maximo_geral:,}".replace(",","."),
+          help="Maior MR registrado em qualquer rankeada, independente do personagem.")
+k2.metric("Jogadores Diferentes Enfrentados", f"{jogadores_unicos:,}".replace(",","."),
+          help="Quantidade de oponentes distintos enfrentados no recorte atual.")
+k3.metric("Total de Partidas",             f"{total:,}".replace(",","."))
+k4.metric("Vitórias",                      f"{vitorias:,}".replace(",","."))
+k5.metric("Win Rate Geral",                f"{win_rate:.1f}%")
 
-k1,k2,k3,k4,k5 = st.columns(5)
-k1.metric("MR Máximo Atingido",    f"{mr_maximo_geral:,}".replace(",","."),
-          help="Maior MR já registrado em qualquer partida ranqueada, independente do personagem.")
-k2.metric("Total de Partidas",     f"{total:,}".replace(",","."))
-k3.metric("Vitórias",              f"{vitorias:,}".replace(",","."))
-k4.metric("Win Rate Geral",        f"{win_rate:.1f}%")
-k5.metric("Jogadores Únicos Enfrentados", f"{jogadores_unicos:,}".replace(",","."))
+# ── MR por personagem — derivado automaticamente, só Masters ─────────────────
+if not df_mr_chars.empty:
+    st.write("")
+    st.markdown("##### 🏅 MR por Personagem na Temporada Atual")
+    cols_mr = st.columns(min(len(df_mr_chars), 6))  # máximo 6 colunas
+    for i, (_, row) in enumerate(df_mr_chars.iterrows()):
+        if i >= 6: break
+        cols_mr[i].metric(
+            label=row['Meu_Personagem'],
+            value=f"{int(row['MR_Atual']):,}".replace(",","."),
+            delta=f"Máx: {int(row['MR_Maximo']):,}".replace(",","."),
+            delta_color="off",
+            help=f"{int(row['Partidas'])} partidas ranqueadas registradas"
+        )
 
-# Tabela de MR por personagem (arquivo auxiliar gerado pela limpeza)
-ARQUIVO_MR = f"SF6_MR_por_personagem_{JOGADOR_ID}.csv"
-PERSONAGENS_MASTER = ["Elena", "Mai", "Cammy"]  # ← ajuste conforme necessário
+# ── Gráficos de distribuição ──────────────────────────────────────────────────
+if total > 0:
+    cores_res = {"Vitória 🏆":"#119c0c","Derrota ❌":"#b63a24","Empate ➖":"#2f45c4"}
+    df_res  = df_f['Meu_Resultado'].value_counts().reset_index()
+    df_res.columns = ['Resultado','Quantidade']
+    df_mods = df_f['Tipo Partida (Jogo)'].value_counts().reset_index()
+    df_mods.columns = ['Modo','Quantidade']
 
-try:
-    df_mr_chars = pd.read_csv(ARQUIVO_MR)
-    # Filtra apenas personagens Master
-    df_mr_master = df_mr_chars[df_mr_chars['Meu_Personagem'].isin(PERSONAGENS_MASTER)].copy()
-    if not df_mr_master.empty:
-        st.write("")
-        st.markdown("##### 🏅 MR por Personagem na Temporada Atual")
-        cols_mr = st.columns(len(df_mr_master))
-        for i, (_, row) in enumerate(df_mr_master.iterrows()):
-            cols_mr[i].metric(
-                label=f"{row['Meu_Personagem']}",
-                value=f"{int(row['MR_Atual']):,}".replace(",","."),
-                delta=f"Máx: {int(row['MR_Maximo']):,}".replace(",","."),
-                delta_color="off",
-                help=f"{int(row['Partidas'])} partidas ranqueadas registradas"
-            )
-except FileNotFoundError:
-    st.caption("💡 Execute o script de limpeza para ver o MR por personagem.")
-
-if total>0:
-    cores_res={"Vitória 🏆":"#119c0c","Derrota ❌":"#b63a24","Empate ➖":"#2f45c4"}
-    df_res  = df_f['Meu_Resultado'].value_counts().reset_index(); df_res.columns=['Resultado','Quantidade']
-    df_mods = df_f['Tipo Partida (Jogo)'].value_counts().reset_index(); df_mods.columns=['Modo','Quantidade']
-    col1,col2=st.columns(2)
+    col1, col2 = st.columns(2)
     with col1:
-        fig=px.pie(df_res,values='Quantidade',names='Resultado',color='Resultado',
-                   color_discrete_map=cores_res,title="Distribuição de Resultados",
-                   template="plotly_dark",height=300)
-        fig.update_traces(textinfo='percent+value',textfont_color="white",
-                          marker_line_color='white',marker_line_width=0.5,
+        fig = px.pie(df_res, values='Quantidade', names='Resultado', color='Resultado',
+                     color_discrete_map=cores_res, title="Distribuição de Resultados",
+                     template="plotly_dark", height=300)
+        fig.update_traces(textinfo='percent+value', textfont_color="white",
+                          marker_line_color='white', marker_line_width=0.5,
                           hovertemplate="<b>%{label}</b><br>%{value} partidas<extra></extra>")
         fig.update_layout(margin=dict(l=10,r=10,t=40,b=10),
-                          legend=dict(orientation="h",y=-0.15,x=0.5,xanchor="center"))
-        st.plotly_chart(fig,use_container_width=True)
+                          legend=dict(orientation="h", y=-0.15, x=0.5, xanchor="center"))
+        st.plotly_chart(fig, use_container_width=True)
     with col2:
-        fig2=px.pie(df_mods,values='Quantidade',names='Modo',
-                    title="Distribuição por Modo",template="plotly_dark",height=300)
-        fig2.update_traces(textinfo='percent+label',textfont_color="white",
-                           marker_line_color='white',marker_line_width=0.5,
+        fig2 = px.pie(df_mods, values='Quantidade', names='Modo',
+                      title="Distribuição por Modo", template="plotly_dark", height=300)
+        fig2.update_traces(textinfo='percent+label', textfont_color="white",
+                           marker_line_color='white', marker_line_width=0.5,
                            hovertemplate="<b>%{label}</b><br>%{value} partidas<extra></extra>")
-        fig2.update_layout(margin=dict(l=10,r=10,t=40,b=10),showlegend=False)
-        st.plotly_chart(fig2,use_container_width=True)
+        fig2.update_layout(margin=dict(l=10,r=10,t=40,b=10), showlegend=False)
+        st.plotly_chart(fig2, use_container_width=True)
 
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 🎨 CORES CANÔNICAS POR PERSONAGEM
+# Baseadas nas cores predominantes dos personagens no jogo
+# ══════════════════════════════════════════════════════════════════════════════
+CORES_PERSONAGENS = {
+    "Ryu":          "#4A90D9",   # azul — gi azul clássico
+    "Ken":          "#E8A020",   # dourado/laranja — cabelo loiro e gi vermelho
+    "Akuma":        "#8B0000",   # vermelho escuro — aura sombria
+    "Terry":        "#E74C3C",   # vermelho — jaqueta vermelha icônica
+    "Ed":           "#F1C40F",   # amarelo — cabelo loiro e energia dourada
+    "Cammy":        "#2ECC71",   # verde — roupa verde militar
+    "Juri":         "#9B59B6",   # roxo — energy roxo e personalidade
+    "Kimberly":     "#FF6B35",   # laranja — spray e energia
+    "Rashid":       "#27AE60",   # verde esmeralda — roupa e turbilhão
+    "Dee Jay":      "#F39C12",   # amarelo vivo — energia positiva jamaicana
+    "Mai":          "#C0392B",   # vermelho — kimono vermelho
+    "Zangief":      "#E74C3C",   # vermelho — roupa de luta vermelha
+    "Marisa":       "#D4AC0D",   # dourado — elmo dourado grego
+    "Manon":        "#85C1E9",   # azul claro — elegância francesa
+    "Lily":         "#8B4513",   # marrom — raízes nativas americanas
+    "Alex":         "#1ABC9C",   # verde água — roupa e personalidade
+    "Guile":        "#2980B9",   # azul marinho — uniforme militar
+    "Dhalsim":      "#E67E22",   # laranja — yogi e fogo
+    "JP":           "#6C3483",   # roxo escuro — aura misteriosa
+    "Luke":         "#F0B27A",   # bege/areia — cabelo e personalidade americana
+    "Chun-Li":      "#3498DB",   # azul — roupa azul icônica
+    "Jamie":        "#1A5276",   # azul escuro — roupa e baijiu
+    "M. Bison":     "#8E44AD",   # roxo — aura psíquica
+    "Sagat":        "#D35400",   # laranja escuro — Muay Thai tailandês
+    "Elena":        "#27AE60",   # verde — conexão com a natureza
+    "A.K.I.":       "#76D7C4",   # verde água — veneno e misticismo
+    "Blanka":       "#28B463",   # verde — cor do personagem
+    "Edmond Honda": "#E74C3C",   # vermelho — mawashi vermelho
+    "C. Viper":     "#E74C3C",   # vermelho — terno e cabelo ruivo
+    "Ingrid":       "#F9E79F",   # amarelo claro — energia solar
+}
+
+# Função para obter cor com fallback
+def cor_personagem(nome):
+    return CORES_PERSONAGENS.get(nome, "#95A5A6")  # cinza como fallback
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# 🖼️ HELPER — card de personagem com st.image (nativo Streamlit)
+# ══════════════════════════════════════════════════════════════════════════════
+
+def card_personagem(col, nome, mr_atual, mr_maximo, partidas):
+    cor  = cor_personagem(nome)
+    path = f"assets/characters/portrait/{nome}.png"
+    with col:
+        st.markdown(
+            f'<div style="height:3px;background:{cor};border-radius:3px;margin-bottom:8px;"></div>',
+            unsafe_allow_html=True
+        )
+        if os.path.exists(path):
+            # Abre com PIL para manter qualidade ao redimensionar
+            img = Image.open(path).convert("RGBA")
+            st.image(img, width=120)
+        else:
+            st.markdown(
+                f'<div style="width:120px;height:120px;border-radius:8px;background:{cor}22;display:flex;align-items:center;justify-content:center;font-size:32px;">🥊</div>',
+                unsafe_allow_html=True
+            )
+        st.markdown(
+            f'<span style="color:{cor};font-weight:700;font-size:12px;letter-spacing:0.5px;">{nome.upper()}</span>',
+            unsafe_allow_html=True
+        )
+        st.markdown(
+            f'<span style="color:#ECF0F1;font-size:20px;font-weight:700;">{mr_atual:,}</span>'.replace(",","."),
+            unsafe_allow_html=True
+        )
+        st.caption(f"Máx: {mr_maximo:,} · {partidas} lutas".replace(",","."))
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ══  SEÇÃO 2 — EVOLUÇÃO DO MR
+# Depende de: df_base já carregado, cor_personagem() e card_personagem() definidos
+# ══════════════════════════════════════════════════════════════════════════════
+st.markdown("---")
+st.markdown("### 📈 Evolução do MR")
+aviso_importante(
+    "Esta seção usa o histórico completo de ranqueadas em Master — "
+    "filtros globais da sidebar não se aplicam aqui. O MR reseta a cada "
+    "temporada, então por padrão mostramos só a temporada atual."
+)
+
+# ── Dados base — só ranqueadas EM MASTER (MR > 0), ordem cronológica estável ──
+# O filtro Meu_MR > 0 exclui placements e partidas pré-Master que vinham como 0
+df_evo = (
+    df_base[
+        (df_base['Tipo Partida (Jogo)'] == 'Ranqueada') &
+        (df_base['Meu_MR'] > 0)
+    ]
+    .sort_values(['Data_Datetime', 'Hora Exata'], ascending=True)
+    .reset_index(drop=True)
+    .copy()
+)
+
+if df_evo.empty:
+    st.info("Nenhuma partida ranqueada em Master encontrada.")
+else:
+    # ── Filtro de temporada + data (independentes dos filtros globais) ────────
+    col_temp, col_filtro = st.columns([2, 3])
+
+    with col_temp:
+        if 'Temporada' in df_evo.columns:
+            temporadas_disp = sorted(
+                df_evo['Temporada'].dropna().unique(),
+                reverse=True  # T12 antes de T11
+            )
+            filtro_temp = st.selectbox(
+                "Temporada:",
+                options=temporadas_disp,
+                index=0,  # default = mais recente
+                key="temp_secao2",
+                help="O MR reseta a cada temporada — misturar temporadas causa saltos no gráfico"
+            )
+            df_evo = df_evo[df_evo['Temporada'] == filtro_temp].reset_index(drop=True)
+        else:
+            st.caption("⚠️ Coluna Temporada ausente — rode a limpeza atualizada.")
+
+    with col_filtro:
+        datas_disponiveis = df_evo['Data_Datetime'].dt.date
+        filtro_data_evo   = st.date_input(
+            "Filtrar por período (opcional):",
+            value=[],
+            min_value=datas_disponiveis.min(),
+            max_value=datas_disponiveis.max(),
+            key="data_secao2",
+            help="Opcional — refina ainda mais dentro da temporada"
+        )
+
+    if len(filtro_data_evo) == 2:
+        df_evo = df_evo[
+            (df_evo['Data_Datetime'].dt.date >= filtro_data_evo[0]) &
+            (df_evo['Data_Datetime'].dt.date <= filtro_data_evo[1])
+        ].reset_index(drop=True)
+    elif len(filtro_data_evo) == 1:
+        df_evo = df_evo[
+            df_evo['Data_Datetime'].dt.date == filtro_data_evo[0]
+        ].reset_index(drop=True)
+
+    if df_evo.empty:
+        st.warning("Nenhuma partida ranqueada em Master no período selecionado.")
+    else:
+        # ── Numeração sequencial por personagem (ordem já estável) ────────────
+        df_evo['Partida_Num'] = df_evo.groupby('Meu_Personagem').cumcount() + 1
+
+        # ── MR máximo global para linha de referência ─────────────────────────
+        mr_max_global = int(df_evo['Meu_MR'].max())
+        personagens   = sorted(df_evo['Meu_Personagem'].dropna().unique())
+
+        # ── Gráfico de linhas ─────────────────────────────────────────────────
+        fig = go.Figure()
+        for personagem in personagens:
+            df_p = df_evo[df_evo['Meu_Personagem'] == personagem].copy()
+            cor  = cor_personagem(personagem)
+            fig.add_trace(go.Scatter(
+                x    = df_p['Partida_Num'],
+                y    = df_p['Meu_MR'],
+                mode = 'lines+markers',
+                name = personagem,
+                line = dict(color=cor, width=2.5),
+                marker = dict(color=cor, size=5, line=dict(color='#0d0d0d', width=1)),
+                customdata = df_p[['Data_Datetime', 'Meu_Resultado']].values,
+                hovertemplate = (
+                    f"<b style='color:{cor}'>{personagem}</b><br>"
+                    "MR: <b>%{y:,}</b><br>"
+                    "Partida %{x}<br>"
+                    "%{customdata[0]|%d/%m/%Y}<br>"
+                    "%{customdata[1]}<extra></extra>"
+                )
+            ))
+
+        fig.add_hline(
+            y=mr_max_global, line_dash="dash",
+            line_color="#F39C12", line_width=1.5,
+            annotation_text=f"  Máx: {mr_max_global:,}".replace(",","."),
+            annotation_position="right",
+            annotation_font_color="#F39C12", annotation_font_size=11,
+        )
+
+        fig.update_layout(
+            template="plotly_dark", height=420, hovermode="x unified",
+            paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(13,13,30,0.6)",
+            xaxis=dict(title="Nº da Partida (por personagem)", gridcolor="#1e2a3a", zeroline=False),
+            yaxis=dict(title="MR (Master Rating)", gridcolor="#1e2a3a", zeroline=False),
+            legend=dict(orientation="h", yanchor="top", y=-0.18,
+                        xanchor="center", x=0.5, font=dict(size=12)),
+            margin=dict(l=10, r=80, t=20, b=60),
+            hoverlabel=dict(bgcolor="#1a1a2e", font_size=13, font_color="white"),
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+        # ── Cards por personagem ──────────────────────────────────────────────
+        st.markdown("##### 🏅 Resumo por Personagem")
+        resumo = (
+            df_evo.sort_values('Data_Datetime', ascending=False)
+            .groupby('Meu_Personagem')
+            .agg(
+                MR_Atual  = ('Meu_MR', 'first'),
+                MR_Maximo = ('Meu_MR', 'max'),
+                Partidas  = ('Meu_MR', 'count'),
+            )
+            .reset_index()
+            .sort_values('MR_Atual', ascending=False)
+        )
+
+        POR_LINHA = 4
+        lista = resumo.to_dict('records')
+        for inicio in range(0, len(lista), POR_LINHA):
+            grupo = lista[inicio:inicio + POR_LINHA]
+            cols  = st.columns(POR_LINHA)
+            for idx, row in enumerate(grupo):
+                card_personagem(
+                    cols[idx],
+                    row['Meu_Personagem'],
+                    int(row['MR_Atual']),
+                    int(row['MR_Maximo']),
+                    int(row['Partidas']),
+                )
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 3 — PERSONAGENS UTILIZADOS
@@ -483,24 +693,48 @@ if total>0:
 st.markdown("---")
 st.markdown("### 🥋 Personagens Utilizados")
 
-if total>0:
-    df_ch=df_f['Meu_Personagem'].value_counts().reset_index(); df_ch.columns=['Personagem','Quantidade']
-    c3,c4=st.columns(2)
+if total > 0:
+    df_ch = df_f['Meu_Personagem'].value_counts().reset_index()
+    df_ch.columns = ['Personagem', 'Quantidade']
+
+    c3, c4 = st.columns(2)
     with c3:
-        fig=px.bar(df_ch,x='Personagem',y='Quantidade',color='Personagem',
-                   title="Partidas por Personagem",template="plotly_dark",height=340)
-        fig.update_traces(texttemplate='%{y}',textposition="outside",textfont_color="white",
-                          hovertemplate="<b>%{x}</b><br>%{y} partidas<extra></extra>")
-        fig.update_layout(showlegend=False,yaxis=dict(showticklabels=False),margin=dict(l=10,r=10,t=40,b=10))
-        st.plotly_chart(fig,use_container_width=True)
+        fig = px.bar(
+            df_ch, x='Personagem', y='Quantidade', color='Personagem',
+            color_discrete_map=CORES_PERSONAGENS,
+            title="Partidas por Personagem",
+            template="plotly_dark", height=340
+        )
+        fig.update_traces(
+            texttemplate='%{y}', textposition="outside", textfont_color="white",
+            hovertemplate="<b>%{x}</b><br>%{y} partidas<extra></extra>"
+        )
+        fig.update_layout(
+            showlegend=False,
+            yaxis=dict(showticklabels=False),
+            margin=dict(l=10, r=10, t=40, b=10)
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
     with c4:
-        fig=px.pie(df_ch,values='Quantidade',names='Personagem',
-                   title="Proporção de Uso",template="plotly_dark",height=340)
-        fig.update_traces(textinfo='percent',textfont_color="white",
-                          marker_line_color='white',marker_line_width=0.5)
-        fig.update_layout(margin=dict(l=10,r=10,t=40,b=10),
-                          legend=dict(orientation="h",y=-0.15,x=0.5,xanchor="center"))
-        st.plotly_chart(fig,use_container_width=True)
+        fig = px.pie(
+            df_ch, values='Quantidade', names='Personagem',
+            color='Personagem',
+            color_discrete_map=CORES_PERSONAGENS,
+            title="Proporção de Uso",
+            template="plotly_dark", height=340
+        )
+        fig.update_traces(
+            textinfo='percent', textfont_color="white",
+            marker_line_color='white', marker_line_width=0.5,
+            hovertemplate="<b>%{label}</b><br>%{value} partidas (%{percent})<extra></extra>"
+        )
+        fig.update_layout(
+            margin=dict(l=10, r=10, t=40, b=10),
+            legend=dict(orientation="h", y=-0.15, x=0.5, xanchor="center")
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 4 — MATCHUPS
@@ -508,94 +742,90 @@ if total>0:
 st.markdown("---")
 st.markdown("### 🥊 Matchups")
 
-if total>0:
-    # 4a — Personagens mais enfrentados
-    df_op=df_f['Oponente_Personagem'].value_counts().reset_index(); df_op.columns=['Personagem','Quantidade']
-    fig=px.bar(df_op,x='Personagem',y='Quantidade',color='Personagem',
-               title="Personagens mais enfrentados",template="plotly_dark",height=380)
-    fig.update_traces(texttemplate='%{y}',textposition="outside",textfont_color="white",
-                      hovertemplate="<b>%{x}</b><br>%{y} partidas<extra></extra>")
-    fig.update_layout(showlegend=False,yaxis=dict(showticklabels=False),margin=dict(l=10,r=10,t=40,b=10))
-    st.plotly_chart(fig,use_container_width=True)
+if total > 0:
 
-    # Personagens não enfrentados com os filtros atuais
-    nao_enf = sorted(
-        set(TODOS_CHARS_SF6) -
-        set(df_f['Oponente_Personagem'].dropna().unique())
+    # ── 4a — Personagens mais enfrentados ─────────────────────────────────────
+    df_op = df_f['Oponente_Personagem'].value_counts().reset_index()
+    df_op.columns = ['Personagem', 'Quantidade']
+
+    fig = px.bar(
+        df_op, x='Personagem', y='Quantidade', color='Personagem',
+        color_discrete_map=CORES_PERSONAGENS,
+        title="Personagens mais enfrentados",
+        template="plotly_dark", height=380
     )
-    if nao_enf:
-        st.info(f"💡 Não enfrentados com os filtros atuais: {', '.join(nao_enf)}.")
+    fig.update_traces(
+        texttemplate='%{y}', textposition="outside", textfont_color="white",
+        hovertemplate="<b>%{x}</b><br>%{y} partidas<extra></extra>"
+    )
+    fig.update_layout(
+        showlegend=False,
+        yaxis=dict(showticklabels=False),
+        margin=dict(l=10, r=10, t=40, b=10)
+    )
+    st.plotly_chart(fig, use_container_width=True)
 
     st.markdown("---")
-    # 4b — Win rate contra cada personagem
+
+    # ── 4b — Win rate contra cada personagem ──────────────────────────────────
     st.markdown("#### 📊 Win Rate contra cada Personagem")
-    df_mu = tabela_wr(df_f,'Oponente_Personagem', sort_by='WR_num', ascending=False)
-    df_mu = df_mu.rename(columns={'Oponente_Personagem':'Personagem'})
+
+    df_mu = tabela_wr(df_f, 'Oponente_Personagem', sort_by='WR_num', ascending=False)
+    df_mu = df_mu.rename(columns={'Oponente_Personagem': 'Personagem'})
+
     st.dataframe(
-        df_mu[['','Personagem','Lutas','Vitórias','Derrotas','WR (%)','WR_num']],
+        df_mu[['', 'Personagem', 'Lutas', 'Vitórias', 'Derrotas', 'WR (%)', 'WR_num']],
         use_container_width=True, hide_index=True,
         column_config={"WR_num": None}
     )
-    
-    if nao_enf:
-        st.info(f"💡 Não enfrentados com os filtros atuais: {', '.join(nao_enf)}.")
-
     st.info(
-        "🚦 Indicador de Win Rate\n\n"
-        f"🟢 Bom  ≥ {VERDE}%   ·   🟡 Médio  ≥ {AMARELO}%   ·   🔴 Baixo  < {AMARELO}%"
-        "   |   Ajustável em ⚙️ Configurações."
+        f"🚦 🟢 ≥ {st.session_state.wr_verde}%   ·   "
+        f"🟡 entre {st.session_state.wr_amarelo}% e {st.session_state.wr_verde}%   ·   "
+        f"🔴 < {st.session_state.wr_amarelo}%   |   Ajustável em ⚙️ Configurações."
     )
 
     st.divider()
 
-
-
-
-
-
-
-
-    # ── Subseção 1: Personagens não enfrentados ──────────────────────────────
+    # ── 4c — Cobertura de personagens ─────────────────────────────────────────
     st.markdown("#### 🗂️ Cobertura de Personagens no Histórico")
-    st.caption("Quais personagens do roster já foram enfrentados e quais ainda não apareceram no histórico.")
+    st.caption("Quais personagens do roster já foram enfrentados e quais ainda não apareceram.")
 
     nao_enf = sorted(set(TODOS_CHARS_SF6) - set(df_f['Oponente_Personagem'].dropna().unique()))
     ja_enf  = sorted(set(TODOS_CHARS_SF6) & set(df_f['Oponente_Personagem'].dropna().unique()))
 
     col_cob1, col_cob2 = st.columns(2)
     with col_cob1:
-        st.metric("Personagens Enfrentados",      f"{len(ja_enf)} de {len(TODOS_CHARS_SF6)}")
+        st.metric("Personagens Enfrentados",       f"{len(ja_enf)} de {len(TODOS_CHARS_SF6)}")
     with col_cob2:
         st.metric("Personagens Nunca Enfrentados", f"{len(nao_enf)} de {len(TODOS_CHARS_SF6)}")
 
     if nao_enf:
         st.info(f"💡 Nunca enfrentados com os filtros atuais: {', '.join(nao_enf)}.")
     else:
-        st.success("✅ Todos os personagens do roster já foram enfrentados com os filtros atuais!")
+        st.success("✅ Todos os personagens do roster já foram enfrentados!")
 
     st.divider()
 
-    # ── Subseção 2: Diversidade e frequência de encontro por personagem ───────
-    st.markdown("#### 👥 Diversidade e Frequência de Encontro por Personagem")
+    # ── 4d — Diversidade de Jogadores por Personagem ──────────────────────────
+    st.markdown("#### 👥 Diversidade de Jogadores por Personagem")
     st.caption(
-        "Para cada personagem do oponente: quantos jogadores diferentes o usaram, "
-        "quando foi o último confronto e de quantos em quantos dias esse personagem costuma ser enfrentado."
+        "Quantos jogadores diferentes usaram cada personagem contra você. "
+        "Muitos jogadores = personagem popular; poucos jogadores com muitas "
+        "partidas = rival recorrente."
     )
 
     col_id = 'Oponente_ID' if 'Oponente_ID' in df_f.columns else 'Oponente_Nome'
-    if col_id == 'Oponente_Nome':
-        st.caption("⚠️ Coluna Oponente_ID não encontrada — usando Oponente_Nome como substituto. Rode o script de limpeza para ter precisão total.")
 
     df_uniq = df_f.groupby('Oponente_Personagem').agg(
-        Total_Partidas=('Meu_Resultado','count'),
-        Jogadores_Unicos=(col_id,'nunique')
+        Total_Partidas   = ('Meu_Resultado', 'count'),
+        Jogadores_Unicos = (col_id, 'nunique')
     ).reset_index().sort_values('Jogadores_Unicos', ascending=False)
-    df_uniq['Partidas_por_Jogador'] = (df_uniq['Total_Partidas'] / df_uniq['Jogadores_Unicos']).round(1)
+    df_uniq['Partidas_por_Jogador'] = (
+        df_uniq['Total_Partidas'] / df_uniq['Jogadores_Unicos']
+    ).round(1)
 
-    # Hover com lista de jogadores únicos por personagem
     def jogadores_hover(char):
-        sub = df_f[df_f['Oponente_Personagem'] == char]
-        if sub.empty: return "Nenhum jogador registrado"
+        sub   = df_f[df_f['Oponente_Personagem'] == char]
         nomes = sorted(sub['Oponente_Nome'].dropna().unique().tolist())
         if len(nomes) <= 8:
             return "<br>".join(nomes)
@@ -604,66 +834,106 @@ if total>0:
     df_uniq['Jogadores_Hover'] = df_uniq['Oponente_Personagem'].apply(jogadores_hover)
 
     fig_uniq = px.bar(
-        df_uniq, x='Oponente_Personagem', y='Jogadores_Unicos', color='Oponente_Personagem',
-        title="Quantidades de jogadores diferentes enfrentados contra cada personagem",
+        df_uniq, x='Oponente_Personagem', y='Jogadores_Unicos',
+        color='Oponente_Personagem',
+        color_discrete_map=CORES_PERSONAGENS,
+        title="Jogadores diferentes enfrentados por personagem",
         template="plotly_dark", height=380,
-        custom_data=['Total_Partidas', 'Jogadores_Hover']
+        custom_data=['Total_Partidas', 'Jogadores_Hover', 'Partidas_por_Jogador']
     )
     fig_uniq.update_traces(
         texttemplate='%{y}', textposition="outside", textfont_color="white",
         hovertemplate=(
             "<b>%{x}</b><br>"
             "Jogadores diferentes: %{y}<br>"
-            "Total de partidas: %{customdata[0]}<br><br>"
+            "Total de partidas: %{customdata[0]}<br>"
+            "Média por jogador: %{customdata[2]}<br><br>"
             "%{customdata[1]}<extra></extra>"
         )
     )
+    fig_uniq.update_traces(marker_line_color='rgba(255,255,255,0.3)', marker_line_width=1)
     fig_uniq.update_layout(
         showlegend=False,
         xaxis_title="Personagem do Oponente",
         yaxis=dict(title="Qtde de Jogadores Diferentes", showticklabels=False),
-        margin=dict(l=10,r=10,t=40,b=10)
+        margin=dict(l=10, r=10, t=40, b=10)
     )
     st.plotly_chart(fig_uniq, use_container_width=True)
 
-    # Tabela com todos os personagens do roster
+    st.caption(
+        "💡 A média por jogador (no hover) revela rivais recorrentes: "
+        "um personagem com poucos jogadores mas muitas partidas indica que "
+        "você enfrenta sempre as mesmas pessoas com ele."
+    )
+
+    st.divider()
+
+    # ── 4e — Frequência de Encontro por Personagem ────────────────────────────
+    st.markdown("#### 🕐 Frequência de Encontro por Personagem")
+    st.caption(
+        "Há quanto tempo você não enfrenta cada personagem, com que frequência "
+        "ele costuma aparecer e qual foi o maior tempo que você ficou sem vê-lo. "
+        "Útil para saber quais matchups você anda treinando pouco."
+    )
+
+    # Datas de lançamento de personagens DLC — para os demais usa o ponto-zero dos dados
+    LANCAMENTO_CHARS = {
+        "Alex":   pd.Timestamp("2026-03-17"),
+        "Ingrid": pd.Timestamp("2026-05-28"),
+    }
+
     df_f['Data_Datetime_parsed'] = pd.to_datetime(df_f['Data_Datetime'])
     hoje       = pd.Timestamp.now().normalize()
     ponto_zero = df_f['Data_Datetime_parsed'].dt.normalize().min()
 
-    def stats_matchup(char):
-        sub = df_f[df_f['Oponente_Personagem'] == char].copy()
+    def disponivel_desde(char):
+        """Quando o personagem passou a estar disponível no recorte de dados."""
+        lanc = LANCAMENTO_CHARS.get(char)
+        if lanc is not None and lanc > ponto_zero:
+            return lanc.normalize()
+        return ponto_zero
+
+    def stats_frequencia(char):
+        sub        = df_f[df_f['Oponente_Personagem'] == char].copy()
+        disponivel = disponivel_desde(char)
+        dias_total = max((hoje - disponivel).days, 1)  # evita divisão por zero
+
         if sub.empty:
             return pd.Series({
-                'Total_Partidas':       0,
-                'Jogadores_Unicos':     0,
-                'Partidas_por_Jogador': 0,
-                'Ultima_Data':          None,
-                'Dias_Desde':           (hoje - ponto_zero).days,
-                'Freq_Media':           None,
-                'Nunca_Enfrentado':     True,
+                'Total_Partidas':   0,
+                'Ultima_Data':      None,
+                'Dias_Desde':       dias_total,
+                'Freq_Media':       None,
+                'Maior_Gap':        dias_total,  # nunca enfrentado = gap = período todo
+                'Nunca_Enfrentado': True,
             })
 
         dias_unicos = sorted(sub['Data_Datetime_parsed'].dt.normalize().drop_duplicates().tolist())
         ultima      = dias_unicos[-1]
         dias_desde  = (hoje - ultima).days
-        pontos      = [ponto_zero] + dias_unicos + [hoje]
-        intervalos  = [(pontos[i+1] - pontos[i]).days for i in range(len(pontos)-1)]
-        intervalos  = [x for x in intervalos if x > 0]
-        media       = round(sum(intervalos) / len(intervalos), 1) if intervalos else None
+
+        # Intervalo médio CORRETO — considera todo o período disponível, não só
+        # os dias entre encontros. Pontos de referência: disponível → cada
+        # encontro → hoje. A média é o período total / número de encontros.
+        freq_media = round(dias_total / len(dias_unicos), 1)
+
+        # Maior gap — maior intervalo entre dois pontos consecutivos
+        # (incluindo disponível→1º encontro e último encontro→hoje)
+        pontos = [disponivel] + dias_unicos + [hoje]
+        gaps   = [(pontos[i+1] - pontos[i]).days for i in range(len(pontos)-1)]
+        maior_gap = max(gaps) if gaps else 0
 
         return pd.Series({
-            'Total_Partidas':       len(sub),
-            'Jogadores_Unicos':     sub[col_id].nunique(),
-            'Partidas_por_Jogador': round(len(sub) / sub[col_id].nunique(), 1),
-            'Ultima_Data':          ultima,
-            'Dias_Desde':           dias_desde,
-            'Freq_Media':           media,
-            'Nunca_Enfrentado':     False,
+            'Total_Partidas':   len(sub),
+            'Ultima_Data':      ultima,
+            'Dias_Desde':       dias_desde,
+            'Freq_Media':       freq_media,
+            'Maior_Gap':        maior_gap,
+            'Nunca_Enfrentado': False,
         })
 
     df_roster = pd.DataFrame({'Oponente_Personagem': TODOS_CHARS_SF6})
-    stats = df_roster['Oponente_Personagem'].apply(stats_matchup)
+    stats     = df_roster['Oponente_Personagem'].apply(stats_frequencia)
     df_roster = pd.concat([df_roster, stats], axis=1)
 
     def fmt_ultima(row):
@@ -672,7 +942,7 @@ if total>0:
         dias     = int(row['Dias_Desde'])
         data_fmt = pd.Timestamp(row['Ultima_Data']).strftime('%d/%m/%Y')
         if dias == 0:   sufixo = "hoje"
-        elif dias == 1: sufixo = "1 dia atrás"
+        elif dias == 1: sufixo = "ontem"
         else:           sufixo = f"{dias} dias atrás"
         return f"{sufixo} · {data_fmt}"
 
@@ -681,58 +951,76 @@ if total>0:
         if pd.isna(row['Freq_Media']): return "—"
         return f"a cada {int(row['Freq_Media'])} dias"
 
-    df_roster['Último Encontro'] = df_roster.apply(fmt_ultima, axis=1)
-    df_roster['Intervalo Médio'] = df_roster.apply(fmt_media,  axis=1)
-    df_roster['Partidas']               = df_roster['Total_Partidas'].astype(int)
-    df_roster['Jogadores Diferentes']   = df_roster['Jogadores_Unicos'].astype(int)
-    df_roster['Média Partidas/Jogador'] = df_roster['Partidas_por_Jogador']
+    def fmt_gap(row):
+        if row['Nunca_Enfrentado']: return "—"
+        return f"{int(row['Maior_Gap'])} dias"
+
+    df_roster['Último Encontro']  = df_roster.apply(fmt_ultima, axis=1)
+    df_roster['Intervalo Médio']  = df_roster.apply(fmt_media,  axis=1)
+    df_roster['Maior Tempo Sem Ver'] = df_roster.apply(fmt_gap, axis=1)
+    df_roster['Partidas']         = df_roster['Total_Partidas'].astype(int)
 
     df_roster_view = df_roster.rename(columns={'Oponente_Personagem': 'Personagem'})
     df_roster_view = df_roster_view.sort_values('Dias_Desde', ascending=False)
 
     st.dataframe(
         df_roster_view[[
-            'Personagem', 'Partidas', 'Jogadores Diferentes',
-            'Média Partidas/Jogador', 'Último Encontro', 'Intervalo Médio'
+            'Personagem',
+            'Último Encontro', 'Intervalo Médio', 'Maior Tempo Sem Ver',
+            'Partidas'
         ]],
         use_container_width=True, hide_index=True
     )
-    st.info("💡 Intervalo Médio - de quantos em quantos dias esse personagem costuma ser enfrentado.")
-    st.info("⚠️ As colunas 'Último Encontro' e 'Intervalo Médio' são textuais — ao ordenar por elas, o resultado pode não seguir a ordem numérica esperada.")
+    st.info(
+        "💡 **Intervalo Médio** = período total que o personagem esteve disponível "
+        "÷ número de dias em que você o enfrentou. Considera o tempo real, não só "
+        "os intervalos entre encontros."
+    )
+    st.caption(
+        "⚠️ Para Alex (17/03) e Ingrid (28/05) o cálculo parte da data de lançamento. "
+        "Para os demais, parte da primeira partida do seu histórico. "
+        "As colunas de texto não ordenam numericamente."
+    )
 
     st.divider()
 
-    # 4c — Mirror Match (se ativo)
+    # ── 4f — Mirror Match ─────────────────────────────────────────────────────
     if cols_on.get("Mirror Match"):
         st.markdown("#### 🪞 Mirror Matches")
-        df_mir = df_f[df_f['Mirror_Match']==True]
+        df_mir = df_f[df_f['Mirror_Match'] == True]
         n_mir  = len(df_mir)
-        if n_mir==0:
+
+        if n_mir == 0:
             st.info("Nenhum mirror match encontrado com os filtros atuais.")
         else:
             wr_mir = wr(df_mir)
-            mm1,mm2,mm3=st.columns(3)
-            mm1.metric("Total de Mirrors",f"{n_mir}")
-            mm2.metric("Win Rate em Mirrors",f"{wr_mir:.1f}%")
-            mm3.metric("Win Rate Geral",f"{win_rate:.1f}%",
-                       delta=f"{wr_mir-win_rate:+.1f}%",delta_color="normal")
-            df_mc = tabela_wr(df_mir,'Meu_Personagem')
+            mm1, mm2, mm3 = st.columns(3)
+            mm1.metric("Total de Mirrors",    f"{n_mir}")
+            mm2.metric("Win Rate em Mirrors", f"{wr_mir:.1f}%")
+            mm3.metric("Win Rate Geral",      f"{win_rate:.1f}%",
+                       delta=f"{wr_mir - win_rate:+.1f}%", delta_color="normal")
+
+            df_mc = tabela_wr(df_mir, 'Meu_Personagem')
             st.dataframe(
-                df_mc[['','Meu_Personagem','Lutas','Vitórias','WR (%)','WR_num']],
+                df_mc[['', 'Meu_Personagem', 'Lutas', 'Vitórias', 'WR (%)', 'WR_num']],
                 use_container_width=True, hide_index=True,
                 column_config={"WR_num": None}
             )
 
     st.divider()
 
-    # 4d — Tier por personagem (se ativo)
+    # ── 4f — Desempenho contra Tierlist ──────────────────────────────────────
     if cols_on.get("Tier"):
         st.markdown("#### 🏆 Desempenho contra Tierlist")
-        df_mu_tier = tabela_wr(df_f,'Tier_Oponente', sort_by='Tier_Oponente', ascending=True)
-        df_mu_tier = df_mu_tier.rename(columns={'Tier_Oponente':'Tier'})
-        wr_nums = df_f.groupby('Tier_Oponente',observed=True).apply(
-            lambda x: (x['Meu_Resultado']=="Vitória 🏆").sum()/len(x)*100 if len(x)>0 else 0
-        ).reset_index(); wr_nums.columns=['Tier','WR']
+
+        df_mu_tier = tabela_wr(df_f, 'Tier_Oponente', sort_by='Tier_Oponente', ascending=True)
+        df_mu_tier = df_mu_tier.rename(columns={'Tier_Oponente': 'Tier'})
+
+        wr_nums = df_f.groupby('Tier_Oponente', observed=True).apply(
+            lambda x: (x['Meu_Resultado'] == "Vitória 🏆").sum() / len(x) * 100
+            if len(x) > 0 else 0
+        ).reset_index()
+        wr_nums.columns = ['Tier', 'WR']
 
         chars_por_tier = {
             tier: "<br>".join(sorted(chars))
@@ -743,129 +1031,195 @@ if total>0:
             lambda t: chars_por_tier.get(t, "—")
         )
 
-        fig_tier=go.Figure()
+        fig_tier = go.Figure()
         fig_tier.add_trace(go.Bar(
-            x=wr_nums['Tier'].astype(str), y=wr_nums['WR'],
-            marker_color=[CORES_TIER.get(str(t),'#888') for t in wr_nums['Tier']],
-            text=[f"{v:.1f}%" for v in wr_nums['WR']],textposition='outside',
-            textfont_color='white',
-            customdata=wr_nums[['chars_hover']].values,
-            hovertemplate="<b>Tier %{x}</b><br>Win Rate: %{y:.1f}%<br><br>%{customdata[0]}<extra></extra>"
+            x            = wr_nums['Tier'].astype(str),
+            y            = wr_nums['WR'],
+            marker_color = [CORES_TIER.get(str(t), '#888') for t in wr_nums['Tier']],
+            text         = [f"{v:.1f}%" for v in wr_nums['WR']],
+            textposition = 'outside',
+            textfont_color = 'white',
+            customdata   = wr_nums[['chars_hover']].values,
+            hovertemplate = (
+                "<b>Tier %{x}</b><br>"
+                "Win Rate: %{y:.1f}%<br><br>"
+                "%{customdata[0]}<extra></extra>"
+            )
         ))
         fig_tier.update_layout(
-            title="Desempenho Contra Tierlist",
-            template="plotly_dark", height=320,
-            xaxis_title="Tier do Personagem",
-            yaxis=dict(title="Win Rate (%)", range=[0,115], showticklabels=False),
-            margin=dict(l=10,r=10,t=40,b=10)
+            title    = "Desempenho Contra Tierlist",
+            template = "plotly_dark", height=320,
+            xaxis_title = "Tier do Personagem",
+            yaxis = dict(title="Win Rate (%)", range=[0, 115], showticklabels=False),
+            margin = dict(l=10, r=10, t=40, b=10)
         )
 
-        c_tier1,c_tier2=st.columns(2)
-        with c_tier1: st.plotly_chart(fig_tier,use_container_width=True)
+        c_tier1, c_tier2 = st.columns(2)
+        with c_tier1:
+            st.plotly_chart(fig_tier, use_container_width=True)
         with c_tier2:
-            st.write(""); st.write("")
+            st.write("")
+            st.write("")
             st.dataframe(
-                df_mu_tier[['','Tier','Lutas','Vitórias','Derrotas','WR (%)','WR_num']],
+                df_mu_tier[['', 'Tier', 'Lutas', 'Vitórias', 'Derrotas', 'WR (%)', 'WR_num']],
                 use_container_width=True, hide_index=True,
                 column_config={"WR_num": None}
             )
 
-    st.info("💡 A posição de cada personagem na tierlist pode ser alterada em **⚙️ Configurações → 🏆 Tierlist**.")        
-    
+        st.info("💡 A posição de cada personagem na tierlist pode ser alterada em **⚙️ Configurações → 🏆 Tierlist**.")
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 5 — ARQUÉTIPOS (se ativo)
 # ══════════════════════════════════════════════════════════════════════════════
-if cols_on.get("Arquétipo") and total>0:
+if cols_on.get("Arquétipo") and total > 0:
     st.markdown("---")
     st.markdown("### 🎭 Desempenho Contra Arquétipos")
-    df_arq = tabela_wr(df_f,'Arquetipo_Oponente').sort_values('Lutas',ascending=False)
-    wr_arq_num = df_f.groupby('Arquetipo_Oponente').apply(
-        lambda x: (x['Meu_Resultado']=="Vitória 🏆").sum()/len(x)*100 if len(x)>0 else 0
-    ).reset_index(); wr_arq_num.columns=['Arquétipo','WR']
 
-    ca1,ca2=st.columns(2)
+    df_arq     = tabela_wr(df_f, 'Arquetipo_Oponente').sort_values('Lutas', ascending=False)
+    wr_arq_num = df_f.groupby('Arquetipo_Oponente').apply(
+        lambda x: (x['Meu_Resultado'] == "Vitória 🏆").sum() / len(x) * 100
+        if len(x) > 0 else 0
+    ).reset_index()
+    wr_arq_num.columns = ['Arquétipo', 'WR']
+
+    # Cores por arquétipo — usa a cor do primeiro personagem do grupo como referência
+    CORES_ARQUETIPOS = {
+        "Shoto":        "#4A90D9",   # Ryu — azul
+        "Rushdown":     "#2ECC71",   # Cammy — verde
+        "Grappler":     "#E74C3C",   # Zangief — vermelho
+        "Zoner":        "#2980B9",   # Guile — azul marinho
+        "All-Rounder":  "#F39C12",   # Luke — laranja
+        "Unorthodox":   "#9B59B6",   # Juri — roxo
+        "High-Risk":    "#C0392B",   # C. Viper — vermelho escuro
+        "Desconhecido": "#95A5A6",   # cinza
+    }
+
+    def cor_arquetipo(nome):
+        return CORES_ARQUETIPOS.get(nome, "#95A5A6")
+
+    # Hover com lista de personagens por arquétipo
+    chars_por_arq = {
+        arq: "<br>".join(sorted(chars))
+        for arq, chars in st.session_state.arq_config.items()
+        if chars
+    }
+    wr_arq_num['chars_hover'] = wr_arq_num['Arquétipo'].map(
+        lambda a: chars_por_arq.get(a, "—")
+    )
+
+    ca1, ca2 = st.columns(2)
     with ca1:
-        # Monta lista de personagens por arquétipo para o hover
-        chars_por_arq = {
-            arq: "<br>".join(sorted(chars))
-            for arq, chars in st.session_state.arq_config.items()
-            if chars
-        }
-        wr_arq_num['chars_hover'] = wr_arq_num['Arquétipo'].map(
-            lambda a: chars_por_arq.get(a, "—")
-        )
-        fig=go.Figure()
+        fig = go.Figure()
         for _, row in wr_arq_num.iterrows():
+            cor = cor_arquetipo(row['Arquétipo'])
             fig.add_trace(go.Bar(
-                x=[row['Arquétipo']], y=[row['WR']],
-                name=row['Arquétipo'],
-                text=[f"{row['WR']:.1f}%"], textposition='outside',
-                textfont_color='white',
-                customdata=[[row['chars_hover']]],
-                hovertemplate=f"<b>{row['Arquétipo']}</b><br>Win Rate: {row['WR']:.1f}%<br><br>%{{customdata[0]}}<extra></extra>"
+                x         = [row['Arquétipo']],
+                y         = [row['WR']],
+                name      = row['Arquétipo'],
+                marker_color = cor,
+                text      = [f"{row['WR']:.1f}%"],
+                textposition = 'outside',
+                textfont_color = 'white',
+                customdata = [[row['chars_hover']]],
+                hovertemplate = (
+                    f"<b>{row['Arquétipo']}</b><br>"
+                    f"Win Rate: {row['WR']:.1f}%<br><br>"
+                    "%{customdata[0]}<extra></extra>"
+                )
             ))
         fig.update_layout(
-            title="Win Rate Contra Arquétipo", template="plotly_dark", height=340,
-            showlegend=False, yaxis=dict(range=[0,115],showticklabels=False),
-            margin=dict(l=10,r=10,t=40,b=10)
+            title      = "Win Rate Contra Arquétipo",
+            template   = "plotly_dark",
+            height     = 340,
+            showlegend = False,
+            yaxis      = dict(range=[0, 115], showticklabels=False),
+            margin     = dict(l=10, r=10, t=40, b=10)
         )
-        st.plotly_chart(fig,use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
+
     with ca2:
-        st.write(""); st.write("")
-        df_arq_view = df_arq.rename(columns={'Arquetipo_Oponente':'Arquétipo'})
+        st.write("")
+        st.write("")
+        df_arq_view = df_arq.rename(columns={'Arquetipo_Oponente': 'Arquétipo'})
         st.dataframe(
-            df_arq_view[['','Arquétipo','Lutas','Vitórias','Derrotas','WR (%)','WR_num']],
+            df_arq_view[['', 'Arquétipo', 'Lutas', 'Vitórias', 'Derrotas', 'WR (%)', 'WR_num']],
             use_container_width=True, hide_index=True,
             column_config={"WR_num": None}
         )
+
     st.info("💡 O Arquétipo de cada personagem pode ser alterado em **⚙️ Configurações → 🥋 Arquétipos**.")
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 6 — NÍVEL DO OPONENTE (se ativo)
 # ══════════════════════════════════════════════════════════════════════════════
-if cols_on.get("Nível") and total>0:
+if cols_on.get("Nível") and total > 0:
     st.markdown("---")
     st.markdown("### 🎯 Desempenho Contra Nível do Oponente")
 
-    df_nv = tabela_wr(df_f,'Nivel_Oponente')
-    wr_nv_num = df_f.groupby('Nivel_Oponente',observed=True).apply(
-        lambda x:(x['Meu_Resultado']=="Vitória 🏆").sum()/len(x)*100 if len(x)>0 else 0
-    ).reset_index(); wr_nv_num.columns=['Nível','WR']
+    # Cores por nível — do frio (inferior) ao quente (superior)
+    CORES_NIVEL = {
+        "Muito Inferior": "#3498DB",   # azul
+        "Inferior":       "#2ECC71",   # verde
+        "Similar":        "#F39C12",   # laranja
+        "Superior":       "#E67E22",   # laranja escuro
+        "Muito Superior": "#E74C3C",   # vermelho
+    }
 
-    cn1,cn2=st.columns(2)
+    df_nv     = tabela_wr(df_f, 'Nivel_Oponente')
+    wr_nv_num = df_f.groupby('Nivel_Oponente', observed=True).apply(
+        lambda x: (x['Meu_Resultado'] == "Vitória 🏆").sum() / len(x) * 100
+        if len(x) > 0 else 0
+    ).reset_index()
+    wr_nv_num.columns = ['Nível', 'WR']
+
+    cn1, cn2 = st.columns(2)
     with cn1:
         def oponentes_hover(nivel):
-            nomes = sorted(df_f[df_f['Nivel_Oponente']==nivel]['Oponente_Nome'].dropna().unique())
+            nomes = sorted(df_f[df_f['Nivel_Oponente'] == nivel]['Oponente_Nome'].dropna().unique())
             if len(nomes) <= 10:
                 return "<br>".join(nomes)
             return "<br>".join(nomes[:10]) + f"<br>... e {len(nomes)-10} outros"
 
         wr_nv_num['op_hover'] = wr_nv_num['Nível'].astype(str).map(oponentes_hover)
 
-        fig=go.Figure()
+        fig = go.Figure()
         for _, row in wr_nv_num.iterrows():
+            cor = CORES_NIVEL.get(str(row['Nível']), '#888888')
             fig.add_trace(go.Bar(
-                x=[row['Nível']], y=[row['WR']],
-                name=row['Nível'],
-                text=[f"{row['WR']:.1f}%"], textposition='outside',
-                textfont_color='white',
-                customdata=[[row['op_hover']]],
-                hovertemplate=f"<b>{row['Nível']}</b><br>Win Rate: {row['WR']:.1f}%<br><br>%{{customdata[0]}}<extra></extra>"
+                x            = [row['Nível']],
+                y            = [row['WR']],
+                name         = row['Nível'],
+                marker_color = cor,
+                text         = [f"{row['WR']:.1f}%"],
+                textposition = 'outside',
+                textfont_color = 'white',
+                customdata   = [[row['op_hover']]],
+                hovertemplate = (
+                    f"<b>{row['Nível']}</b><br>"
+                    f"Win Rate: {row['WR']:.1f}%<br><br>"
+                    "%{customdata[0]}<extra></extra>"
+                )
             ))
         fig.update_layout(
-            title="Win Rate Contra Nível do Oponente",
-            template="plotly_dark", height=320,
-            showlegend=False, yaxis=dict(range=[0,115],showticklabels=False),
-            xaxis=dict(categoryorder='array', categoryarray=ORDEM_NIVEL),
-            xaxis_title="Nível do Oponente",
-            yaxis_title="Win Rate (%)",
-            margin=dict(l=10,r=10,t=40,b=10)
+            title      = "Win Rate Contra Nível do Oponente",
+            template   = "plotly_dark",
+            height     = 320,
+            showlegend = False,
+            yaxis      = dict(range=[0, 115], showticklabels=False),
+            xaxis      = dict(
+                categoryorder = 'array',
+                categoryarray = ORDEM_NIVEL,
+                title         = "Nível do Oponente"
+            ),
+            margin = dict(l=10, r=10, t=40, b=10)
         )
-        st.plotly_chart(fig,use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
     with cn2:
-        st.write(""); st.write("")
+        st.write("")
+        st.write("")
         mi = st.session_state.lim_muito_inf
         i  = st.session_state.lim_inf
         s  = st.session_state.lim_sup
@@ -879,35 +1233,31 @@ if cols_on.get("Nível") and total>0:
             "Muito Superior": f"≥ {ms} MR",
         }
 
-        df_nv_view = df_nv.rename(columns={'Nivel_Oponente':'Nível'})
+        df_nv_view = df_nv.rename(columns={'Nivel_Oponente': 'Nível'})
         df_nv_view['Faixa de MR'] = df_nv_view['Nível'].map(faixas_desc)
-
-        # Ordena pela ordem natural das faixas
-        df_nv_view['_ord'] = df_nv_view['Nível'].map(
-            {n: i for i, n in enumerate(ORDEM_NIVEL)}
+        df_nv_view['_ord']        = df_nv_view['Nível'].map(
+            {n: idx for idx, n in enumerate(ORDEM_NIVEL)}
         )
         df_nv_view = df_nv_view.sort_values('_ord')
 
         st.dataframe(
-            df_nv_view[['','Nível','Faixa de MR','Lutas','Vitórias','WR (%)','WR_num']],
+            df_nv_view[['', 'Nível', 'Faixa de MR', 'Lutas', 'Vitórias', 'WR (%)', 'WR_num']],
             use_container_width=True, hide_index=True,
             column_config={"WR_num": None, "_ord": None}
         )
 
     st.info(
-        f"🎯 O nível do oponente é calculado com base na **diferença de MR antes da partida** — "
+        f"🎯 O nível do oponente é calculado pela **diferença de MR antes da partida** — "
         f"MR do oponente menos MR do {nome_jogador}. "
         f"As faixas são configuráveis em **⚙️ Configurações → 🎯 Nível dos Jogadores**."
     )
-    st.write("")
     st.info(
-        "📊 **Por que não deixei as faixas do nível do oponente simétricas?**   "
-        "Na estrutura de pontos da ranked do SF6, quando analisamos a elite de jogadores, "
-        "é muito mais difícil subir 2000 para 2100 MR do que 1600 para 1700 MR."
+        "📊 **Por que as faixas não são simétricas?** "
+        "Na ranked do SF6 subir de 2000 para 2100 MR é muito mais difícil do que de 1600 para 1700. "
+        f"Como {nome_jogador} é um top player, uma pequena diferença de pontos acima "
+        "já representa um oponente consideravelmente mais forte."
     )
-    
-    st.info(f"Como {nome_jogador} é um top player, uma pequena diferença de pontos acima dele, pode representar um oponente bem mais forte."
-    )
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 7 — DIA DA SEMANA
@@ -915,50 +1265,80 @@ if cols_on.get("Nível") and total>0:
 st.markdown("---")
 st.markdown("### 📅 Desempenho por Dia da Semana")
 
-if total>0:
-    ordem_dias=['Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado','Domingo']
-    df_dias=df_f['Dia da Semana'].value_counts().reindex(ordem_dias).fillna(0).reset_index()
-    df_dias.columns=['Dia da Semana','Quantidade']; df_dias=df_dias[df_dias['Quantidade']>0]
+if total > 0:
+    ORDEM_DIAS = ['Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira',
+                  'Sexta-feira','Sábado','Domingo']
+    CORES_DIAS = {
+        'Segunda-feira': '#3498DB', 'Terça-feira':  '#2ECC71',
+        'Quarta-feira':  '#F39C12', 'Quinta-feira': '#9B59B6',
+        'Sexta-feira':   '#E74C3C', 'Sábado':       '#1ABC9C',
+        'Domingo':       '#E67E22',
+    }
 
-    # Calcula WR por dia
+    df_dias = (
+        df_f['Dia da Semana'].value_counts()
+        .reindex(ORDEM_DIAS).fillna(0).reset_index()
+    )
+    df_dias.columns = ['Dia da Semana', 'Quantidade']
+    df_dias = df_dias[df_dias['Quantidade'] > 0]
+
     df_wr_dia = pd.DataFrame([{
         'Dia da Semana': dia,
-        'WR': wr(df_f[df_f['Dia da Semana']==dia]),
-        'Partidas': len(df_f[df_f['Dia da Semana']==dia])
+        'WR':      wr(df_f[df_f['Dia da Semana'] == dia]),
+        'Partidas': len(df_f[df_f['Dia da Semana'] == dia]),
     } for dia in df_dias['Dia da Semana']])
 
-    # Tabela resumo antes dos gráficos
+    # Tabela resumo
     df_tabela_dia = df_wr_dia.copy()
-    df_tabela_dia[''] = df_tabela_dia['WR'].apply(semaforo)
+    df_tabela_dia['']           = df_tabela_dia['WR'].apply(semaforo)
     df_tabela_dia['Win Rate (%)'] = df_tabela_dia['WR'].apply(lambda x: f"{x:.1f}%")
-    df_tabela_dia['WR_num'] = df_tabela_dia['WR']
-    df_tabela_dia['_ord'] = df_tabela_dia['Dia da Semana'].map(
-        {d: i for i, d in enumerate(ordem_dias)}
+    df_tabela_dia['_ord']        = df_tabela_dia['Dia da Semana'].map(
+        {d: i for i, d in enumerate(ORDEM_DIAS)}
     )
     st.dataframe(
-        df_tabela_dia[['','Dia da Semana','Partidas','Win Rate (%)','WR_num','_ord']].sort_values('_ord'),
+        df_tabela_dia[['', 'Dia da Semana', 'Partidas', 'Win Rate (%)', 'WR', '_ord']]
+        .sort_values('_ord'),
         use_container_width=True, hide_index=True,
-        column_config={"WR_num": None, "_ord": None}
+        column_config={"WR": None, "_ord": None}
     )
- 
+
     st.write("")
-    cd1,cd2=st.columns(2)
+    cd1, cd2 = st.columns(2)
     with cd1:
-        fig=px.bar(df_dias,x='Dia da Semana',y='Quantidade',title="Partidas por Dia",
-                   template="plotly_dark",height=300)
-        fig.update_traces(texttemplate='%{y}',textposition="outside",textfont_color="white",
-                          hovertemplate="<b>%{x}</b><br>%{y} partidas<extra></extra>")
-        fig.update_layout(xaxis_title="",yaxis=dict(showticklabels=False,title=""),margin=dict(l=10,r=10,t=40,b=10))
-        st.plotly_chart(fig,use_container_width=True)
+        fig = px.bar(
+            df_dias, x='Dia da Semana', y='Quantidade',
+            color='Dia da Semana', color_discrete_map=CORES_DIAS,
+            title="Partidas por Dia", template="plotly_dark", height=300
+        )
+        fig.update_traces(
+            texttemplate='%{y}', textposition="outside", textfont_color="white",
+            hovertemplate="<b>%{x}</b><br>%{y} partidas<extra></extra>"
+        )
+        fig.update_layout(
+            showlegend=False,
+            xaxis_title="", yaxis=dict(showticklabels=False, title=""),
+            margin=dict(l=10, r=10, t=40, b=10)
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
     with cd2:
-        fig2=px.bar(df_wr_dia,x='Dia da Semana',y='WR',title="Win Rate por Dia (%)",
-                    template="plotly_dark",height=300)
-        fig2.update_traces(texttemplate='%{y:.1f}%',textposition="outside",textfont_color="white",
-                           hovertemplate="<b>%{x}</b><br>%{y:.1f}% win rate<br>%{customdata} partidas<extra></extra>",
-                           customdata=df_wr_dia['Partidas'])
-        fig2.update_layout(xaxis_title="",yaxis=dict(showticklabels=False,title="",range=[0,115]),
-                           coloraxis_showscale=False,margin=dict(l=10,r=10,t=40,b=10))
-        st.plotly_chart(fig2,use_container_width=True)
+        fig2 = px.bar(
+            df_wr_dia, x='Dia da Semana', y='WR',
+            color='Dia da Semana', color_discrete_map=CORES_DIAS,
+            title="Win Rate por Dia (%)", template="plotly_dark", height=300,
+            custom_data=['Partidas']
+        )
+        fig2.update_traces(
+            texttemplate='%{y:.1f}%', textposition="outside", textfont_color="white",
+            hovertemplate="<b>%{x}</b><br>%{y:.1f}% win rate<br>%{customdata[0]} partidas<extra></extra>"
+        )
+        fig2.update_layout(
+            showlegend=False,
+            xaxis_title="", yaxis=dict(showticklabels=False, title="", range=[0, 115]),
+            margin=dict(l=10, r=10, t=40, b=10)
+        )
+        st.plotly_chart(fig2, use_container_width=True)
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 8 — HORÁRIO
@@ -966,165 +1346,270 @@ if total>0:
 st.markdown("---")
 st.markdown("### 🕒 Desempenho por Faixa de Horário")
 
-if total>0:
-    df_h=df_f.copy(); df_h['Hora_Fixa']=df_h['Hora Exata'].str[:2]
-    df_hora=df_h.groupby('Hora_Fixa').agg(
-        Lutas=('Meu_Resultado','count'),
-        Vitórias=('Meu_Resultado',lambda x:(x=="Vitória 🏆").sum())
+if total > 0:
+    df_h = df_f.copy()
+    df_h['Hora_Fixa'] = df_h['Hora Exata'].str[:2]
+    df_hora = df_h.groupby('Hora_Fixa').agg(
+        Lutas    = ('Meu_Resultado', 'count'),
+        Vitórias = ('Meu_Resultado', lambda x: (x == "Vitória 🏆").sum())
     ).reset_index()
-    df_hora['WR_num']=df_hora['Vitórias']/df_hora['Lutas']*100
-    df_hora['Faixa']=df_hora['Hora_Fixa']+":00 – "+df_hora['Hora_Fixa']+":59"
-    df_hora['']=df_hora['WR_num'].apply(semaforo)
-    df_hora['WR (%)']=df_hora['WR_num'].apply(lambda x:f"{x:.1f}%")
-    df_hora=df_hora.sort_values('Faixa')
+    df_hora['WR_num'] = df_hora['Vitórias'] / df_hora['Lutas'] * 100
+    df_hora['Faixa']  = df_hora['Hora_Fixa'] + ":00 – " + df_hora['Hora_Fixa'] + ":59"
+    df_hora['']       = df_hora['WR_num'].apply(semaforo)
+    df_hora['WR (%)'] = df_hora['WR_num'].apply(lambda x: f"{x:.1f}%")
+    df_hora = df_hora.sort_values('Faixa')
 
-    ch1,ch2=st.columns(2)
+    ch1, ch2 = st.columns(2)
     with ch1:
-        fig=px.bar(df_hora,x='Faixa',y='WR_num',title="Win Rate por Horário (%)",
-                   template="plotly_dark",height=320)
-        fig.update_traces(texttemplate='%{y:.1f}%',textposition="outside",textfont_color="white",
-                          hovertemplate="<b>%{x}</b><br>%{y:.1f}% win rate<br>%{customdata} partidas<extra></extra>",
-                          customdata=df_hora['Lutas'])
-        fig.update_layout(xaxis_title="",yaxis=dict(showticklabels=False,title="",range=[0,115]),
-                          coloraxis_showscale=False,margin=dict(l=10,r=10,t=40,b=10))
-        st.plotly_chart(fig,use_container_width=True)
+        fig = px.bar(
+            df_hora, x='Faixa', y='WR_num',
+            title="Win Rate por Horário (%)",
+            template="plotly_dark", height=320,
+            custom_data=['Lutas']
+        )
+        fig.update_traces(
+            texttemplate='%{y:.1f}%', textposition="outside", textfont_color="white",
+            marker_color='#3498DB',
+            hovertemplate="<b>%{x}</b><br>%{y:.1f}% win rate<br>%{customdata[0]} partidas<extra></extra>"
+        )
+        fig.update_layout(
+            xaxis_title="",
+            yaxis=dict(showticklabels=False, title="", range=[0, 115]),
+            margin=dict(l=10, r=10, t=40, b=10)
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
     with ch2:
-        st.write(""); st.write("")
-        st.dataframe(df_hora[['','Faixa','Lutas','WR (%)']],use_container_width=True,hide_index=True)
+        st.write("")
+        st.write("")
+        st.dataframe(
+            df_hora[['', 'Faixa', 'Lutas', 'WR (%)', 'WR_num']],
+            use_container_width=True, hide_index=True,
+            column_config={"WR_num": None}
+        )
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 9 — SESSÃO E FADIGA
 # ══════════════════════════════════════════════════════════════════════════════
 st.markdown("---")
 st.markdown("### 😮‍💨 Sessão e Fadiga")
- 
-if total>0 and 'Numero_Partida_No_Dia' in df_f.columns:
-    st.caption("A sessão de jogo foi considera por dia. (Mesmo um player jogando um pouco de manhã e um pouco a noite - será considerada 1 sessão).")
+
+if total > 0 and 'Numero_Partida_No_Dia' in df_f.columns:
+    st.caption("A sessão de jogo é considerada por dia — mesmo jogando de manhã e à noite, conta como 1 sessão.")
     st.caption("O aquecimento são as partidas 1, 2 e 3 do dia.")
-    st.caption("Se aplicar um filtro de personagem ou modo de jogo, o aquecimente será as partidas 1, 2 e 3 daquele personagem ou modo.")
- 
+    st.caption("Se aplicar filtro de personagem ou modo, o aquecimento será relativo àquele filtro.")
+
     def faixa_p(n):
-        if n<=3:  return "1–3 (aquecimento)"
-        if n<=10: return "4–10"
-        if n<=15: return "11–15"
-        if n<=20: return "16–20"
-        if n<=25: return "21–25"
-        if n<=30: return "26–30"
-        if n<=35: return "31–35"
-        if n<=40: return "36–40"
+        if n <= 3:  return "1–3 (aquecimento)"
+        if n <= 10: return "4–10"
+        if n <= 15: return "11–15"
+        if n <= 20: return "16–20"
+        if n <= 25: return "21–25"
+        if n <= 30: return "26–30"
+        if n <= 35: return "31–35"
+        if n <= 40: return "36–40"
         return "40+"
- 
-    ordem_fx=["1–3 (aquecimento)","4–10","11–15","16–20","21–25","26–30","31–35","36–40","40+"]
- 
-    df_fad=df_f.copy(); df_fad['Faixa']=df_fad['Numero_Partida_No_Dia'].apply(faixa_p)
-    df_fx=df_fad.groupby('Faixa').agg(
-        Lutas=('Meu_Resultado','count'),Vitórias=('Meu_Resultado',lambda x:(x=="Vitória 🏆").sum())
-    ).reset_index(); df_fx['WR']=df_fx['Vitórias']/df_fx['Lutas']*100
-    df_fx['Faixa']=pd.Categorical(df_fx['Faixa'],categories=ordem_fx,ordered=True)
-    df_fx=df_fx.sort_values('Faixa')
-    df_fx=df_fx[df_fx['Lutas']>0]  # remove faixas sem dados
- 
-    cf1,cf2=st.columns(2)
+
+    ORDEM_FX = ["1–3 (aquecimento)","4–10","11–15","16–20",
+                "21–25","26–30","31–35","36–40","40+"]
+
+    # Cores de fadiga — verde no início, vermelho no fim
+    CORES_FADIGA = {
+        "1–3 (aquecimento)": "#F39C12",
+        "4–10":              "#2ECC71",
+        "11–15":             "#27AE60",
+        "16–20":             "#F1C40F",
+        "21–25":             "#E67E22",
+        "26–30":             "#E74C3C",
+        "31–35":             "#C0392B",
+        "36–40":             "#922B21",
+        "40+":               "#641E16",
+    }
+
+    df_fad = df_f.copy()
+    df_fad['Faixa'] = df_fad['Numero_Partida_No_Dia'].apply(faixa_p)
+    df_fx = df_fad.groupby('Faixa').agg(
+        Lutas    = ('Meu_Resultado', 'count'),
+        Vitórias = ('Meu_Resultado', lambda x: (x == "Vitória 🏆").sum())
+    ).reset_index()
+    df_fx['WR']    = df_fx['Vitórias'] / df_fx['Lutas'] * 100
+    df_fx['Faixa'] = pd.Categorical(df_fx['Faixa'], categories=ORDEM_FX, ordered=True)
+    df_fx = df_fx.sort_values('Faixa')
+    df_fx = df_fx[df_fx['Lutas'] > 0]
+
+    cf1, cf2 = st.columns(2)
     with cf1:
-        fig=px.bar(df_fx,x='Faixa',y='WR',color='Faixa',title="Win Rate por Faixa da Sessão",
-                   template="plotly_dark",height=340,
-                   custom_data=['Lutas'])
-        fig.update_traces(texttemplate='%{y:.1f}%',textposition="outside",textfont_color="white",
-                          hovertemplate="<b>%{x}</b><br>%{y:.1f}% win rate<br>%{customdata[0]} partidas<extra></extra>")
-        fig.update_layout(showlegend=False,yaxis=dict(range=[0,115],showticklabels=False),
-                          margin=dict(l=10,r=10,t=40,b=10))
-        st.plotly_chart(fig,use_container_width=True)
+        fig = px.bar(
+            df_fx, x='Faixa', y='WR',
+            color='Faixa', color_discrete_map=CORES_FADIGA,
+            title="Win Rate por Faixa da Sessão",
+            template="plotly_dark", height=340,
+            custom_data=['Lutas']
+        )
+        fig.update_traces(
+            texttemplate='%{y:.1f}%', textposition="outside", textfont_color="white",
+            hovertemplate="<b>%{x}</b><br>%{y:.1f}% win rate<br>%{customdata[0]} partidas<extra></extra>"
+        )
+        fig.update_layout(
+            showlegend=False,
+            yaxis=dict(range=[0, 115], showticklabels=False),
+            margin=dict(l=10, r=10, t=40, b=10)
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
     with cf2:
-        df_fv=df_fx.copy(); df_fv['']=df_fv['WR'].apply(semaforo); df_fv['WR (%)']=df_fv['WR'].apply(lambda x:f"{x:.1f}%")
-        st.write(""); st.write("")
-        st.dataframe(df_fv[['','Faixa','Lutas','WR (%)']],use_container_width=True,hide_index=True)
+        df_fv = df_fx.copy()
+        df_fv['']       = df_fv['WR'].apply(semaforo)
+        df_fv['WR (%)'] = df_fv['WR'].apply(lambda x: f"{x:.1f}%")
+        st.write("")
+        st.write("")
+        st.dataframe(
+            df_fv[['', 'Faixa', 'Lutas', 'WR (%)', 'WR']],
+            use_container_width=True, hide_index=True,
+            column_config={"WR": None}
+        )
         st.caption("Faixas sem dados não aparecem no gráfico.")
 
-    st.info(
-        "📌 Exemplo 1: a faixa '1–3 (aquecimento)' soma todas as vezes que o jogador "
-        "jogou a 1ª, 2ª ou 3ª partida do dia."
-    )
-    st.info(
-        "📌 Exemplo 2: a faixa '11–15' soma todas as vezes que o jogador "
-        "jogou da 11ª até a 15ª partida do dia."
-    )
+    st.info("📌 Faixa '1–3 (aquecimento)' = soma de todas as vezes que o jogador jogou a 1ª, 2ª ou 3ª partida do dia.")
+    st.info("📌 Faixa '11–15' = soma de todas as vezes que o jogador jogou da 11ª até a 15ª partida do dia.")
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 10 — FATOR PSICOLÓGICO
 # ══════════════════════════════════════════════════════════════════════════════
 st.markdown("---")
 st.markdown("### 🧠 Fator Psicológico")
 
-if total>0:
+if total > 0:
+    # ── 10a — Impacto do 1º Round ─────────────────────────────────────────────
     st.markdown("#### 🥇 Impacto do 1º Round")
-    df_v1=df_f[df_f['Venceu_Primeiro_Round']=='Sim']; df_p1=df_f[df_f['Venceu_Primeiro_Round']=='Não']
-    cr1,cr2=st.columns(2)
+    df_v1 = df_f[df_f['Venceu_Primeiro_Round'] == 'Sim']
+    df_p1 = df_f[df_f['Venceu_Primeiro_Round'] == 'Não']
+
+    cr1, cr2 = st.columns(2)
     with cr1:
-        tx=wr(df_v1); st.metric("Win Rate SE vencer o 1º Round",f"{tx:.1f}%")
+        tx = wr(df_v1)
+        st.metric("Win Rate SE vencer o 1º Round", f"{tx:.1f}%")
         st.caption(f"🎯 {(df_v1['Meu_Resultado']=='Vitória 🏆').sum()} vitórias de {len(df_v1)} partidas")
     with cr2:
-        tx=wr(df_p1); st.metric("Win Rate SE perder o 1º Round",f"{tx:.1f}%")
+        tx = wr(df_p1)
+        st.metric("Win Rate SE perder o 1º Round", f"{tx:.1f}%")
         st.caption(f"🎯 {(df_p1['Meu_Resultado']=='Vitória 🏆').sum()} vitórias de {len(df_p1)} partidas")
 
+    # ── 10b — Trajetória da Partida ───────────────────────────────────────────
     st.markdown("#### 🔄 Trajetória da Partida")
-    cseq=df_f['Sequencia_Rounds'].value_counts().reset_index(); cseq.columns=['Seq','Qtd']
-    trad={"V-V":"Vitória Limpa 2-0","V-D-V":"Vitória Suada 2-1","V-D-D":"Tomou Virada 1-2",
-          "D-D":"Derrota Limpa 0-2","D-V-D":"Reagiu mas Perdeu","D-V-V":"Virada Épica 2-1"}
-    cores_s={"V-V":"#19a50d","V-D-V":"#005fcc","D-V-V":"#9c00cc",
-             "D-D":"#ac1f06","D-V-D":"#4d2d27","V-D-D":"#efec3b"}
-    cseq['Desc']=cseq['Seq'].map(trad).fillna(cseq['Seq']); cseq=cseq[cseq['Seq']!="Sem dados"]
+
+    cseq = df_f['Sequencia_Rounds'].value_counts().reset_index()
+    cseq.columns = ['Seq', 'Qtd']
+
+    trad = {
+        "V-V":   "Vitória Limpa 2-0",
+        "V-D-V": "Vitória Suada 2-1",
+        "V-D-D": "Tomou Virada 1-2",
+        "D-D":   "Derrota Limpa 0-2",
+        "D-V-D": "Reagiu mas Perdeu",
+        "D-V-V": "Virada Épica 2-1",
+    }
+    cores_s = {
+        "V-V":   "#19a50d", "V-D-V": "#005fcc", "D-V-V": "#9c00cc",
+        "D-D":   "#ac1f06", "D-V-D": "#4d2d27", "V-D-D": "#efec3b",
+    }
+
+    cseq['Desc'] = cseq['Seq'].map(trad).fillna(cseq['Seq'])
+    cseq = cseq[cseq['Seq'] != "Sem dados"]
+
     if not cseq.empty:
-        cs1,cs2=st.columns(2)
+        cs1, cs2 = st.columns(2)
         with cs1:
-            fig=px.bar(cseq,x='Qtd',y='Desc',color='Seq',color_discrete_map=cores_s,
-                       orientation='h',template="plotly_dark",height=280,
-                       custom_data=['Seq'])
+            fig = px.bar(
+                cseq, x='Qtd', y='Desc', color='Seq',
+                color_discrete_map=cores_s,
+                orientation='h', template="plotly_dark", height=280,
+                custom_data=['Seq']
+            )
             fig.update_traces(
-                texttemplate='<b>%{x}</b>',textposition="outside",textfont_color="white",
+                texttemplate='<b>%{x}</b>', textposition="outside", textfont_color="white",
                 hovertemplate="<b>%{customdata[0]}</b><br>%{x} partidas<extra></extra>"
             )
-            fig.update_layout(showlegend=False,yaxis={'categoryorder':'total ascending','title':''},
-                              xaxis={'showticklabels':False,'title':''},margin=dict(l=10,r=10,t=10,b=10))
-            st.plotly_chart(fig,use_container_width=True)
+            fig.update_layout(
+                showlegend=False,
+                yaxis=dict(categoryorder='total ascending', title=''),
+                xaxis=dict(showticklabels=False, title=''),
+                margin=dict(l=10, r=10, t=10, b=10)
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
         with cs2:
-            fig=px.pie(cseq,values='Qtd',names='Desc',color='Seq',color_discrete_map=cores_s,
-                       template="plotly_dark",height=280)
+            fig = px.pie(
+                cseq, values='Qtd', names='Desc', color='Seq',
+                color_discrete_map=cores_s,
+                template="plotly_dark", height=280
+            )
             fig.update_traces(
-                textinfo='percent',textfont_color="white",
-                marker_line_color='white',marker_line_width=0.5,
+                textinfo='percent', textfont_color="white",
+                marker_line_color='white', marker_line_width=0.5,
                 hovertemplate="<b>%{label}</b><br>%{value} partidas<extra></extra>"
             )
-            fig.update_layout(showlegend=False,margin=dict(l=10,r=10,t=10,b=10))
-            st.plotly_chart(fig,use_container_width=True)
+            fig.update_layout(showlegend=False, margin=dict(l=10, r=10, t=10, b=10))
+            st.plotly_chart(fig, use_container_width=True)
 
+    # ── 10c — Como os Rounds Foram Decididos ──────────────────────────────────
     st.markdown("#### 💥 Como os Rounds Foram Decididos")
+
     def ex_g(t):
-        if pd.isna(t) or t in ("Nenhum","Sem dados"): return []
+        if pd.isna(t) or t in ("Nenhum", "Sem dados"): return []
         return [g.strip() for g in str(t).split(',')]
-    dg=df_f[['Meus_Golpes_Finais','Golpes_Oponente']].copy()
-    dg['M']=dg['Meus_Golpes_Finais'].apply(ex_g); dg['O']=dg['Golpes_Oponente'].apply(ex_g)
-    dmg=dg.explode('M')['M'].value_counts().reset_index(); dmg.columns=['G','Q']; dmg=dmg.sort_values('Q',ascending=True)
-    dog=dg.explode('O')['O'].value_counts().reset_index(); dog.columns=['G','Q']; dog=dog.sort_values('Q',ascending=True)
-    cg1,cg2=st.columns(2)
+
+    dg = df_f[['Meus_Golpes_Finais', 'Golpes_Oponente']].copy()
+    dg['M'] = dg['Meus_Golpes_Finais'].apply(ex_g)
+    dg['O'] = dg['Golpes_Oponente'].apply(ex_g)
+
+    dmg = dg.explode('M')['M'].value_counts().reset_index()
+    dmg.columns = ['G', 'Q']
+    dmg = dmg.sort_values('Q', ascending=True)
+
+    dog = dg.explode('O')['O'].value_counts().reset_index()
+    dog.columns = ['G', 'Q']
+    dog = dog.sort_values('Q', ascending=True)
+
+    cg1, cg2 = st.columns(2)
     with cg1:
         if not dmg.empty:
-            fig=px.bar(dmg,x='Q',y='G',orientation='h',title=f"Como VOCÊ finalizou rounds ({dmg['Q'].sum()})",
-                       template="plotly_dark",color_discrete_sequence=["#00cc96"])
+            fig = px.bar(
+                dmg, x='Q', y='G', orientation='h',
+                title=f"Como VOCÊ finalizou rounds ({dmg['Q'].sum()})",
+                template="plotly_dark", color_discrete_sequence=["#00cc96"]
+            )
             fig.update_traces(
-                texttemplate='<b>%{x}</b>',textposition="outside",textfont_color="white",
+                texttemplate='<b>%{x}</b>', textposition="outside", textfont_color="white",
                 hovertemplate="<b>%{y}</b><br>%{x} rounds<extra></extra>"
             )
-            fig.update_layout(xaxis={'showticklabels':False,'title':''},yaxis={'title':''},margin=dict(l=10,r=10,t=40,b=10))
-            st.plotly_chart(fig,use_container_width=True)
+            fig.update_layout(
+                xaxis=dict(showticklabels=False, title=''),
+                yaxis=dict(title=''),
+                margin=dict(l=10, r=10, t=40, b=10)
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
     with cg2:
         if not dog.empty:
-            fig=px.bar(dog,x='Q',y='G',orientation='h',title=f"Como o OPONENTE finalizou rounds ({dog['Q'].sum()})",
-                       template="plotly_dark",color_discrete_sequence=["#ef553b"])
+            fig = px.bar(
+                dog, x='Q', y='G', orientation='h',
+                title=f"Como o OPONENTE finalizou rounds ({dog['Q'].sum()})",
+                template="plotly_dark", color_discrete_sequence=["#ef553b"]
+            )
             fig.update_traces(
-                texttemplate='<b>%{x}</b>',textposition="outside",textfont_color="white",
+                texttemplate='<b>%{x}</b>', textposition="outside", textfont_color="white",
                 hovertemplate="<b>%{y}</b><br>%{x} rounds<extra></extra>"
             )
-            fig.update_layout(xaxis={'showticklabels':False,'title':''},yaxis={'title':''},margin=dict(l=10,r=10,t=40,b=10))
-            st.plotly_chart(fig,use_container_width=True)
+            fig.update_layout(
+                xaxis=dict(showticklabels=False, title=''),
+                yaxis=dict(title=''),
+                margin=dict(l=10, r=10, t=40, b=10)
+            )
+            st.plotly_chart(fig, use_container_width=True)
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 11 — LADO DA TELA
@@ -1132,37 +1617,46 @@ if total>0:
 st.markdown("---")
 st.markdown("### 📺 Lado da Tela — P1 vs P2")
 
-if total>0:
-    df_l=df_f['Meu_Lado'].value_counts().reset_index(); df_l.columns=['Lado','Quantidade']
-    cores_l={"Player 1":"#3498db","Player 2":"#e74c3c"}
-    cl1,cl2=st.columns(2)
+if total > 0:
+    df_l = df_f['Meu_Lado'].value_counts().reset_index()
+    df_l.columns = ['Lado', 'Quantidade']
+    cores_l = {"Player 1": "#3498DB", "Player 2": "#E74C3C"}
+
+    cl1, cl2 = st.columns(2)
     with cl1:
-        fig=px.pie(df_l,values='Quantidade',names='Lado',color='Lado',color_discrete_map=cores_l,
-                   title="P1 / P2",template="plotly_dark",height=280)
+        fig = px.pie(
+            df_l, values='Quantidade', names='Lado',
+            color='Lado', color_discrete_map=cores_l,
+            title="P1 / P2", template="plotly_dark", height=280
+        )
         fig.update_traces(
-            textinfo='percent+label',textfont_color="white",
-            marker_line_color='white',marker_line_width=0.5,
+            textinfo='percent+label', textfont_color="white",
+            marker_line_color='white', marker_line_width=0.5,
             hovertemplate="<b>%{label}</b><br>%{value} partidas<extra></extra>"
         )
-        fig.update_layout(showlegend=False,margin=dict(l=10,r=10,t=40,b=10))
-        st.plotly_chart(fig,use_container_width=True)
+        fig.update_layout(showlegend=False, margin=dict(l=10, r=10, t=40, b=10))
+        st.plotly_chart(fig, use_container_width=True)
+
     with cl2:
-        st.write(""); st.write("")
-        for lado in ["Player 1","Player 2"]:
-            sub=df_f[df_f['Meu_Lado']==lado]; tx=wr(sub)
-            lb="Esquerda (P1)" if lado=="Player 1" else "Direita (P2)"
-            st.metric(f"Win Rate como {lb}",f"{tx:.1f}%")
+        st.write("")
+        st.write("")
+        for lado in ["Player 1", "Player 2"]:
+            sub = df_f[df_f['Meu_Lado'] == lado]
+            tx  = wr(sub)
+            lb  = "Esquerda (P1)" if lado == "Player 1" else "Direita (P2)"
+            st.metric(f"Win Rate como {lb}", f"{tx:.1f}%")
             st.caption(f"🎯 {(sub['Meu_Resultado']=='Vitória 🏆').sum()} vitórias de {len(sub)} partidas")
             st.write("")
-    df_p1d=df_f[df_f['Meu_Lado'].astype(str).str.contains('1')]
+
+    df_p1d = df_f[df_f['Meu_Lado'].astype(str).str.contains('1')]
     if not df_p1d.empty:
         with st.expander(f"📋 Oponentes como P1 ({len(df_p1d)} partidas)"):
-            gp1=df_p1d.groupby('Oponente_Nome').agg(
-                Partidas=('Meu_Resultado','count'),
-                Vitórias=('Meu_Resultado',lambda x:(x=="Vitória 🏆").sum()),
-                Derrotas=('Meu_Resultado',lambda x:(x=="Derrota ❌").sum())
-            ).reset_index().sort_values('Partidas',ascending=False)
-            st.dataframe(gp1,use_container_width=True,hide_index=True)
+            gp1 = df_p1d.groupby('Oponente_Nome').agg(
+                Partidas = ('Meu_Resultado', 'count'),
+                Vitórias = ('Meu_Resultado', lambda x: (x == "Vitória 🏆").sum()),
+                Derrotas = ('Meu_Resultado', lambda x: (x == "Derrota ❌").sum())
+            ).reset_index().sort_values('Partidas', ascending=False)
+            st.dataframe(gp1, use_container_width=True, hide_index=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 12 — OPONENTES
@@ -1170,27 +1664,197 @@ if total>0:
 st.markdown("---")
 st.markdown("### 🎯 Oponentes — Jogadores Enfrentados")
 
-if total>0:
-    df_rv=df_f.groupby('Oponente_Nome').agg(
-        Partidas=('Meu_Resultado','count'),
-        Vitórias=('Meu_Resultado',lambda x:(x=="Vitória 🏆").sum()),
-        Derrotas=('Meu_Resultado',lambda x:(x=="Derrota ❌").sum())
-    ).reset_index(); df_rv['WR']=df_rv['Vitórias']/df_rv['Partidas']*100
-    if not df_rv.empty:
-        df3=df_rv[df_rv['Partidas']>=3]
-        me=df_rv.loc[df_rv['Partidas'].idxmax()]
-        mv=(df3 if not df3.empty else df_rv).loc[(df3 if not df3.empty else df_rv)['Vitórias'].idxmax()]
-        md=(df3 if not df3.empty else df_rv).loc[(df3 if not df3.empty else df_rv)['Derrotas'].idxmax()]
-        df4=df_rv[df_rv['Partidas']>=4].copy()
-        if not df4.empty:
-            df4['D50']=abs(df4['WR']-50); meq=df4.sort_values(['D50','Partidas'],ascending=[True,False]).iloc[0]
-            neq=meq['Oponente_Nome']; deq=f"⚖️ {meq['WR']:.1f}% em {meq['Partidas']} partidas"
-        else: neq="Sem dados"; deq="Mín. 4 partidas"
-        co1,co2,co3,co4=st.columns(4)
-        with co1: st.metric("Mais Enfrentado",me['Oponente_Nome']); st.caption(f"⚔️ {me['Partidas']} partidas")
-        with co2: st.metric("Freguês (mín.3)",mv['Oponente_Nome']); st.caption(f"🎯 {mv['Vitórias']} vitórias em {mv['Partidas']} partidas")
-        with co3: st.metric("Nêmesis (mín.3)",md['Oponente_Nome']); st.caption(f"💀 {md['Derrotas']} derrotas em {md['Partidas']} partidas")
-        with co4: st.metric("Rivalidade Equilíbrada",neq); st.caption(deq)
+if total > 0:
+    MIN_PARTIDAS = 5  # mínimo de confrontos para entrar nos rankings
+
+    # ── Agrega dados por oponente ─────────────────────────────────────────────
+    df_rv = df_f.groupby('Oponente_Nome').agg(
+        Partidas = ('Meu_Resultado', 'count'),
+        Vitórias = ('Meu_Resultado', lambda x: (x == "Vitória 🏆").sum()),
+        Derrotas = ('Meu_Resultado', lambda x: (x == "Derrota ❌").sum()),
+    ).reset_index()
+    df_rv['WR_Pct']    = (df_rv['Vitórias'] / df_rv['Partidas'] * 100).round(1)
+    df_rv['Derrota_Pct'] = (df_rv['Derrotas'] / df_rv['Partidas'] * 100).round(1)
+    df_rv['']          = df_rv['WR_Pct'].apply(semaforo)
+    df_rv['WR (%)']    = df_rv['WR_Pct'].apply(lambda x: f"{x:.1f}%")
+
+    df_min = df_rv[df_rv['Partidas'] >= MIN_PARTIDAS].copy()
+
+    # ── 4 métricas rápidas ────────────────────────────────────────────────────
+    # Destaques usam valores ABSOLUTOS (mais robustos que % com pouco volume).
+    # As taxas percentuais aparecem nos Top 5 abaixo, com contexto completo.
+    me = df_rv.loc[df_rv['Partidas'].idxmax()]
+
+    if not df_min.empty:
+        fre_abs = df_min.loc[df_min['Vitórias'].idxmax()]   # mais vitórias absolutas
+        nem_abs = df_min.loc[df_min['Derrotas'].idxmax()]   # mais derrotas absolutas
+        df_eq   = df_min.copy()
+        df_eq['D50'] = abs(df_eq['WR_Pct'] - 50)
+        eq = df_eq.sort_values(['D50', 'Partidas'], ascending=[True, False]).iloc[0]
+    else:
+        fre_abs = nem_abs = eq = None
+
+    co1, co2, co3, co4 = st.columns(4)
+    with co1:
+        st.metric("Mais Enfrentado", me['Oponente_Nome'])
+        st.caption(f"⚔️ {me['Partidas']} partidas")
+    with co2:
+        if fre_abs is not None:
+            st.metric("Maior Freguês", fre_abs['Oponente_Nome'])
+            st.caption(f"🏆 {fre_abs['Vitórias']} vitórias em {fre_abs['Partidas']} partidas ({fre_abs['WR_Pct']:.0f}%)")
+        else:
+            st.metric("Maior Freguês", "—")
+            st.caption(f"Mín. {MIN_PARTIDAS} partidas")
+    with co3:
+        if nem_abs is not None:
+            st.metric("Maior Nêmesis", nem_abs['Oponente_Nome'])
+            st.caption(f"💀 {nem_abs['Derrotas']} derrotas em {nem_abs['Partidas']} partidas ({nem_abs['Derrota_Pct']:.0f}%)")
+        else:
+            st.metric("Maior Nêmesis", "—")
+            st.caption(f"Mín. {MIN_PARTIDAS} partidas")
+    with co4:
+        if eq is not None:
+            st.metric("Rivalidade Equilibrada", eq['Oponente_Nome'])
+            st.caption(f"⚖️ {eq['WR_Pct']:.0f}% em {eq['Partidas']} partidas")
+        else:
+            st.metric("Rivalidade Equilibrada", "—")
+            st.caption(f"Mín. {MIN_PARTIDAS} partidas")
+
+    st.divider()
+
+    # ── Top 5 — Mais Confrontados ─────────────────────────────────────────────
+    st.markdown(f"#### ⚔️ Top 5 — Mais Confrontados (mín. {MIN_PARTIDAS} partidas)")
+    if not df_min.empty:
+        top_conf = df_min.nlargest(5, 'Partidas')[
+            ['', 'Oponente_Nome', 'Partidas', 'Vitórias', 'Derrotas', 'WR (%)', 'WR_Pct']
+        ]
+        st.dataframe(top_conf, use_container_width=True, hide_index=True,
+                     column_config={"WR_Pct": None})
+    else:
+        st.info(f"Nenhum oponente com {MIN_PARTIDAS}+ confrontos nos filtros atuais.")
+
+    st.divider()
+
+    # ── Top 5 — Fregueses ─────────────────────────────────────────────────────
+    st.markdown(f"#### 🏆 Top 5 — Fregueses (mín. {MIN_PARTIDAS} partidas)")
+    if not df_min.empty:
+        tf1, tf2 = st.columns(2)
+        with tf1:
+            st.caption("Por vitórias absolutas")
+            top_fre_abs = df_min.nlargest(5, 'Vitórias')[
+                ['', 'Oponente_Nome', 'Partidas', 'Vitórias', 'WR (%)', 'WR_Pct']
+            ]
+            st.dataframe(top_fre_abs, use_container_width=True, hide_index=True,
+                         column_config={"WR_Pct": None})
+        with tf2:
+            st.caption("Por % de vitória")
+            top_fre_pct = df_min.nlargest(5, 'WR_Pct')[
+                ['', 'Oponente_Nome', 'Partidas', 'Vitórias', 'WR (%)', 'WR_Pct']
+            ]
+            st.dataframe(top_fre_pct, use_container_width=True, hide_index=True,
+                         column_config={"WR_Pct": None})
+    else:
+        st.info(f"Nenhum oponente com {MIN_PARTIDAS}+ confrontos nos filtros atuais.")
+
+    st.divider()
+
+    # ── Top 5 — Nêmesis ───────────────────────────────────────────────────────
+    st.markdown(f"#### 💀 Top 5 — Nêmesis (mín. {MIN_PARTIDAS} partidas)")
+    if not df_min.empty:
+        tn1, tn2 = st.columns(2)
+        with tn1:
+            st.caption("Por derrotas absolutas")
+            top_nem_abs = df_min.nlargest(5, 'Derrotas')[
+                ['', 'Oponente_Nome', 'Partidas', 'Derrotas', 'WR (%)', 'Derrota_Pct']
+            ]
+            top_nem_abs['Derrota (%)'] = top_nem_abs['Derrota_Pct'].apply(lambda x: f"{x:.1f}%")
+            st.dataframe(
+                top_nem_abs[['', 'Oponente_Nome', 'Partidas', 'Derrotas', 'Derrota (%)']],
+                use_container_width=True, hide_index=True
+            )
+        with tn2:
+            st.caption("Por % de derrota")
+            top_nem_pct = df_min.nlargest(5, 'Derrota_Pct')[
+                ['', 'Oponente_Nome', 'Partidas', 'Derrotas', 'Derrota_Pct']
+            ]
+            top_nem_pct['Derrota (%)'] = top_nem_pct['Derrota_Pct'].apply(lambda x: f"{x:.1f}%")
+            st.dataframe(
+                top_nem_pct[['', 'Oponente_Nome', 'Partidas', 'Derrotas', 'Derrota (%)']],
+                use_container_width=True, hide_index=True
+            )
+    else:
+        st.info(f"Nenhum oponente com {MIN_PARTIDAS}+ confrontos nos filtros atuais.")
+
+    st.divider()
+
+    # ── Top 5 — Rivalidades Equilibradas ─────────────────────────────────────
+    st.markdown(f"#### ⚖️ Top 5 — Rivalidades Equilibradas (mín. {MIN_PARTIDAS} partidas)")
+    st.caption("Oponentes com WR mais próximo de 50% — ninguém domina a série.")
+    if not df_min.empty:
+        df_eq_top = df_min.copy()
+        df_eq_top['Dist_50'] = abs(df_eq_top['WR_Pct'] - 50)
+        top_eq = df_eq_top.nsmallest(5, 'Dist_50')[
+            ['', 'Oponente_Nome', 'Partidas', 'Vitórias', 'Derrotas', 'WR (%)', 'WR_Pct']
+        ]
+        st.dataframe(top_eq, use_container_width=True, hide_index=True,
+                     column_config={"WR_Pct": None})
+    else:
+        st.info(f"Nenhum oponente com {MIN_PARTIDAS}+ confrontos nos filtros atuais.")
+
+    st.divider()
+
+    # ── Jogadores por Dia da Semana ───────────────────────────────────────────
+    st.markdown("#### 📅 Jogadores por Dia da Semana")
+    st.caption(
+        "O mesmo jogador pode aparecer em vários dias. "
+        "Útil para lembrar em qual dia você enfrentou alguém específico."
+    )
+
+    ORDEM_DIAS = ['Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira',
+                  'Sexta-feira','Sábado','Domingo']
+
+    # Monta dicionário dia → lista de jogadores únicos ordenados
+    jogadores_por_dia = {}
+    for dia in ORDEM_DIAS:
+        df_dia = df_f[df_f['Dia da Semana'] == dia]
+        if df_dia.empty:
+            jogadores_por_dia[dia] = []
+        else:
+            jogadores_por_dia[dia] = sorted(df_dia['Oponente_Nome'].dropna().unique().tolist())
+
+    # Métricas de jogadores únicos por dia
+    cols_metricas = st.columns(7)
+    for idx, dia in enumerate(ORDEM_DIAS):
+        qtd = len(jogadores_por_dia[dia])
+        with cols_metricas[idx]:
+            st.metric(
+                label=dia[:3],  # abreviação: Seg, Ter, Qua...
+                value=f"{qtd}",
+                help=f"{dia} — {qtd} jogadores únicos"
+            )
+
+    # DataFrame transposto — dias como colunas, jogadores nas linhas
+    max_linhas = max((len(v) for v in jogadores_por_dia.values()), default=0)
+
+    if max_linhas > 0:
+        df_dias_jogadores = pd.DataFrame({
+            dia[:3]: (
+                jogadores_por_dia[dia] +
+                [''] * (max_linhas - len(jogadores_por_dia[dia]))
+            )
+            for dia in ORDEM_DIAS
+        })
+
+        st.dataframe(
+            df_dias_jogadores,
+            use_container_width=True,
+            hide_index=True,
+            height=min(max_linhas * 35 + 38, 500),  # altura proporcional, máx 500px
+        )
+        st.caption("⚠️ Células vazias indicam que o dia teve menos jogadores que o dia com mais confrontos.")
+    else:
+        st.info("Nenhum dado disponível para os filtros selecionados.")
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 13 — BUSCA DE CONFRONTOS
@@ -1198,26 +1862,158 @@ if total>0:
 st.markdown("---")
 st.markdown("### 🔍 Histórico Detalhado contra um Oponente")
 
-lista_busca=sorted(df_f['Oponente_Nome'].dropna().unique())
-busca=st.selectbox("Selecione:",options=lista_busca,index=None,placeholder="Digite para filtrar...")
+lista_busca = sorted(df_f['Oponente_Nome'].dropna().unique())
+busca = st.selectbox(
+    "Selecione um oponente:",
+    options=lista_busca, index=None,
+    placeholder="Digite para filtrar..."
+)
+
 if busca:
-    db=df_f[df_f['Oponente_Nome']==busca].sort_values(['Data','Hora Exata'],ascending=[False,False])
-    vb=(db['Meu_Resultado']=="Vitória 🏆").sum(); dbb=(db['Meu_Resultado']=="Derrota ❌").sum()
-    st.success(f"**{len(db)} confrontos** contra '{busca}' → 🏆 {vb} vitórias · ❌ {dbb} derrotas")
-    for _,row in db.iterrows():
-        ic="🟢" if "Vitória" in row['Meu_Resultado'] else ("🔴" if "Derrota" in row['Meu_Resultado'] else "⚪")
-        with st.expander(f"{ic} {row['Data']} {row['Hora Exata']} | {row['Meu_Personagem']} vs {row['Oponente_Personagem']} | {row['Placar']}"):
-            b1,b2,b3=st.columns([1,1.5,1.5])
-            with b1:
+    db = df_f[df_f['Oponente_Nome'] == busca].sort_values(
+        ['Data', 'Hora Exata'], ascending=[False, False]
+    )
+    vb   = (db['Meu_Resultado'] == "Vitória 🏆").sum()
+    dbb  = (db['Meu_Resultado'] == "Derrota ❌").sum()
+    wr_b = vb / len(db) * 100 if len(db) > 0 else 0
+
+    # Personagem mais usado pelo oponente (para a arte grande)
+    char_mais_usado = db['Oponente_Personagem'].value_counts().idxmax()
+    cor_char        = cor_personagem(char_mais_usado)
+
+    # ── Cabeçalho: full body do main + métricas ───────────────────────────────
+    col_arte, col_metricas = st.columns([1, 3])
+
+    with col_arte:
+        path_full = f"assets/characters/full/{char_mais_usado}.png"
+        if os.path.exists(path_full):
+            st.image(Image.open(path_full).convert("RGBA"), use_container_width=True)
+        else:
+            # fallback para portrait se não tiver full body
+            path_portrait = f"assets/characters/portrait/{char_mais_usado}.png"
+            if os.path.exists(path_portrait):
+                st.image(Image.open(path_portrait).convert("RGBA"), width=120)
+        st.markdown(
+            f'<div style="text-align:center;color:{cor_char};font-weight:700;'
+            f'font-size:13px;margin-top:4px;">{char_mais_usado.upper()}</div>',
+            unsafe_allow_html=True
+        )
+        st.caption(f"<div style='text-align:center;'>Personagem mais usado</div>",
+                   unsafe_allow_html=True)
+
+    with col_metricas:
+        st.markdown(f"#### vs **{busca}**")
+        mb1, mb2, mb3, mb4 = st.columns(4)
+        mb1.metric("Confrontos",  len(db))
+        mb2.metric("Vitórias 🏆", vb)
+        mb3.metric("Derrotas ❌", dbb)
+        mb4.metric("Win Rate",    f"{wr_b:.1f}%")
+
+        # Personagens que o oponente usou
+        chars_op = db['Oponente_Personagem'].value_counts()
+        chars_txt = " · ".join([f"{c} ({n})" for c, n in chars_op.items()])
+        st.caption(f"🎭 Personagens usados por {busca}: {chars_txt}")
+
+        # MR range do oponente nessas partidas
+        mrs = db[db['Oponente_MR'] > 0]['Oponente_MR']
+        if not mrs.empty:
+            st.caption(f"📊 MR do oponente: {int(mrs.min())} – {int(mrs.max())}")
+
+    st.write("")
+
+    # ── Lista de confrontos individuais ───────────────────────────────────────
+    for _, row in db.iterrows():
+        ic = ("🟢" if "Vitória" in row['Meu_Resultado']
+              else "🔴" if "Derrota" in row['Meu_Resultado']
+              else "⚪")
+
+        label = (
+            f"{ic} {row['Data']} {row['Hora Exata']} | "
+            f"{row['Meu_Personagem']} vs {row['Oponente_Personagem']} | "
+            f"{row['Placar']}"
+        )
+
+        with st.expander(label):
+
+            # Reconstrói rounds a partir da sequência e golpes finais
+            seq_str = str(row.get('Sequencia_Rounds', ''))
+            seq     = [s.strip() for s in seq_str.split('-') if s.strip() in ('V','D')] \
+                      if seq_str not in ('', 'Sem dados') else []
+
+            meus_golpes = [g.strip() for g in str(row.get('Meus_Golpes_Finais','')).split(',')
+                           if g.strip() not in ('', 'Nenhum', 'Sem dados', 'Erro de Leitura')]
+            op_golpes   = [g.strip() for g in str(row.get('Golpes_Oponente','')).split(',')
+                           if g.strip() not in ('', 'Nenhum', 'Sem dados', 'Erro de Leitura')]
+
+            meus_iter = iter(meus_golpes)
+            op_iter   = iter(op_golpes)
+            rounds = []
+            for r in seq:
+                if r == 'V':
+                    rounds.append({'meu': next(meus_iter, 'Vitória'), 'op': ''})
+                else:
+                    rounds.append({'meu': '', 'op': next(op_iter, 'Vitória')})
+
+            cor_meu = cor_personagem(row['Meu_Personagem'])
+            cor_op  = cor_personagem(row['Oponente_Personagem'])
+
+            col_eu, col_op, col_info = st.columns([1, 1, 2])
+
+            with col_eu:
+                st.markdown(
+                    f'<div style="color:{cor_meu};font-weight:700;font-size:12px;'
+                    f'margin-bottom:4px;">{row["Meu_Nome"].upper()}</div>',
+                    unsafe_allow_html=True
+                )
+                path_meu = f"assets/characters/portrait/{row['Meu_Personagem']}.png"
+                if os.path.exists(path_meu):
+                    st.image(Image.open(path_meu).convert("RGBA"), width=80)
+                st.markdown(
+                    f'<span style="color:{cor_meu};font-weight:700;font-size:11px;">'
+                    f'{row["Meu_Personagem"].upper()}</span>',
+                    unsafe_allow_html=True
+                )
+                st.write("")
+                for i, r in enumerate(rounds, 1):
+                    if r['meu']:
+                        st.markdown(f"**Round {i}:** {r['meu']}")
+                    else:
+                        st.markdown(f"Round {i}: —")
+
+            with col_op:
+                st.markdown(
+                    f'<div style="color:{cor_op};font-weight:700;font-size:12px;'
+                    f'margin-bottom:4px;">{row["Oponente_Nome"].upper()}</div>',
+                    unsafe_allow_html=True
+                )
+                path_op = f"assets/characters/portrait/{row['Oponente_Personagem']}.png"
+                if os.path.exists(path_op):
+                    st.image(Image.open(path_op).convert("RGBA"), width=80)
+                st.markdown(
+                    f'<span style="color:{cor_op};font-weight:700;font-size:11px;">'
+                    f'{row["Oponente_Personagem"].upper()}</span>',
+                    unsafe_allow_html=True
+                )
+                st.write("")
+                for i, r in enumerate(rounds, 1):
+                    if r['op']:
+                        st.markdown(f"**Round {i}:** {r['op']}")
+                    else:
+                        st.markdown(f"Round {i}: —")
+
+            with col_info:
+                st.write("")
                 st.markdown(f"**Modo:** {row['Tipo Partida (Jogo)']}")
                 st.markdown(f"**Resultado:** {row['Meu_Resultado']}")
-                if cols_on.get("Nível"):    st.markdown(f"**Nível:** {row.get('Nivel_Oponente','—')}")
-                if cols_on.get("Tier"):     st.markdown(f"**Tier:** {row.get('Tier_Oponente','—')}")
-                if cols_on.get("Mirror Match"): st.markdown(f"**Mirror:** {'Sim 🪞' if row.get('Mirror_Match') else 'Não'}")
-            with b2:
-                st.markdown("🗡️ **Como você venceu:**"); st.info(row['Meus_Golpes_Finais'])
-            with b3:
-                st.markdown("🛡️ **Como o oponente venceu:**"); st.error(row['Golpes_Oponente'])
+                st.markdown(f"**Placar:** {row['Placar']}")
+                st.markdown(f"**MR Oponente:** {row['Oponente_MR']}")
+                if cols_on.get("Nível"):
+                    st.markdown(f"**Nível:** {row.get('Nivel_Oponente','—')}")
+                if cols_on.get("Tier"):
+                    st.markdown(f"**Tier:** {row.get('Tier_Oponente','—')}")
+                if cols_on.get("Mirror Match"):
+                    st.markdown(f"**Mirror:** {'Sim 🪞' if row.get('Mirror_Match') else 'Não'}")
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ══  SEÇÃO 14 — HISTÓRICO COMPLETO
@@ -1225,290 +2021,207 @@ if busca:
 st.markdown("---")
 st.markdown("### 📋 Histórico Detalhado")
 
-colunas_base=['Data','Hora Exata','Tipo Partida (Jogo)','Turno','Meu_Resultado','Placar',
-              'Meu_Personagem','Oponente_Nome','Oponente_Personagem','Oponente_MR',
-              'Numero_Partida_No_Dia','Streak_Atual']
-if cols_on.get("Nível"):       colunas_base.append('Nivel_Oponente')
-if cols_on.get("Tier"):        colunas_base.append('Tier_Oponente')
-if cols_on.get("Arquétipo"):   colunas_base.append('Arquetipo_Oponente')
-if cols_on.get("Mirror Match"):colunas_base.append('Mirror_Match')
+if total > 0:
+    colunas_base = [
+        'Data', 'Hora Exata', 'Tipo Partida (Jogo)', 'Turno',
+        'Meu_Resultado', 'Placar',
+        'Meu_Personagem', 'Meu_MR',
+        'Oponente_Nome', 'Oponente_Personagem', 'Oponente_MR', 'Oponente_Rank_Nome',
+        'Numero_Partida_No_Dia', 'Streak_Atual',
+        'Venceu_Primeiro_Round', 'Sequencia_Rounds',
+    ]
+    if cols_on.get("Nível"):        colunas_base.append('Nivel_Oponente')
+    if cols_on.get("Tier"):         colunas_base.append('Tier_Oponente')
+    if cols_on.get("Arquétipo"):    colunas_base.append('Arquetipo_Oponente')
+    if cols_on.get("Mirror Match"): colunas_base.append('Mirror_Match')
 
-colunas_ok=[c for c in colunas_base if c in df_f.columns]
-if total>0:
-    st.dataframe(df_f[colunas_ok].sort_values(['Data','Hora Exata'],ascending=[False,False]),
-                 use_container_width=True,hide_index=True)
+    colunas_ok = [c for c in colunas_base if c in df_f.columns]
+
+    st.dataframe(
+        df_f[colunas_ok].sort_values(['Data', 'Hora Exata'], ascending=[False, False]),
+        use_container_width=True, hide_index=True
+    )
+    st.caption(f"📊 {total:,} partidas exibidas com os filtros atuais.".replace(",","."))
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ══  SEÇÃO — AVALIAÇÃO DE MATCHUPS PELO WINTER
+# ══  SEÇÃO — COMPARAÇÃO DOS MAINS
+# Fixa em ranqueadas da temporada atual — filtros globais não se aplicam.
+# Tier e Arquétipo SEGUEM as Configurações (mudam se o usuário ajustar lá).
+# Depende de: df_base, cor_personagem(), arq_map, tier_map, semaforo(), ORDEM_TIER
 # ══════════════════════════════════════════════════════════════════════════════
 st.markdown("---")
-st.markdown("### 🎮 Avaliação de Matchups — Winter")
-st.caption("Arraste os personagens entre as categorias. O dashboard calcula o win rate de cada grupo automaticamente.")
+st.markdown("### ⚔️ Comparação dos Mains")
+st.caption(
+    "Compara os personagens mais usados em ranqueada na temporada atual. "
+    "Filtros da sidebar não se aplicam, mas a Tier List e os Arquétipos "
+    "seguem o que estiver configurado em ⚙️ Configurações."
+)
 
-# Pega personagens enfrentados nos dados filtrados
-chars_enfrentados = sorted(df_f['Oponente_Personagem'].dropna().unique().tolist())
+# ── Base: ranqueadas da temporada mais recente ────────────────────────────────
+df_mains = df_base[df_base['Tipo Partida (Jogo)'] == 'Ranqueada'].copy()
 
-# Inicializa session state com todos os personagens em "Sem Opinião"
-if 'matchup_gosta' not in st.session_state:
-    st.session_state.matchup_gosta    = []
-if 'matchup_reclama' not in st.session_state:
-    st.session_state.matchup_reclama  = []
-if 'matchup_neutro' not in st.session_state:
-    st.session_state.matchup_neutro   = chars_enfrentados.copy()
+if 'Temporada' in df_mains.columns and not df_mains['Temporada'].dropna().empty:
+    temp_atual = sorted(df_mains['Temporada'].dropna().unique(), reverse=True)[0]
+    df_mains   = df_mains[df_mains['Temporada'] == temp_atual]
+    st.caption(f"📅 Temporada analisada: **{temp_atual}**")
+else:
+    temp_atual = None
 
-# Sincroniza: se novos personagens apareceram nos dados, adiciona em Neutro
-ja_classificados = set(st.session_state.matchup_gosta) | set(st.session_state.matchup_reclama) | set(st.session_state.matchup_neutro)
-novos = [c for c in chars_enfrentados if c not in ja_classificados]
-if novos:
-    st.session_state.matchup_neutro.extend(novos)
+if df_mains.empty:
+    st.info("Nenhuma partida ranqueada na temporada atual.")
+else:
+    # ── Filtro local de mínimo de partidas ────────────────────────────────────
+    col_min, _ = st.columns([1, 3])
+    with col_min:
+        min_conf = st.slider(
+            "Mín. de confrontos para análise:",
+            min_value=3, max_value=15, value=5, step=1,
+            key="min_conf_mains",
+            help="Só conta matchups com pelo menos este número de partidas"
+        )
 
-# Remove personagens que sumiram dos dados filtrados
-for lista in ['matchup_gosta','matchup_reclama','matchup_neutro']:
-    st.session_state[lista] = [c for c in st.session_state[lista] if c in chars_enfrentados]
+    # ── Top 3 personagens mais usados ─────────────────────────────────────────
+    top3 = df_mains['Meu_Personagem'].value_counts().head(3).index.tolist()
 
-# Drag-and-drop
-sort_input = [
-    {"header": "😤 Reclama da Matchup",  "items": list(st.session_state.matchup_reclama)},
-    {"header": "😊 Gosta da Matchup",    "items": list(st.session_state.matchup_gosta)},
-    {"header": "😐 Sem Opinião",         "items": list(st.session_state.matchup_neutro)},
-]
-sort_resultado = sort_items(sort_input, multi_containers=True, key="sort_matchup_opinion")
+    if not top3:
+        st.info("Sem personagens suficientes para comparar.")
+    else:
+        def wr_pct(sub):
+            t = len(sub)
+            return (sub['Meu_Resultado'] == "Vitória 🏆").sum() / t * 100 if t > 0 else 0.0
 
-if st.button("💾 Salvar classificação"):
-    for bloco in sort_resultado:
-        if bloco["header"] == "😤 Reclama da Matchup":
-            st.session_state.matchup_reclama = bloco["items"]
-        elif bloco["header"] == "😊 Gosta da Matchup":
-            st.session_state.matchup_gosta   = bloco["items"]
+        # Garante colunas dinâmicas (seguem as Configurações via arq_map/tier_map)
+        if 'Arquetipo_Oponente' not in df_mains.columns:
+            df_mains['Arquetipo_Oponente'] = (
+                df_mains['Oponente_Personagem'].map(arq_map).fillna("Desconhecido")
+            )
+        if 'Tier_Oponente' not in df_mains.columns:
+            df_mains['Tier_Oponente'] = (
+                df_mains['Oponente_Personagem'].map(tier_map).fillna("?")
+            )
+
+        def analisa_personagem(personagem):
+            """Métricas de desempenho — só matchup específico nos cards."""
+            sub = df_mains[df_mains['Meu_Personagem'] == personagem]
+            resultado = {
+                'wr_geral': wr_pct(sub),
+                'partidas': len(sub),
+                'vitorias': (sub['Meu_Resultado'] == "Vitória 🏆").sum(),
+            }
+            char_stats = []
+            for char, grupo in sub.groupby('Oponente_Personagem'):
+                if len(grupo) >= min_conf:
+                    char_stats.append((char, wr_pct(grupo), len(grupo)))
+            char_stats.sort(key=lambda x: x[1], reverse=True)
+            resultado['melhor_char'] = char_stats[0]  if char_stats else None
+            resultado['pior_char']   = char_stats[-1] if char_stats else None
+            resultado['tem_char']    = len(char_stats) > 0
+            return resultado
+
+        analises = {p: analisa_personagem(p) for p in top3}
+
+        # ── Cards lado a lado — WR geral + melhor/pior matchup específico ──────
+        cols = st.columns(len(top3))
+        for idx, personagem in enumerate(top3):
+            a   = analises[personagem]
+            cor = cor_personagem(personagem)
+            with cols[idx]:
+                path = f"assets/characters/portrait/{personagem}.png"
+                if os.path.exists(path):
+                    st.image(Image.open(path).convert("RGBA"), width=90)
+                st.markdown(
+                    f'<div style="color:{cor};font-weight:700;font-size:15px;">'
+                    f'{personagem.upper()}</div>',
+                    unsafe_allow_html=True
+                )
+                st.metric("WR Geral", f"{a['wr_geral']:.1f}%")
+                st.caption(f"🎯 {a['vitorias']} vitórias em {a['partidas']} partidas")
+
+                st.markdown("---")
+
+                if a['tem_char']:
+                    char, w, n = a['melhor_char']
+                    st.markdown(f"🥇 **Melhor matchup:** {char}")
+                    st.caption(f"{semaforo(w)} {w:.1f}% em {n} partidas")
+                    if a['pior_char'] and a['pior_char'] != a['melhor_char']:
+                        char, w, n = a['pior_char']
+                        st.markdown(f"🥊 **Pior matchup:** {char}")
+                        st.caption(f"{semaforo(w)} {w:.1f}% em {n} partidas")
+                else:
+                    st.caption(
+                        f"⚠️ Nenhum matchup específico com {min_conf}+ confrontos. "
+                        f"Baixe o mínimo para ver mais."
+                    )
+
+        st.divider()
+
+        # ── Helper genérico de recomendação por categoria ─────────────────────
+        def tabela_recomendacao(coluna_categoria, valores_ordenados=None, label="Categoria"):
+            """Para cada valor da categoria, qual main tem melhor WR (mín. confrontos)."""
+            categorias = (
+                valores_ordenados if valores_ordenados is not None
+                else sorted(df_mains[df_mains[coluna_categoria] != "Desconhecido"][coluna_categoria].dropna().unique())
+            )
+            linhas = []
+            for cat in categorias:
+                melhor_p, melhor_wr, melhor_n = None, -1, 0
+                cobertura = []  # personagens que tiveram dados suficientes
+                for personagem in top3:
+                    sub = df_mains[
+                        (df_mains['Meu_Personagem'] == personagem) &
+                        (df_mains[coluna_categoria] == cat)
+                    ]
+                    if len(sub) >= min_conf:
+                        cobertura.append(personagem)
+                        w = wr_pct(sub)
+                        if w > melhor_wr:
+                            melhor_p, melhor_wr, melhor_n = personagem, w, len(sub)
+                if melhor_p is not None:
+                    if len(cobertura) >= 2:
+                        obs = f"Comparado entre {len(cobertura)} mains"
+                    else:
+                        obs = f"Só {cobertura[0]} teve {min_conf}+ partidas"
+                    linhas.append({
+                        label:       str(cat),
+                        'Use':       melhor_p,
+                        'Win Rate':  f"{melhor_wr:.1f}%",
+                        'Partidas':  melhor_n,
+                        'Observação': obs,
+                    })
+            return pd.DataFrame(linhas)
+
+        # ── 3 tabelas de recomendação empilhadas ──────────────────────────────
+        st.markdown("#### 💡 Recomendação de Uso")
+        st.caption(f"Qual dos seus {len(top3)} mains rende mais em cada categoria (mín. {min_conf} confrontos).")
+
+        # Tabela 1 — Por Arquétipo
+        st.markdown("##### 🥋 Por Arquétipo")
+        df_arq_rec = tabela_recomendacao('Arquetipo_Oponente', label='Arquétipo')
+        if not df_arq_rec.empty:
+            st.dataframe(df_arq_rec, use_container_width=True, hide_index=True)
         else:
-            st.session_state.matchup_neutro  = bloco["items"]
-    st.success("✅ Classificação salva!")
-    st.rerun()
-
-# Análise dos grupos
-grupos = {
-    "😤 Reclama": st.session_state.matchup_reclama,
-    "😊 Gosta":   st.session_state.matchup_gosta,
-    "😐 Neutro":  st.session_state.matchup_neutro,
-}
-
-grupos_com_dados = {k: v for k, v in grupos.items() if v}
-if len(grupos_com_dados) >= 2:
-    st.markdown("#### 📊 Win Rate por Classificação")
-
-    rows = []
-    for label, chars in grupos.items():
-        if not chars: continue
-        sub = df_f[df_f['Oponente_Personagem'].isin(chars)]
-        if len(sub) == 0: continue
-        rows.append({
-            "Classificação": label,
-            "Personagens":   ", ".join(sorted(chars)),
-            "Partidas":      len(sub),
-            "Vitórias":      (sub['Meu_Resultado']=="Vitória 🏆").sum(),
-            "WR_num":        wr(sub),
-        })
-
-    if rows:
-        df_op_class = pd.DataFrame(rows)
-        df_op_class[''] = df_op_class['WR_num'].apply(semaforo)
-        df_op_class['Win Rate (%)'] = df_op_class['WR_num'].apply(lambda x: f"{x:.1f}%")
-
-        # Métricas de destaque
-        mc1, mc2, mc3 = st.columns(3)
-        cores_grupo = {"😤 Reclama": "#b63a24", "😊 Gosta": "#119c0c", "😐 Neutro": "#95A5A6"}
-        for i, row in enumerate(rows):
-            col = [mc1, mc2, mc3][i % 3]
-            col.metric(row['Classificação'], f"{row['WR_num']:.1f}%",
-                       f"{row['Partidas']} partidas")
+            st.info(f"Nenhum arquétipo com {min_conf}+ confrontos. Baixe o mínimo.")
 
         st.write("")
 
-        # Gráfico comparativo
-        fig_op = go.Figure()
-        for row in rows:
-            fig_op.add_trace(go.Bar(
-                x=[row['Classificação']], y=[row['WR_num']],
-                name=row['Classificação'],
-                marker_color=cores_grupo.get(row['Classificação'], '#888'),
-                text=[f"{row['WR_num']:.1f}%"], textposition='outside',
-                textfont_color='white',
-                customdata=[[row['Partidas'], row['Personagens']]],
-                hovertemplate=(
-                    "<b>%{x}</b><br>"
-                    "Win Rate: %{y:.1f}%<br>"
-                    "%{customdata[0]} partidas<br><br>"
-                    "%{customdata[1]}<extra></extra>"
-                )
-            ))
-        fig_op.update_layout(
-            template="plotly_dark", height=340, showlegend=False,
-            yaxis=dict(range=[0,115], showticklabels=False),
-            margin=dict(l=10,r=10,t=20,b=10)
-        )
-        st.plotly_chart(fig_op, use_container_width=True)
+        # Tabela 2 — Por Tier
+        st.markdown("##### 🏆 Por Tier")
+        tiers_ordenados = [t for t in ORDEM_TIER
+                           if t in df_mains['Tier_Oponente'].unique()]
+        df_tier_rec = tabela_recomendacao('Tier_Oponente', tiers_ordenados, label='Tier')
+        if not df_tier_rec.empty:
+            st.dataframe(df_tier_rec, use_container_width=True, hide_index=True)
+        else:
+            st.info(f"Nenhum tier com {min_conf}+ confrontos. Baixe o mínimo.")
 
-        # Tabela detalhada
-        st.dataframe(
-            df_op_class[['','Classificação','Partidas','Vitórias','Win Rate (%)','Personagens']],
-            use_container_width=True, hide_index=True
-        )
-        st.caption("💡 O hover do gráfico lista todos os personagens de cada grupo.")
+        st.write("")
 
-# ══════════════════════════════════════════════════════════════════════════════
-# ══  SEÇÃO EXTRA — ANÁLISE DO CAMPEONATO (Bradley-Terry)
-# ══════════════════════════════════════════════════════════════════════════════
-st.markdown("---")
-st.markdown("### 🏟️ Análise do Campeonato — Probabilidades de Vitória")
-st.caption(
-    "Usando o modelo Bradley-Terry — baseado apenas no Win Rate geral de cada jogador. "
-    "O modelo converte o Win Rate em força latente e calcula a probabilidade de vitória num confronto direto."
-)
-
-# ── Dados do campeonato ───────────────────────────────────────────────────────
-confrontos = [
-    {"oponente": "Nebraska",  "wr_winter": 0.57, "wr_op": 0.66},
-    {"oponente": "JUST ME",   "wr_winter": 0.57, "wr_op": 0.54},
-]
-
-def bradley_terry(wr_a, wr_b):
-    """Retorna P(A vence 1 partida) pelo modelo Bradley-Terry."""
-    forca_a = wr_a / (1 - wr_a)
-    forca_b = wr_b / (1 - wr_b)
-    return forca_a / (forca_a + forca_b)
-
-def prob_set(p, primeiro_a, total):
-    """
-    Calcula P(A vence o set) para formato FT-N (primeiro a N vences).
-    Soma todos os cenários onde A vence exatamente na partida (2N-1).
-    """
-    from math import comb
-    prob = 0.0
-    for derrotas in range(primeiro_a):
-        # A vence a última partida, tendo sofrido 'derrotas' antes
-        # nas (primeiro_a - 1 + derrotas) partidas anteriores
-        anteriores = primeiro_a - 1 + derrotas
-        prob += comb(anteriores, derrotas) * (p ** primeiro_a) * ((1-p) ** derrotas)
-    return prob
-
-st.write("")
-
-for c in confrontos:
-    p = bradley_terry(c['wr_winter'], c['wr_op'])
-
-    # Calcula para FT2 e FT3
-    p_ft2 = prob_set(p, 2, 3)
-    p_ft3 = prob_set(p, 3, 5)
-
-    p_ft2_op = 1 - p_ft2
-    p_ft3_op = 1 - p_ft3
-
-    # Cenários detalhados FT2
-    p_20 = p * p
-    p_21 = p*(1-p)*p + (1-p)*p*p
-
-    # Cenários detalhados FT3
-    p_30 = p**3
-    p_31 = 3 * p**3 * (1-p)
-    p_32 = 6 * p**3 * (1-p)**2
-
-    st.markdown(f"#### ⚔️ Winter vs {c['oponente']}")
-
-    col_wr1, col_wr2, col_wr3 = st.columns(3)
-    col_wr1.metric("Win Rate Winter",           f"{c['wr_winter']*100:.0f}%")
-    col_wr2.metric(f"Win Rate {c['oponente']}",  f"{c['wr_op']*100:.0f}%")
-    col_wr3.metric(
-        "Diferença de força",
-        f"{abs(c['wr_winter'] - c['wr_op'])*100:.0f}pp",
-        delta="favorável ao Winter" if c['wr_winter'] >= c['wr_op'] else f"favorável ao {c['oponente']}",
-        delta_color="normal" if c['wr_winter'] >= c['wr_op'] else "inverse"
-    )
-
-    st.write("")
-
-    # ── Gráficos FT2 e FT3 lado a lado ───────────────────────────────────────
-    cg1, cg2 = st.columns(2)
-
-    with cg1:
-        fig_ft2 = go.Figure()
-        fig_ft2.add_trace(go.Bar(
-            x=["Winter", c['oponente']],
-            y=[round(p_ft2*100,1), round(p_ft2_op*100,1)],
-            marker_color=[
-                "#00cc96" if p_ft2 >= 0.5 else "#ef553b",
-                "#00cc96" if p_ft2_op >= 0.5 else "#ef553b"
-            ],
-            text=[f"{p_ft2*100:.1f}%", f"{p_ft2_op*100:.1f}%"],
-            textposition="outside",
-            textfont_color="white",
-            hovertemplate="<b>%{x}</b><br>Probabilidade de vencer o set: %{y:.1f}%<extra></extra>"
-        ))
-        fig_ft2.update_layout(
-            title=f"FT2 — Primeiro a 2 vitórias",
-            template="plotly_dark", height=280,
-            yaxis=dict(range=[0,115], showticklabels=False, title=""),
-            xaxis_title="",
-            margin=dict(l=10, r=10, t=40, b=10)
-        )
-        st.plotly_chart(fig_ft2, use_container_width=True)
-
-        # Cenários FT2
-        cc1, cc2, cc3 = st.columns(3)
-        cc1.metric("P(vence 1 partida)",  f"{p*100:.1f}%")
-        cc2.metric("P(Winter vence 2-0)", f"{p_20*100:.1f}%")
-        cc3.metric("P(Winter vence 2-1)", f"{p_21*100:.1f}%")
-
-    with cg2:
-        fig_ft3 = go.Figure()
-        fig_ft3.add_trace(go.Bar(
-            x=["Winter", c['oponente']],
-            y=[round(p_ft3*100,1), round(p_ft3_op*100,1)],
-            marker_color=[
-                "#00cc96" if p_ft3 >= 0.5 else "#ef553b",
-                "#00cc96" if p_ft3_op >= 0.5 else "#ef553b"
-            ],
-            text=[f"{p_ft3*100:.1f}%", f"{p_ft3_op*100:.1f}%"],
-            textposition="outside",
-            textfont_color="white",
-            hovertemplate="<b>%{x}</b><br>Probabilidade de vencer o set: %{y:.1f}%<extra></extra>"
-        ))
-        fig_ft3.update_layout(
-            title=f"FT3 — Primeiro a 3 vitórias",
-            template="plotly_dark", height=280,
-            yaxis=dict(range=[0,115], showticklabels=False, title=""),
-            xaxis_title="",
-            margin=dict(l=10, r=10, t=40, b=10)
-        )
-        st.plotly_chart(fig_ft3, use_container_width=True)
-
-        # Cenários FT3
-        cd1, cd2, cd3 = st.columns(3)
-        cd1.metric("P(Winter vence 3-0)", f"{p_30*100:.1f}%")
-        cd2.metric("P(Winter vence 3-1)", f"{p_31*100:.1f}%")
-        cd3.metric("P(Winter vence 3-2)", f"{p_32*100:.1f}%")
-
-    # ── Texto interpretativo ──────────────────────────────────────────────────
-    favoritismo_ft2 = (
-        "O resultado era esperado como favorável ao Winter."
-        if p_ft2 >= 0.5
-        else f"O favoritismo era do {c['oponente']}."
-    )
-    ganho_ft3 = round((p_ft3 - p_ft2) * 100, 1)
-
-    st.info(
-        f"📊 Pelo modelo Bradley-Terry, o Winter tinha **{p_ft2*100:.1f}% de chance no FT2** "
-        f"e **{p_ft3*100:.1f}% no FT3** contra {c['oponente']} — "
-        f"baseado apenas nos Win Rates gerais. {favoritismo_ft2} "
-        f"No formato FT3, a chance do Winter {'aumentaria' if ganho_ft3 > 0 else 'diminuiria'} "
-        f"em {abs(ganho_ft3):.1f} pontos percentuais — "
-        f"{'formatos mais longos favorecem quem tem maior força relativa.' if ganho_ft3 > 0 else 'formatos mais longos favorecem o oponente mais forte.'}"
-    )
-    st.divider()
-
-st.info(
-    "⚠️ **Importante:** este modelo considera apenas o Win Rate geral como medida de força. "
-    "Não leva em conta matchup de personagens, histórico direto entre os jogadores, "
-    "fadiga, pressão de campeonato ou qualquer outro fator contextual. "
-    "É uma estimativa de base — não uma previsão completa."
-)
+        # Tabela 3 — Por Personagem
+        st.markdown("##### 🎯 Por Personagem")
+        df_char_rec = tabela_recomendacao('Oponente_Personagem', label='Personagem')
+        if not df_char_rec.empty:
+            st.dataframe(df_char_rec, use_container_width=True, hide_index=True)
+            st.caption("⚠️ Personagens específicos podem ter amostras menores — confira a coluna Partidas.")
+        else:
+            st.info(f"Nenhum personagem com {min_conf}+ confrontos. Baixe o mínimo.")
