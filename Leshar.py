@@ -2043,16 +2043,15 @@ if total > 0:
     )
     st.caption(f"📊 {total:,} partidas exibidas com os filtros atuais.".replace(",","."))
 
-
 # ══════════════════════════════════════════════════════════════════════════════
-# ══  SEÇÃO — COMPARAÇÃO DOS MAINS
+# ══  SEÇÃO — OS 3 PERSONAGENS MAIS USADOS
 # Fixa em ranqueadas da temporada atual — filtros globais não se aplicam.
 # Tier e Arquétipo SEGUEM as Configurações (mudam se o usuário ajustar lá).
 # Depende de: df_base, cor_personagem(), arq_map, tier_map, semaforo(), ORDEM_TIER
 # ══════════════════════════════════════════════════════════════════════════════
 st.markdown("---")
-st.markdown("### ⚔️ Comparação dos Mains")
-st.caption(
+st.markdown("### ⚔️ Os 3 Personagens Mais Usados")
+aviso_importante(
     "Compara os personagens mais usados em ranqueada na temporada atual. "
     "Filtros da sidebar não se aplicam, mas a Tier List e os Arquétipos "
     "seguem o que estiver configurado em ⚙️ Configurações."
@@ -2178,10 +2177,18 @@ else:
                         if w > melhor_wr:
                             melhor_p, melhor_wr, melhor_n = personagem, w, len(sub)
                 if melhor_p is not None:
-                    if len(cobertura) >= 2:
-                        obs = f"Comparado entre {len(cobertura)} mains"
-                    else:
+                    # Monta a observação listando quais mains tiveram dados
+                    if len(cobertura) == len(top3):
+                        obs = f"Todos tiveram {min_conf}+ partidas"
+                    elif len(cobertura) == 1:
                         obs = f"Só {cobertura[0]} teve {min_conf}+ partidas"
+                    else:
+                        # 2 ou mais (mas não todos) — lista os nomes
+                        if len(cobertura) > 2:
+                            nomes = ", ".join(cobertura[:-1]) + " e " + cobertura[-1]
+                        else:
+                            nomes = " e ".join(cobertura)
+                        obs = f"Só {nomes} tiveram {min_conf}+ partidas"
                     linhas.append({
                         label:       str(cat),
                         'Use':       melhor_p,
